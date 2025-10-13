@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the company website repository for Next3Labs. The repository is currently in its initial setup phase.
+This is the company website repository for NEXT3LABS. The repository is currently in its initial setup phase.
+
+**IMPORTANT BRANDING RULE**: The company name must ALWAYS be written as "NEXT3LABS" in uppercase. Never use "Next3Labs", "next3labs", or any other case variation.
 
 ## Repository Information
 

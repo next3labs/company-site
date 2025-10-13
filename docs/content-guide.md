@@ -1,6 +1,8 @@
 # Content Management Guide
 
-This guide explains how to update and manage content on the Next3Labs website without needing deep technical knowledge.
+This guide explains how to update and manage content on the NEXT3LABS website without needing deep technical knowledge.
+
+**IMPORTANT BRANDING RULE**: The company name must ALWAYS be written as "NEXT3LABS" in uppercase.
 
 ## Quick Overview
 
@@ -17,10 +19,10 @@ The website uses a static site generator called Eleventy. Content is stored in s
 
 ```json
 {
-  "title": "Next3Labs",
-  "description": "Next3Labs - Innovative technology solutions",
+  "title": "NEXT3LABS",
+  "description": "NEXT3LABS - Innovative technology solutions",
   "url": "https://next3labs.com",
-  "author": "Next3Labs Team",
+  "author": "NEXT3LABS Team",
   "currentYear": 2025
 }
 ```

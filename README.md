@@ -1,4 +1,4 @@
-# Next3Labs Company Website
+# NEXT3LABS Company Website
 
 Static company website built with Eleventy (11ty).
 
