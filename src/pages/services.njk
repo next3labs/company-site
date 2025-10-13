@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: Services
+description: Explore our range of technology services
+permalink: /services/
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p class="lead">Comprehensive technology solutions for your business</p>
+  </div>
+</section>
+
+<section class="services-detail">
+  <div class="container">
+    {% for service in services %}
+    <div class="service-detail">
+      <h2>{{ service.title }}</h2>
+      <p>{{ service.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Interested in Our Services?</h2>
+    <p>Get in touch to learn how we can help you.</p>
+    <a href="/contact/" class="btn btn-primary">Contact Us</a>
+  </div>
+</section>

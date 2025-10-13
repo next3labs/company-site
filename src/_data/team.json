@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Team Member 1",
+    "role": "CEO & Founder",
+    "bio": "Brief bio about the team member",
+    "image": "/assets/images/team/member1.jpg"
+  },
+  {
+    "name": "Team Member 2",
+    "role": "CTO",
+    "bio": "Brief bio about the team member",
+    "image": "/assets/images/team/member2.jpg"
+  }
+]

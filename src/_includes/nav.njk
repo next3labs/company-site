@@ -1,0 +1,8 @@
+<nav class="main-nav">
+  <ul class="nav-list">
+    <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+    <li><a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+    <li><a href="/services/" {% if page.url == "/services/" %}class="active"{% endif %}>Services</a></li>
+    <li><a href="/contact/" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
+  </ul>
+</nav>
