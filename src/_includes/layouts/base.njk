@@ -3,8 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
   <title>{{ title }} | {{ site.title }}</title>
   <meta name="description" content="{{ description or site.description }}">
+  <meta name="keywords" content="software development singapore, linux server rescue, devops singapore, custom software, server emergency, system optimization, technical consulting, next3labs">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }} | {{ site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_SG">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} | {{ site.title }}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.company.legalName }}",
+    "alternateName": "{{ site.title }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/images/next3labs-logo.png",
+    "description": "{{ site.description }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.company.address.street }}",
+      "addressLocality": "{{ site.company.address.city }}",
+      "postalCode": "{{ site.company.address.postal }}",
+      "addressCountry": "SG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+65-8772-1895",
+      "contactType": "customer service",
+      "areaServed": "SG",
+      "availableLanguage": "en"
+    },
+    "sameAs": []
+  }
+  </script>
+
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>

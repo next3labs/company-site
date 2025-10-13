@@ -5,6 +5,10 @@ module.exports = function(eleventyConfig) {
   // Copy CNAME file for custom domain
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
+  // Copy SEO files
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+
   // Watch CSS files for changes
   eleventyConfig.addWatchTarget("src/assets/css/");
 
