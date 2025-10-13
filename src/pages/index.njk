@@ -1,21 +1,22 @@
 ---
 layout: layouts/base.njk
 title: Home
-description: Welcome to NEXT3LABS - Innovative technology solutions
+description: Software development and Linux server rescue services in Singapore. We build, fix, and optimize.
 permalink: /
 ---
 
 <section class="hero">
   <div class="container">
-    <h1>Welcome to {{ site.title }}</h1>
-    <p class="lead">{{ site.description }}</p>
-    <a href="/contact/" class="btn btn-primary">Get in Touch</a>
+    <h1>We Build, Fix, and Optimize</h1>
+    <p class="lead">Custom software development and Linux server rescue services in Singapore.</p>
+    <p class="lead">When your code needs writing or your servers need saving, we're the team that gets it done.</p>
+    <a href="/contact/" class="btn btn-primary">Let's Talk</a>
   </div>
 </section>
 
 <section class="services">
   <div class="container">
-    <h2>Our Services</h2>
+    <h2>What We Do</h2>
     <div class="services-grid">
       {% for service in services %}
       <div class="service-card">
@@ -25,13 +26,17 @@ permalink: /
       </div>
       {% endfor %}
     </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/services/" class="btn btn-secondary">View All Services</a>
+    </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="container">
-    <h2>Ready to Work Together?</h2>
-    <p>Let's build something amazing.</p>
-    <a href="/contact/" class="btn btn-secondary">Contact Us</a>
+    <h2>Got a Technical Challenge?</h2>
+    <p>Whether you need custom software built from scratch or a crashed server brought back to life, we've got you covered.</p>
+    <p>Based in Singapore. Available for remote work worldwide.</p>
+    <a href="/contact/" class="btn btn-primary">Get in Touch</a>
   </div>
 </section>

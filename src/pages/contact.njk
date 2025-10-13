@@ -1,14 +1,14 @@
 ---
 layout: layouts/base.njk
 title: Contact Us
-description: Get in touch with NEXT3LABS
+description: Get in touch with NEXT3LABS for software development and Linux server rescue services in Singapore.
 permalink: /contact/
 ---
 
 <section class="page-header">
   <div class="container">
-    <h1>Contact Us</h1>
-    <p class="lead">We'd love to hear from you</p>
+    <h1>Let's Talk</h1>
+    <p class="lead">Got a project? Server emergency? Just want to chat about tech?</p>
   </div>
 </section>
 
@@ -17,22 +17,36 @@ permalink: /contact/
     <div class="contact-grid">
       <div class="contact-info">
         <h2>Get in Touch</h2>
-        <p>Have a question or want to work together? Reach out to us.</p>
+        <p>Fastest way to reach us is by email. We typically respond within a few hours during business days.</p>
+        <p>For server emergencies, mention "URGENT" in your subject line.</p>
 
         <div class="contact-details">
           <div class="contact-item">
             <h3>Email</h3>
-            <p><a href="mailto:info@next3labs.com">info@next3labs.com</a></p>
+            <p><a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
           </div>
 
           <div class="contact-item">
             <h3>Location</h3>
-            <p>Your Location Here</p>
+            <p><strong>{{ site.company.legalName }}</strong><br>
+            {{ site.company.address.street }}<br>
+            {{ site.company.address.building }}<br>
+            {{ site.company.city }} {{ site.company.address.postal }}</p>
+            <p style="margin-top: 0.5rem;">UEN: {{ site.company.uen }}</p>
+          </div>
+
+          <div class="contact-item">
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM SGT<br>
+            Emergency support available 24/7 for existing clients</p>
           </div>
         </div>
       </div>
 
       <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <p style="margin-bottom: 1.5rem;">Or just email us directly at <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
+
         <form action="#" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
@@ -46,10 +60,14 @@ permalink: /contact/
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or what you need help with..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+            Note: This form is not yet connected. Please email us directly for now.
+          </p>
+
+          <button type="submit" class="btn btn-primary" disabled>Send Message</button>
         </form>
       </div>
     </div>

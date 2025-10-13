@@ -1,7 +1,20 @@
 {
   "title": "NEXT3LABS",
-  "description": "NEXT3LABS - Innovative technology solutions",
+  "description": "Software development and Linux server rescue services in Singapore. We build, fix, and optimize.",
   "url": "https://next3labs.com",
   "author": "NEXT3LABS Team",
-  "currentYear": 2025
+  "currentYear": 2025,
+  "company": {
+    "legalName": "NEXT3LABS PTE LTD",
+    "uen": "201623123D",
+    "address": {
+      "street": "100 PECK SEAH STREET 08-14",
+      "building": "PS100",
+      "city": "Singapore",
+      "postal": "079333",
+      "country": "Singapore"
+    },
+    "email": "hello@next3labs.com",
+    "tagline": "We build, fix, and optimize"
+  }
 }

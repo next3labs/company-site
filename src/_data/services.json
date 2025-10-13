@@ -1,17 +1,32 @@
 [
   {
-    "title": "Service 1",
-    "description": "Description of the first service",
-    "icon": "icon-1"
+    "title": "Custom Software Development",
+    "description": "We build web apps, APIs, and automation tools tailored to your needs. From MVPs to production systems, we code it right the first time.",
+    "icon": "💻",
+    "details": "Full-stack development with modern technologies. Clean code, proper testing, and documentation included."
   },
   {
-    "title": "Service 2",
-    "description": "Description of the second service",
-    "icon": "icon-2"
+    "title": "Linux Server Rescue",
+    "description": "Server down? Disk full? Config broken? We'll get your Linux servers back online fast. Emergency support available.",
+    "icon": "🚑",
+    "details": "Expert troubleshooting for crashed services, performance issues, security incidents, and disaster recovery."
   },
   {
-    "title": "Service 3",
-    "description": "Description of the third service",
-    "icon": "icon-3"
+    "title": "DevOps & Infrastructure",
+    "description": "CI/CD pipelines, containerization, monitoring, and infrastructure-as-code. We automate the boring stuff so you can focus on building.",
+    "icon": "⚙️",
+    "details": "Docker, Kubernetes, GitHub Actions, monitoring setup, and cloud infrastructure management."
+  },
+  {
+    "title": "System Optimization",
+    "description": "Slow database? High CPU usage? We analyze, optimize, and fine-tune your systems for better performance and lower costs.",
+    "icon": "⚡",
+    "details": "Performance profiling, database query optimization, caching strategies, and resource optimization."
+  },
+  {
+    "title": "Technical Consulting",
+    "description": "Need a second opinion? Architecture review? Technology decisions? We provide honest, practical technical advice.",
+    "icon": "🎯",
+    "details": "Architecture design, technology stack selection, code reviews, and technical due diligence."
   }
 ]
