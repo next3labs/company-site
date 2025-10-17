@@ -20,13 +20,13 @@ permalink: /
     <div class="services-grid">
       {% for service in services %}
       {% if service.link %}
-      <a href="{{ service.link }}" class="service-card-link">
-        <div class="service-card">
-          {% if service.featured %}<span class="featured-badge">Featured Product</span>{% endif %}
-          <div class="service-icon">{{ service.icon }}</div>
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-        </div>
+      <a href="{{ service.link }}" class="service-card service-card-link">
+        <div class="service-icon">{{ service.icon }}</div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        {% if service.featured %}
+        <span class="featured-badge">Featured Product</span>
+        {% endif %}
       </a>
       {% else %}
       <div class="service-card">
