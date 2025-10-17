@@ -1,5 +1,12 @@
 [
   {
+    "title": "Agent Boost",
+    "description": "AI-powered platform for Singapore property agents. Automate lead generation, create Facebook ads with AI, and manage your sales pipeline—all in one place.",
+    "icon": "🚀",
+    "link": "/agent-boost/",
+    "featured": true
+  },
+  {
     "title": "Custom Software Development",
     "description": "We build web apps, APIs, and automation tools tailored to your needs. From MVPs to production systems, we code it right the first time.",
     "icon": "💻",
