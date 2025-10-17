@@ -1,0 +1,255 @@
+---
+layout: layouts/base.njk
+title: Agent Boost - AI-Powered Platform for Singapore Property Agents
+description: All-in-one platform for independent Singapore property agents. AI-powered Facebook ads, unified lead management, and professional agent portal. Try the demo now.
+permalink: /agent-boost/
+---
+
+{# Hero Section #}
+<section class="product-hero">
+  <div class="container">
+    <div class="product-hero-content">
+      <h1 class="product-title">{{ agentboost.hero.title }}</h1>
+      <p class="product-subtitle">{{ agentboost.hero.subtitle }}</p>
+      <p class="product-tagline">{{ agentboost.hero.tagline }}</p>
+      <div class="hero-cta">
+        <a href="{{ agentboost.demoUrl }}" class="btn btn-primary btn-large">{{ agentboost.hero.ctaPrimary }}</a>
+        {% if agentboost.videoUrl != "#" %}
+        <a href="{{ agentboost.videoUrl }}" class="btn btn-secondary btn-large">{{ agentboost.hero.ctaSecondary }}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="product-hero-image">
+      <div class="screenshot-placeholder">
+        <p>Dashboard Screenshot</p>
+        <small>Replace with actual screenshot: {{ agentboost.screenshots[0].image }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Problem Statement #}
+<section class="product-section bg-light">
+  <div class="container">
+    <h2>{{ agentboost.problemStatement.title }}</h2>
+    <p class="section-intro">Independent property agents face daily challenges:</p>
+    <ul class="challenge-list">
+      {% for challenge in agentboost.problemStatement.challenges %}
+      <li>{{ challenge }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# Solution Overview #}
+<section class="product-section">
+  <div class="container">
+    <h2>{{ agentboost.solutionOverview.title }}</h2>
+    <div class="solution-grid">
+      {% for highlight in agentboost.solutionOverview.highlights %}
+      <div class="solution-card">
+        <div class="solution-icon">{{ highlight.icon }}</div>
+        <h3>{{ highlight.title }}</h3>
+        <ul class="feature-list">
+          {% for feature in highlight.features %}
+          <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Key Features #}
+<section class="product-section bg-light">
+  <div class="container">
+    <h2>Everything You Need to Grow Your Property Business</h2>
+    <div class="features-grid">
+      {% for feature in agentboost.keyFeatures %}
+      <div class="feature-card">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+        <ul class="feature-details">
+          {% for detail in feature.details %}
+          <li>{{ detail }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Screenshots Gallery #}
+<section class="product-section">
+  <div class="container">
+    <h2>See Agent Boost in Action</h2>
+    <div class="screenshots-grid">
+      {% for screenshot in agentboost.screenshots %}
+      <div class="screenshot-item">
+        <div class="screenshot-placeholder">
+          <p>{{ screenshot.name }}</p>
+        </div>
+        <p class="screenshot-caption">{{ screenshot.caption }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Technical Specifications #}
+<section class="product-section bg-light">
+  <div class="container">
+    <h2>Built with Modern Web Technologies</h2>
+    <div class="tech-grid">
+      <div class="tech-column">
+        <h3>Technology Stack</h3>
+        <ul>
+          {% for tech in agentboost.technicalStack.frontend %}
+          <li>{{ tech }}</li>
+          {% endfor %}
+        </ul>
+        <h4>Architecture</h4>
+        <ul>
+          {% for arch in agentboost.technicalStack.architecture %}
+          <li>{{ arch }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="tech-column">
+        <h3>Design Principles</h3>
+        <ul>
+          {% for design in agentboost.technicalStack.design %}
+          <li>{{ design }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Use Cases #}
+<section class="product-section">
+  <div class="container">
+    <h2>Perfect For Property Agents Who Want To:</h2>
+    <ol class="use-cases-list">
+      {% for useCase in agentboost.useCases %}
+      <li>{{ useCase }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{# Demo Information #}
+<section class="product-section bg-primary text-white">
+  <div class="container">
+    <h2>{{ agentboost.demoInfo.title }}</h2>
+    <p class="section-intro">{{ agentboost.demoInfo.description }}</p>
+    <div class="demo-grid">
+      <div class="demo-includes">
+        <h3>The demo includes:</h3>
+        <ul>
+          {% for item in agentboost.demoInfo.includes %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="demo-access">
+        <h3>Demo Access</h3>
+        <ul>
+          <li><strong>Credentials:</strong> {{ agentboost.demoInfo.access.credentials }}</li>
+          <li><strong>Best viewed on:</strong> {{ agentboost.demoInfo.access.bestViewed }}</li>
+          <li><strong>Test data:</strong> {{ agentboost.demoInfo.access.testData }}</li>
+        </ul>
+        <a href="{{ agentboost.demoInfo.access.url }}" class="btn btn-white btn-large">Try Demo Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Target Market #}
+<section class="product-section">
+  <div class="container">
+    <h2>{{ agentboost.targetMarket.title }}</h2>
+    <p class="section-intro">{{ agentboost.targetMarket.description }}</p>
+    <div class="target-grid">
+      <div class="target-column">
+        <h3>Perfect For Agents Who:</h3>
+        <ul>
+          {% for item in agentboost.targetMarket.audience %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="target-column">
+        <h3>Singapore-Specific Features</h3>
+        <ul>
+          {% for feature in agentboost.targetMarket.singaporeFeatures %}
+          <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Project Details #}
+<section class="product-section bg-light">
+  <div class="container">
+    <h2>Development Information</h2>
+    <div class="project-details-grid">
+      <div class="project-info">
+        <p><strong>Project Type:</strong> {{ agentboost.projectDetails.type }}</p>
+        <p><strong>Status:</strong> {{ agentboost.projectDetails.status }}</p>
+        <p><strong>Pricing:</strong> ${{ agentboost.pricing.monthly }}/month subscription</p>
+      </div>
+      <div class="project-goals">
+        <h3>Prototype Goals</h3>
+        <ol>
+          {% for goal in agentboost.projectDetails.goals %}
+          <li>{{ goal }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="project-roadmap">
+        <h3>Future Roadmap</h3>
+        <ul>
+          {% for item in agentboost.projectDetails.roadmap %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Call to Action #}
+<section class="product-section bg-primary text-white">
+  <div class="container text-center">
+    <h2>{{ agentboost.cta.title }}</h2>
+    <p class="section-intro">{{ agentboost.cta.description }}</p>
+    <ul class="cta-opportunities">
+      {% for opportunity in agentboost.cta.opportunities %}
+      <li>{{ opportunity }}</li>
+      {% endfor %}
+    </ul>
+    <div class="cta-buttons">
+      <a href="{{ agentboost.demoUrl }}" class="btn btn-white btn-large">{{ agentboost.cta.buttons.primary }}</a>
+      <a href="/contact/" class="btn btn-secondary-white btn-large">{{ agentboost.cta.buttons.secondary }}</a>
+    </div>
+  </div>
+</section>
+
+{# Contact Section #}
+<section class="product-section">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p class="section-intro">Interested in Agent Boost? Have questions or feedback?</p>
+    <div class="contact-cta">
+      <p>Contact us to learn more about early access and launch pricing.</p>
+      <a href="/contact/" class="btn btn-primary btn-large">Contact Us</a>
+    </div>
+  </div>
+</section>

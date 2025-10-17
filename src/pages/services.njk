@@ -1,32 +1,60 @@
 ---
 layout: layouts/base.njk
-title: Services
-description: Explore our range of technology services
+title: Our Services - Software Development & Server Rescue
+description: Custom software development, Linux server rescue, DevOps automation, system optimization, and technical consulting in Singapore. Emergency server support available 24/7.
 permalink: /services/
 ---
 
 <section class="page-header">
   <div class="container">
-    <h1>Our Services</h1>
-    <p class="lead">Comprehensive technology solutions for your business</p>
+    <h1>What We Do</h1>
+    <p class="lead">From building software from scratch to bringing crashed servers back to life</p>
   </div>
 </section>
 
 <section class="services-detail">
   <div class="container">
     {% for service in services %}
-    <div class="service-detail">
-      <h2>{{ service.title }}</h2>
-      <p>{{ service.description }}</p>
+    <div class="service-detail" style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <span style="font-size: 2.5rem;">{{ service.icon }}</span>
+        <h2 style="margin: 0;">{{ service.title }}</h2>
+      </div>
+      <p style="font-size: 1.1rem; margin-bottom: 1rem;">{{ service.description }}</p>
+      <p style="color: var(--text-color); line-height: 1.8;">{{ service.details }}</p>
     </div>
     {% endfor %}
   </div>
 </section>
 
+<section class="about-content" style="background: var(--light-bg); padding: 3rem 0;">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">How We Work</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div style="margin-bottom: 2rem;">
+        <h3>1. Initial Chat</h3>
+        <p>Tell us what you need. We'll ask questions to understand your situation and goals.</p>
+      </div>
+      <div style="margin-bottom: 2rem;">
+        <h3>2. Proposal</h3>
+        <p>We'll outline what we can do, how long it'll take, and what it'll cost. No hidden fees, no surprises.</p>
+      </div>
+      <div style="margin-bottom: 2rem;">
+        <h3>3. Get It Done</h3>
+        <p>We do the work, keep you updated, and deliver what we promised. Regular communication, no radio silence.</p>
+      </div>
+      <div style="margin-bottom: 2rem;">
+        <h3>4. Support</h3>
+        <p>We stick around to make sure everything works as expected. Questions? Changes? We're here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta">
   <div class="container">
-    <h2>Interested in Our Services?</h2>
-    <p>Get in touch to learn how we can help you.</p>
-    <a href="/contact/" class="btn btn-primary">Contact Us</a>
+    <h2>Ready to Start?</h2>
+    <p>Let's talk about your project or technical challenge.</p>
+    <a href="/contact/" class="btn btn-primary">Get in Touch</a>
   </div>
 </section>
