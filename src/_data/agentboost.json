@@ -1,0 +1,292 @@
+{
+  "name": "Agent Boost",
+  "formerName": "PropertyLink",
+  "tagline": "All-in-One Platform for Independent Singapore Property Agents",
+  "subtitle": "AI-Powered Facebook Ads + Lead Management + Professional Agent Portal",
+  "description": "Complete lead generation and management system for independent property agents in Singapore",
+  "status": "Demo ready, seeking early adopters",
+  "pricing": {
+    "monthly": 199,
+    "currency": "SGD",
+    "model": "Subscription"
+  },
+  "demoUrl": "https://n3apps-agentboost.netlify.app/#/dashboard",
+  "videoUrl": "#",
+  "hero": {
+    "title": "Agent Boost",
+    "subtitle": "All-in-One Platform for Independent Singapore Property Agents",
+    "tagline": "AI-Powered Facebook Ads + Lead Management + Professional Agent Portal",
+    "ctaPrimary": "View Live Demo",
+    "ctaSecondary": "Watch Video Demo"
+  },
+  "problemStatement": {
+    "title": "Built for Independent Property Agents in Singapore",
+    "challenges": [
+      "Struggling with Facebook ad creation and social media marketing",
+      "Leads scattered across Facebook, WhatsApp, email, and paper notes",
+      "No professional online presence to share with prospects",
+      "Missing follow-ups and losing potential deals",
+      "Spending hours on administrative tasks instead of closing deals"
+    ]
+  },
+  "solutionOverview": {
+    "title": "Your Complete Lead Generation & Management System",
+    "highlights": [
+      {
+        "title": "AI-Powered Facebook Ads",
+        "icon": "🤖",
+        "features": [
+          "Create professional Facebook ads in 2 minutes",
+          "AI generates compelling ad copy with 3 variations",
+          "Preview on desktop and mobile before publishing",
+          "Export-ready for Facebook Ads Manager"
+        ]
+      },
+      {
+        "title": "Unified Lead Dashboard",
+        "icon": "📊",
+        "features": [
+          "All leads auto-captured in one place",
+          "Facebook Lead Ads webhook integration",
+          "Professional public-facing agent portal",
+          "Manual lead entry for walk-ins and referrals"
+        ]
+      },
+      {
+        "title": "Visual Pipeline Management",
+        "icon": "📈",
+        "features": [
+          "Drag-and-drop Kanban board",
+          "Track leads from first contact to closing",
+          "Never miss a follow-up",
+          "Complete lead history and notes"
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    {
+      "title": "AI Ad Creator",
+      "icon": "🤖",
+      "description": "Create professional Facebook ads in minutes with AI-powered copy generation",
+      "details": [
+        "Step-by-step wizard",
+        "Property details input",
+        "AI-generated ad copy (3 variations)",
+        "Desktop/mobile preview",
+        "One-click copy to clipboard"
+      ]
+    },
+    {
+      "title": "Lead Pipeline",
+      "icon": "📊",
+      "description": "Visual Kanban board to track leads through your sales process",
+      "details": [
+        "Kanban board view (New → Contacted → Viewing → Negotiating → Closed)",
+        "Drag-and-drop lead movement",
+        "Lead scoring (Hot/Warm/Cold)",
+        "Source tracking (Facebook/Portal/Manual)",
+        "20+ mock leads included"
+      ]
+    },
+    {
+      "title": "Agent Portal",
+      "icon": "🌐",
+      "description": "Professional public-facing page to showcase your services",
+      "details": [
+        "Public-facing professional page",
+        "Shareable URL: propertylink.sg/agent/[your-name]",
+        "Contact form with lead capture",
+        "Featured property listings",
+        "WhatsApp quick contact",
+        "Trust badges and testimonials"
+      ]
+    },
+    {
+      "title": "Facebook Integration",
+      "icon": "⚡",
+      "description": "Auto-capture leads from Facebook campaigns in real-time",
+      "details": [
+        "Webhook auto-capture",
+        "Real-time lead notifications",
+        "Multiple campaign tracking",
+        "Active campaign dashboard",
+        "Zero manual export needed"
+      ]
+    },
+    {
+      "title": "Lead Management",
+      "icon": "📱",
+      "description": "Complete lead profiles with activity tracking and follow-ups",
+      "details": [
+        "Complete lead profiles",
+        "Activity timeline",
+        "WhatsApp/call/email actions",
+        "Note-taking and follow-ups",
+        "Viewing scheduler"
+      ]
+    },
+    {
+      "title": "Customization & Settings",
+      "icon": "⚙️",
+      "description": "Personalize your portal and manage integrations",
+      "details": [
+        "Profile management",
+        "Portal theme customization",
+        "Notification preferences",
+        "Facebook account connection",
+        "Billing management"
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "Dashboard",
+      "caption": "At-a-glance metrics and recent lead activity",
+      "image": "/assets/images/agentboost/dashboard.png"
+    },
+    {
+      "name": "Agent Portal",
+      "caption": "Your professional public-facing page",
+      "image": "/assets/images/agentboost/agent-portal.png"
+    },
+    {
+      "name": "Lead Pipeline",
+      "caption": "Visual Kanban board for lead management",
+      "image": "/assets/images/agentboost/pipeline.png"
+    },
+    {
+      "name": "AI Ad Creator - Step 1",
+      "caption": "Property details input wizard",
+      "image": "/assets/images/agentboost/ad-creator-step1.png"
+    },
+    {
+      "name": "AI Ad Creator - Step 2",
+      "caption": "AI-generated ad copy with 3 variations",
+      "image": "/assets/images/agentboost/ad-creator-step2.png"
+    },
+    {
+      "name": "Lead Detail View",
+      "caption": "Complete lead profile with activity timeline",
+      "image": "/assets/images/agentboost/lead-detail.png"
+    },
+    {
+      "name": "Facebook Integration",
+      "caption": "Webhook automation for lead capture",
+      "image": "/assets/images/agentboost/facebook-integration.png"
+    },
+    {
+      "name": "Settings Page",
+      "caption": "Portal customization and preferences",
+      "image": "/assets/images/agentboost/settings.png"
+    }
+  ],
+  "technicalStack": {
+    "frontend": [
+      "Vanilla HTML/CSS/JavaScript",
+      "Tailwind CSS (CDN)",
+      "Lucide Icons"
+    ],
+    "architecture": [
+      "Single-page application",
+      "Client-side routing (hash-based)",
+      "localStorage for persistence",
+      "Static hosting ready"
+    ],
+    "design": [
+      "Mobile-first responsive design",
+      "Singapore property market aesthetic",
+      "Primary Blue #2563eb, Accent Green #10b981",
+      "Smooth animations and transitions",
+      "Clear typography hierarchy",
+      "Accessible and intuitive UI"
+    ]
+  },
+  "useCases": [
+    "Generate high-quality Facebook ads without hiring a designer",
+    "Stop losing leads scattered across multiple platforms",
+    "Build a professional online presence instantly",
+    "Automate lead capture from Facebook campaigns",
+    "Manage their pipeline visually and efficiently",
+    "Focus on closing deals instead of admin work"
+  ],
+  "demoInfo": {
+    "title": "Try Agent Boost Now",
+    "description": "This is a fully interactive validation prototype built with realistic Singapore property market data.",
+    "includes": [
+      "7 complete screens with smooth navigation",
+      "20+ mock leads with realistic names and data",
+      "3+ featured property listings",
+      "Functional drag-and-drop Kanban board",
+      "AI ad creation wizard with preview",
+      "Facebook integration demonstration",
+      "Complete settings and customization"
+    ],
+    "access": {
+      "url": "https://n3apps-agentboost.netlify.app/#/dashboard",
+      "credentials": "No login required",
+      "bestViewed": "Desktop and mobile devices",
+      "testData": "Pre-loaded with mock Singapore property data"
+    }
+  },
+  "targetMarket": {
+    "title": "Designed for Singapore Property Agents",
+    "description": "Agent Boost is specifically built for independent property agents in Singapore who:",
+    "audience": [
+      "Have little or no agency support",
+      "Want to compete with larger agencies",
+      "Need professional marketing tools",
+      "Are ready to modernize their workflow",
+      "Understand the value of lead management"
+    ],
+    "singaporeFeatures": [
+      "CEA registration number display",
+      "Singapore phone format (+65)",
+      "Local property types (HDB, Condo, Landed)",
+      "Singapore neighborhoods (Punggol, Sengkang, Hougang, Tampines)",
+      "Realistic price ranges for Singapore market",
+      "WhatsApp integration (primary communication channel)"
+    ]
+  },
+  "projectDetails": {
+    "type": "Product validation prototype",
+    "status": "Demo ready, seeking early adopters",
+    "goals": [
+      "Validate market need with independent agents",
+      "Test user flows and interactions",
+      "Gather feedback for MVP development",
+      "Demonstrate technical feasibility",
+      "Attract early adopters and investors"
+    ],
+    "roadmap": [
+      "Direct Facebook ad publishing integration",
+      "Real webhook implementation",
+      "User authentication and multi-tenant support",
+      "WhatsApp Business API integration",
+      "Mobile app (iOS/Android)",
+      "Advanced analytics and reporting",
+      "Email marketing campaigns",
+      "Property listing integrations"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Your Property Business?",
+    "description": "Agent Boost is currently in validation phase. We're looking for independent property agents to:",
+    "opportunities": [
+      "Test the demo and provide feedback",
+      "Join our early adopter program",
+      "Help shape the product roadmap",
+      "Get exclusive launch pricing"
+    ],
+    "buttons": {
+      "primary": "Try Live Demo",
+      "secondary": "Request Early Access",
+      "tertiary": "Contact Us"
+    }
+  },
+  "seo": {
+    "title": "Agent Boost - AI-Powered Platform for Singapore Property Agents",
+    "description": "All-in-one platform for independent Singapore property agents. AI-powered Facebook ads, unified lead management, and professional agent portal. Try the demo now.",
+    "keywords": "Singapore property agent, real estate CRM, Facebook lead ads, property agent portal, lead management, real estate marketing, Singapore property tech"
+  }
+}
