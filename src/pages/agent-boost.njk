@@ -20,10 +20,7 @@ permalink: /agent-boost/
       </div>
     </div>
     <div class="product-hero-image">
-      <div class="screenshot-placeholder">
-        <p>Dashboard Screenshot</p>
-        <small>Replace with actual screenshot: {{ agentboost.screenshots[0].image }}</small>
-      </div>
+      <img src="{{ agentboost.screenshots[0].image }}" alt="{{ agentboost.screenshots[0].name }}" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
     </div>
   </div>
 </section>
@@ -89,9 +86,7 @@ permalink: /agent-boost/
     <div class="screenshots-grid">
       {% for screenshot in agentboost.screenshots %}
       <div class="screenshot-item">
-        <div class="screenshot-placeholder">
-          <p>{{ screenshot.name }}</p>
-        </div>
+        <img src="{{ screenshot.image }}" alt="{{ screenshot.name }}" style="width: 100%; height: auto; display: block;">
         <p class="screenshot-caption">{{ screenshot.caption }}</p>
       </div>
       {% endfor %}
