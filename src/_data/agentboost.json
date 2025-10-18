@@ -1,6 +1,6 @@
 {
   "name": "Agent Boost",
-  "formerName": "PropertyLink",
+  "formerName": null,
   "tagline": "All-in-One Platform for Independent Singapore Property Agents",
   "subtitle": "AI-Powered Facebook Ads + Lead Management + Professional Agent Portal",
   "description": "Complete lead generation and management system for independent property agents in Singapore",
@@ -95,7 +95,7 @@
       "description": "Professional public-facing page to showcase your services",
       "details": [
         "Public-facing professional page",
-        "Shareable URL: propertylink.sg/agent/[your-name]",
+        "Shareable URL: agentboost.n3apps.com/agent/[your-name]",
         "Contact form with lead capture",
         "Featured property listings",
         "WhatsApp quick contact",
