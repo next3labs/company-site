@@ -181,3 +181,116 @@ Simply upload the contents of `_site/` to your hosting provider.
    ```
 3. Add your content using HTML and Nunjucks syntax
 4. Update navigation in `src/_includes/nav.njk` if needed
+
+## SEO Automations
+
+This project includes automated SEO enhancements implemented in Phase 1:
+
+### 1. Auto-Generated Sitemap
+
+The sitemap is automatically generated and updated using `@quasibit/eleventy-plugin-sitemap`.
+
+**Features:**
+- Automatically discovers all pages in the site
+- Updates `lastmod` dates based on file modification times
+- Outputs to `_site/sitemap.xml` during build
+- No manual updates required when adding/modifying pages
+
+**Configuration:**
+- Plugin configured in `.eleventy.js`
+- Sitemap template: `src/sitemap.xml.njk`
+- Base URL: `https://next3labs.com`
+
+**Note:** The static `src/sitemap.xml` file has been removed. Sitemap is now dynamically generated during each build.
+
+### 2. Lighthouse CI Integration
+
+Automated performance and SEO auditing via GitHub Actions.
+
+**Workflow File:** `.github/workflows/lighthouse-ci.yml`
+
+**Triggers:** Runs on every pull request to `main` branch
+
+**Score Thresholds:**
+- Performance: ≥ 80%
+- Accessibility: ≥ 90%
+- Best Practices: ≥ 90%
+- SEO: ≥ 90%
+
+**Behavior:**
+- Builds the site in CI environment
+- Runs Lighthouse audits on all main pages
+- Uploads results as artifacts
+- Fails the PR if scores drop below thresholds
+
+**Configuration File:** `.lighthouserc.js`
+
+**Pages Audited:**
+- Homepage (`/`)
+- About page (`/about/`)
+- Services page (`/services/`)
+- Contact page (`/contact/`)
+
+### 3. Image Optimization Pipeline
+
+Responsive image optimization using `@11ty/eleventy-img`.
+
+**Features:**
+- Generates multiple image sizes (320w, 640w, 1024w)
+- Creates modern formats (AVIF, WebP) with JPEG fallback
+- Outputs responsive `<picture>` tags with proper `srcset`
+- Enables lazy loading and async decoding
+- Automatic caching of processed images
+
+**Usage in Templates:**
+
+```njk
+{% image "src/assets/images/photo.jpg", "Descriptive alt text" %}
+```
+
+**Custom Sizes (optional):**
+
+```njk
+{% image "src/assets/images/photo.jpg", "Descriptive alt text", "480, 800, 1200" %}
+```
+
+**Output Location:** `_site/assets/images/optimized/`
+
+**Important Notes:**
+- Always provide descriptive `alt` text (required)
+- Images are processed during build time
+- First build with new images may be slower due to processing
+- Processed images are cached for subsequent builds
+
+**Example Output:**
+
+```html
+<picture>
+  <source type="image/avif" srcset="...">
+  <source type="image/webp" srcset="...">
+  <img src="photo-1024w.jpeg"
+       srcset="photo-320w.jpeg 320w, photo-640w.jpeg 640w, photo-1024w.jpeg 1024w"
+       sizes="(max-width: 640px) 320px, (max-width: 1024px) 640px, 1024px"
+       alt="Descriptive alt text"
+       loading="lazy"
+       decoding="async">
+</picture>
+```
+
+## SEO Best Practices
+
+With these automations in place:
+
+1. **Sitemap:** Automatically updated on every build - no manual maintenance needed
+2. **Performance Monitoring:** CI/CD enforces performance standards via Lighthouse CI
+3. **Image Optimization:** Use the `{% image %}` shortcode for all images to ensure optimal delivery
+4. **Quality Gates:** Pull requests must pass Lighthouse thresholds before merging
+
+### Adding New Content
+
+When adding new pages or updating content:
+
+1. Pages are automatically added to sitemap (no action needed)
+2. Images should use the `{% image %}` shortcode
+3. Pull requests will be automatically audited by Lighthouse CI
+4. Review Lighthouse results before merging to ensure SEO standards are maintained
