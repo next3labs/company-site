@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal: Windows File Server Access - Lights & Shadows</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { color: #1a5f7a; border-bottom: 3px solid #1a5f7a; padding-bottom: 15px; margin-bottom: 30px; }
+        h2 { color: #2e7d32; margin-top: 50px; margin-bottom: 20px; }
+        h3 { color: #555; margin-top: 25px; }
+        .meta { color: #666; font-size: 14px; margin-bottom: 30px; }
+        .highlight { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
+        .problem-list { list-style: none; }
+        .problem-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .problem-list li:last-child { border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #1a5f7a; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .diagram { background: #1a1a2e; color: #0f0; padding: 25px; border-radius: 8px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px; white-space: pre; overflow-x: auto; }
+        ol { margin: 15px 0 15px 25px; }
+        li { margin: 10px 0; }
+        .cost-box { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .cost-box strong { color: #2e7d32; font-size: 18px; }
+        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Windows File Server Access Solution</h1>
+        <p class="meta"><strong>For:</strong> Lights & Shadows Pte Ltd | <strong>Date:</strong> 24 February 2026</p>
+
+        <h2>The Problem</h2>
+        <div class="highlight">
+            <p>Lights & Shadows has <strong>Windows machines in China</strong> that need to access their <strong>file server in Singapore</strong>. The server is behind a <strong>Fortinet firewall</strong>.</p>
+        </div>
+
+        <h3>Current Challenges:</h3>
+        <ul class="problem-list">
+            <li>🔴 High latency (150-200ms) between China and Singapore</li>
+            <li>🔴 China's Great Firewall causes unstable connections</li>
+            <li>🔴 Fortinet requires careful port configuration</li>
+            <li>🔴 Windows SMB protocol is sensitive to latency</li>
+        </ul>
+
+        <h2>Our Solution: Alibaba Cloud Global Accelerator</h2>
+
+        <h3>Architecture</h3>
+        <div class="diagram">┌─────────────┐     ┌──────────────────────┐     ┌─────────────┐
+│   CHINA     │     │  ALIBABA CLOUD       │     │ SINGAPORE   │
+│             │     │  GLOBAL ACCELERATOR  │     │             │
+│  ┌───────┐  │     │                      │     │  ┌───────┐  │
+│  │Windows│──────▶│  China → Singapore    │──────▶│Fortinet│  │
+│  │  PC   │  │     │  (Optimized Route)   │     │  │  FW   │  │
+│  └───────┘  │     │                      │     │  └──┬────┘  │
+│             │     └──────────────────────┘     │     │        │
+│             │                                  │     ▼        │
+│             │                                  │  ┌───────┐  │
+│             │                                  │  │ File  │  │
+│             │                                  │  │Server │  │
+│             │                                  │  └───────┘  │
+└─────────────┘                                  └─────────────┘</div>
+
+        <h3>How It Works</h3>
+        <ol>
+            <li><strong>Connect:</strong> User in China connects to nearest Alibaba Cloud GA point</li>
+            <li><strong>Route:</strong> Traffic flows through Alibaba's global backbone (not public internet)</li>
+            <li><strong>Terminate:</strong> Traffic arrives at Singapore through Fortinet</li>
+            <li><strong>Access:</strong> Windows SMB connects to file server as if on local network</li>
+        </ol>
+
+        <h3>Why Alibaba Cloud?</h3>
+        <table>
+            <tr><th>Factor</th><th>Benefit</th></tr>
+            <tr><td>China Coverage</td><td>Strong presence in China with multiple access points</td></tr>
+            <tr><td>SMB Optimization</td><td>Specifically good for Windows file sharing</td></tr>
+            <tr><td>Fortinet Compatible</td><td>Works with existing firewall</td></tr>
+            <tr><td>Static IP</td><td>Stable address for Windows network mapping</td></tr>
+        </table>
+
+        <h2>Implementation Plan</h2>
+        <table>
+            <tr><th>Week</th><th>Activity</th><th>Deliverable</th></tr>
+            <tr><td>1</td><td>Technical Assessment</td><td>Requirements Document</td></tr>
+            <tr><td>2</td><td>POC Setup</td><td>Live Test Environment</td></tr>
+            <tr><td>3</td><td>Testing & Optimization</td><td>Test Report</td></tr>
+            <tr><td>4</td><td>Final Proposal</td><td>SOW & Quotation</td></tr>
+        </table>
+
+        <h2>Investment</h2>
+        <div class="cost-box">
+            <h3>One-Time Costs</h3>
+            <table>
+                <tr><td>Technical Assessment</td><td>$500</td></tr>
+                <tr><td>POC Setup & Configuration</td><td>$800</td></tr>
+                <tr><td>Fortinet Consultation</td><td>$300</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>$1,600</strong></td></tr>
+            </table>
+        </div>
+
+        <div class="cost-box">
+            <h3>Monthly Recurring</h3>
+            <table>
+                <tr><td>GA Instance</td><td>$80-150</td></tr>
+                <tr><td>Bandwidth (1-5 TB)</td><td>$100-200</td></tr>
+                <tr><td>Support & Monitoring</td><td>$100</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>$280-450</strong></td></tr>
+            </table>
+        </div>
+
+        <h2>Next Steps</h2>
+        <ol>
+            <li>Initial call with Lights & Shadows IT to gather network details</li>
+            <li>Sign POC agreement</li>
+            <li>Begin technical assessment</li>
+        </ol>
+
+        <div class="footer">
+            <p><em>Prepared by A Cai (COO), Next3Labs</em><br>
+            Email: lim@next3labs.com</p>
+        </div>
+    </div>
+</body>
+</html>
