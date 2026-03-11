@@ -1,9 +1,24 @@
 <nav class="main-nav">
   <ul class="nav-list">
     <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+    <li class="nav-dropdown">
+      <a href="/services/" {% if page.url == "/services/" or "/ai-readiness/" in page.url or "/server-rescue/" in page.url or "/custom-software/" in page.url or "/devops/" in page.url %}class="active"{% endif %}>Services</a>
+      <div class="nav-dropdown-menu">
+        <a href="/ai-readiness/">AI Readiness Assessment</a>
+        <a href="/server-rescue/">Server Rescue</a>
+        <a href="/devops/">Cloud & DevOps</a>
+        <a href="/custom-software/">Custom Software</a>
+      </div>
+    </li>
+    <li><a href="/showcase/" {% if page.url == "/showcase/" %}class="active"{% endif %}>Work</a></li>
     <li><a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
-    <li><a href="/services/" {% if page.url == "/services/" %}class="active"{% endif %}>Services</a></li>
-    <li><a href="/agent-boost/" {% if page.url == "/agent-boost/" %}class="active"{% endif %}>Agent Boost</a></li>
     <li><a href="/contact/" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
   </ul>
+  <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
 </nav>
