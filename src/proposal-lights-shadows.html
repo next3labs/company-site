@@ -1,0 +1,149 @@
+---
+layout: layouts/base.njk
+title: Proposal - Windows File Server Access
+---
+
+<div class="proposal">
+
+# Windows File Server Access Solution for Lights & Shadows
+
+**Date:** 24 February 2026
+
+---
+
+## The Problem
+
+Lights & Shadows has **Windows machines in China** that need to access their **file server in Singapore**. The server is behind a **Fortinet firewall**.
+
+### Current Challenges:
+- 🔴 High latency (150-200ms) between China and Singapore
+- 🔴 China's Great Firewall causes unstable connections  
+- 🔴 Fortinet requires careful port configuration
+- 🔴 Windows SMB protocol is sensitive to latency
+
+---
+
+## Our Solution: Alibaba Cloud Global Accelerator
+
+### Architecture
+
+```
+┌─────────────┐     ┌──────────────────────┐     ┌─────────────┐
+│   CHINA     │     │  ALIBABA CLOUD       │     │ SINGAPORE   │
+│             │     │  GLOBAL ACCELERATOR  │     │             │
+│  ┌───────┐  │     │                      │     │  ┌───────┐  │
+│  │Windows│──────▶│  China → Singapore    │──────▶│Fortinet│  │
+│  │  PC   │  │     │  (Optimized Route)   │     │  │  FW   │  │
+│  └───────┘  │     │                      │     │  └──┬────┘  │
+│             │     └──────────────────────┘     │     │        │
+│             │                                  │     ▼        │
+│             │                                  │  ┌───────┐  │
+│             │                                  │  │ File  │  │
+│             │                                  │  │Server │  │
+│             │                                  │  └───────┘  │
+└─────────────┘                                  └─────────────┘
+```
+
+### How It Works
+
+1. **Connect:** User in China connects to nearest Alibaba Cloud GA point
+2. **Route:** Traffic flows through Alibaba's global backbone (not public internet)
+3. **Terminate:** Traffic arrives at Singapore through Fortinet
+4. **Access:** Windows SMB connects to file server as if on local network
+
+### Why Alibaba Cloud?
+
+| Factor | Benefit |
+|--------|---------|
+| China Coverage | Strong presence in China with multiple access points |
+| SMB Optimization | Specifically good for Windows file sharing |
+| Fortinet Compatible | Works with existing firewall |
+| Static IP | Stable address for Windows network mapping |
+
+---
+
+## Implementation Plan
+
+| Week | Activity | Deliverable |
+|------|----------|-------------|
+| 1 | Technical Assessment | Requirements Document |
+| 2 | POC Setup | Live Test Environment |
+| 3 | Testing & Optimization | Test Report |
+| 4 | Final Proposal | SOW & Quotation |
+
+---
+
+## Investment
+
+### One-Time Costs
+| Item | Amount |
+|------|--------|
+| Technical Assessment | $500 |
+| POC Setup & Configuration | $800 |
+| Fortinet Consultation | $300 |
+| **Total** | **$1,600** |
+
+### Monthly Recurring
+| Item | Amount |
+|------|--------|
+| GA Instance | $80-150 |
+| Bandwidth (1-5 TB) | $100-200 |
+| Support & Monitoring | $100 |
+| **Total** | **$280-450** |
+
+---
+
+## Next Steps
+
+1. Initial call with Lights & Shadows IT to gather network details
+2. Sign POC agreement
+3. Begin technical assessment
+
+---
+
+*Prepared by A Cai (COO), Next3Labs*  
+*Email: lim@next3labs.com*
+
+</div>
+
+<style>
+.proposal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+.proposal h1 {
+  color: #1a5f7a;
+  border-bottom: 2px solid #1a5f7a;
+  padding-bottom: 10px;
+}
+.proposal h2 {
+  color: #2e7d32;
+  margin-top: 40px;
+}
+.proposal h3 {
+  color: #555;
+}
+.proposal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.proposal th, .proposal td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+.proposal th {
+  background-color: #1a5f7a;
+  color: white;
+}
+.proposal pre {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+</style>
