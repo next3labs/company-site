@@ -1,9 +1,9 @@
 {
   "title": "NEXT3LABS",
-  "description": "Software development and Linux server rescue services in Singapore. We build, fix, and optimize.",
+  "description": "AI Solutions & Software Development for Singapore SMEs. Custom software, AI agents, managed IT, and server rescue. Budget 2026 ready.",
   "url": "https://next3labs.com",
   "author": "NEXT3LABS Team",
-  "currentYear": 2025,
+  "currentYear": 2026,
   "company": {
     "legalName": "NEXT3LABS PTE LTD",
     "uen": "201623123D",
@@ -15,6 +15,6 @@
       "country": "Singapore"
     },
     "email": "hello@next3labs.com",
-    "tagline": "We build, fix, and optimize"
+    "tagline": "AI Solutions for Singapore SMEs"
   }
 }

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CRM</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; min-height: 100vh; }
+        .sidebar { width: 240px; background: #1e293b; color: #fff; padding: 20px; position: fixed; height: 100vh; }
+        .logo { font-size: 20px; font-weight: 700; margin-bottom: 32px; display: flex; align-items: center; gap: 8px; }
+        .nav-item { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; color: #94a3b8; cursor: pointer; margin-bottom: 4px; }
+        .nav-item:hover, .nav-item.active { background: #334155; color: #fff; }
+        .nav-item .count { margin-left: auto; background: #ef4444; font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+        .main { margin-left: 240px; padding: 24px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .header h1 { font-size: 24px; }
+        .btn { background: #2563eb; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 500; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .stat { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; }
+        .stat h3 { font-size: 12px; color: #64748b; text-transform: uppercase; margin-bottom: 8px; }
+        .stat .value { font-size: 28px; font-weight: 700; }
+        .stat .change { font-size: 12px; }
+        .stat .change.up { color: #22c55e; }
+        .stat .change.down { color: #ef4444; }
+        .table-card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; }
+        .table-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #e2e8f0; }
+        .table-header h2 { font-size: 16px; }
+        .search { background: #f1f5f9; border: none; padding: 8px 16px; border-radius: 8px; width: 240px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 12px 20px; font-size: 12px; color: #64748b; text-transform: uppercase; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+        td { padding: 16px 20px; border-bottom: 1px solid #f1f5f9; }
+        .contact { display: flex; align-items: center; gap: 12px; }
+        .avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; color: #fff; }
+        .avatar.blue { background: #3b82f6; }
+        .avatar.green { background: #22c55e; }
+        .avatar.purple { background: #8b5cf6; }
+        .avatar.orange { background: #f59e0b; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12: 500;px; font-weight }
+        .badge.new { background: #dbeafe; color: #2563eb; }
+        .badge.progress { background: #fef3c7; color: #d97706; }
+        .badge.won { background: #dcfce7; color: #16a34a; }
+        .badge.lost { background: #fee2e2; color: #dc2626; }
+        .actions { display: flex; gap: 8px; }
+        .action-btn { background: #f1f5f9; border: none; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; }
+        .pipeline { display: flex; gap: 16px; margin-top: 24px; }
+        .pipeline-col { flex: 1; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 16px; }
+        .pipeline-col h3 { font-size: 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .pipeline-col .count { margin-left: auto; background: #f1f5f9; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+        .deal { background: #f8fafc; border-radius: 8px; padding: 12px; margin-bottom: 8px; border: 1px solid #e2e8f0; }
+        .deal h4 { font-size: 14px; margin-bottom: 4px; }
+        .deal .value { font-size: 16px; font-weight: 700; color: #22c55e; }
+        .deal .company { font-size: 12px; color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">📊 Simple CRM</div>
+        <div class="nav-item active">🏠 Dashboard</div>
+        <div class="nav-item">👥 Contacts <span class="count">24</span></div>
+        <div class="nav-item">💼 Deals <span class="count">8</span></div>
+        <div class="nav-item">📅 Tasks</div>
+        <div class="nav-item">📈 Reports</div>
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #334155;">
+            <div class="nav-item">⚙️ Settings</div>
+            <div class="nav-item">🚪 Logout</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <button class="btn">+ Add Deal</button>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <h3>Total Contacts</h3>
+                <div class="value">1,247</div>
+                <div class="change up">↑ 12% this month</div>
+            </div>
+            <div class="stat">
+                <h3>Active Deals</h3>
+                <div class="value">48</div>
+                <div class="change up">↑ 8% this month</div>
+            </div>
+            <div class="stat">
+                <h3>Win Rate</h3>
+                <div class="value">34%</div>
+                <div class="change down">↓ 2% this month</div>
+            </div>
+            <div class="stat">
+                <h3>Revenue</h3>
+                <div class="value">$84.5K</div>
+                <div class="change up">↑ 23% this month</div>
+            </div>
+        </div>
+        <div class="table-card">
+            <div class="table-header">
+                <h2>Recent Deals</h2>
+                <input type="text" class="search" placeholder="Search deals...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contact</th>
+                        <th>Company</th>
+                        <th>Value</th>
+                        <th>Stage</th>
+                        <th>Expected Close</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="contact">
+                                <div class="avatar blue">JC</div>
+                                <div>John Chen</div>
+                            </div>
+                        </td>
+                        <td>Tech Solutions Pte Ltd</td>
+                        <td>$12,000</td>
+                        <td><span class="badge won">Won</span></td>
+                        <td>Mar 8, 2026</td>
+                        <td class="actions">
+                            <button class="action-btn">✏️</button>
+                            <button class="action-btn">👁️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="contact">
+                                <div class="avatar green">SL</div>
+                                <div>Sarah Lim</div>
+                            </div>
+                        </td>
+                        <td>Global Innovations</td>
+                        <td>$28,500</td>
+                        <td><span class="badge progress">Negotiation</span></td>
+                        <td>Mar 20, 2026</td>
+                        <td class="actions">
+                            <button class="action-btn">✏️</button>
+                            <button class="action-btn">👁️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="contact">
+                                <div class="avatar purple">MK</div>
+                                <div>Michael Koh</div>
+                            </div>
+                        </td>
+                        <td>StartUp Ventures</td>
+                        <td>$8,500</td>
+                        <td><span class="badge new">New</span></td>
+                        <td>Mar 25, 2026</td>
+                        <td class="actions">
+                            <button class="action-btn">✏️</button>
+                            <button class="action-btn">👁️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="contact">
+                                <div class="avatar orange">AT</div>
+                                <div>Amy Tan</div>
+                            </div>
+                        </td>
+                        <td>Enterprise Corp</td>
+                        <td>$45,000</td>
+                        <td><span class="badge progress">Proposal</span></td>
+                        <td>Apr 5, 2026</td>
+                        <td class="actions">
+                            <button class="action-btn">✏️</button>
+                            <button class="action-btn">👁️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pipeline">
+            <div class="pipeline-col">
+                <h3>🔵 New <span class="count">12</span></h3>
+                <div class="deal">
+                    <h4>Website Redesign</h4>
+                    <div class="company">Creative Agency</div>
+                    <div class="value">$5,000</div>
+                </div>
+                <div class="deal">
+                    <h4>Marketing Campaign</h4>
+                    <div class="company">Retail Plus</div>
+                    <div class="value">$3,200</div>
+                </div>
+            </div>
+            <div class="pipeline-col">
+                <h3>🟡 Qualified <span class="count">8</span></h3>
+                <div class="deal">
+                    <h4>Software License</h4>
+                    <div class="company">DataTech</div>
+                    <div class="value">$15,000</div>
+                </div>
+            </div>
+            <div class="pipeline-col">
+                <h3>🟠 Proposal <span class="count">5</span></h3>
+                <div class="deal">
+                    <h4>Enterprise Plan</h4>
+                    <div class="company">Enterprise Corp</div>
+                    <div class="value">$45,000</div>
+                </div>
+            </div>
+            <div class="pipeline-col">
+                <h3>🟢 Won <span class="count">23</span></h3>
+                <div class="deal">
+                    <h4>Consulting Package</h4>
+                    <div class="company">Tech Solutions</div>
+                    <div class="value">$12,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

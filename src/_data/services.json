@@ -1,5 +1,13 @@
 [
   {
+    "title": "AI Readiness Assessment",
+    "description": "Free assessment tool that scores your SME's AI readiness. Get a personalized action plan and discover Budget 2026 benefits.",
+    "icon": "🧠",
+    "details": "Comprehensive AI readiness scoring across 5 dimensions. Includes personalized recommendations and Budget 2026 tax deduction guidance.",
+    "link": "/ai-readiness/",
+    "featured": true
+  },
+  {
     "title": "Agent Boost",
     "description": "AI-powered platform for Singapore property agents. Create Facebook ads in minutes, manage leads effortlessly, and showcase your services with a professional portal.",
     "icon": "🚀",

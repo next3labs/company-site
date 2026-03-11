@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #fff; min-height: 100vh; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .header h1 { font-size: 24px; font-weight: 600; }
+        .btn { background: #6366f1; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 500; }
+        .filters { display: flex; gap: 12px; margin-bottom: 24px; }
+        .filter { background: #1e293b; border: 1px solid #334155; padding: 8px 16px; border-radius: 8px; color: #94a3b8; font-size: 14px; }
+        .filter.active { background: #6366f1; border-color: #6366f1; color: #fff; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .card { background: #1e293b; border-radius: 12px; overflow: hidden; }
+        .card-img { height: 120px; background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+        .card-body { padding: 16px; }
+        .card h3 { font-size: 16px; margin-bottom: 8px; }
+        .card .meta { font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
+        .card .price { font-size: 20px; font-weight: 700; color: #22c55e; }
+        .card .price span { font-size: 14px; color: #94a3b8; font-weight: 400; }
+        .tags { display: flex; gap: 8px; margin-top: 12px; }
+        .tag { background: #334155; font-size: 11px; padding: 4px 8px; border-radius: 4px; color: #cbd5e1; }
+        .sidebar { position: fixed; right: 20px; top: 80px; width: 280px; background: #1e293b; border-radius: 12px; padding: 20px; }
+        .sidebar h2 { font-size: 16px; margin-bottom: 16px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 12px; color: #94a3b8; margin-bottom: 6px; }
+        .form-group input, .form-group select { width: 100%; background: #0f172a; border: 1px solid #334155; padding: 10px; border-radius: 8px; color: #fff; font-size: 14px; }
+        .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 16px; }
+        .cal-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 12px; border-radius: 4px; }
+        .cal-day.header { color: #94a3b8; font-weight: 600; }
+        .cal-day.avail { background: #334155; cursor: pointer; }
+        .cal-day.avail:hover { background: #6366f1; }
+        .cal-day.selected { background: #6366f1; }
+        .cal-day.unavail { color: #475569; text-decoration: line-through; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📅 Booking System</h1>
+        <button class="btn">+ New Booking</button>
+    </div>
+    <div class="filters">
+        <span class="filter active">All</span>
+        <span class="filter">Consultation</span>
+        <span class="filter">Service</span>
+        <span class="filter">Event</span>
+        <span class="filter">Meeting</span>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <div class="card-img">💼</div>
+            <div class="card-body">
+                <h3>Business Consultation</h3>
+                <div class="meta">45 min • Dr. Sarah Chen</div>
+                <div class="price">$150 <span>/ session</span></div>
+                <div class="tags">
+                    <span class="tag">1-on-1</span>
+                    <span class="tag">Online</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">🛠️</div>
+            <div class="card-body">
+                <h3>Technical Support</h3>
+                <div class="meta">60 min • IT Team</div>
+                <div class="price">$200 <span>/ session</span></div>
+                <div class="tags">
+                    <span class="tag">Remote</span>
+                    <span class="tag">Priority</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">🎯</div>
+            <div class="card-body">
+                <h3>Product Demo</h3>
+                <div class="meta">30 min • Sales Team</div>
+                <div class="price">FREE</div>
+                <div class="tags">
+                    <span class="tag">Online</span>
+                    <span class="tag">Group</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">🧘</div>
+            <div class="card-body">
+                <h3>Wellness Workshop</h3>
+                <div class="meta">2 hours • Yoga Studio</div>
+                <div class="price">$45 <span>/ person</span></div>
+                <div class="tags">
+                    <span class="tag">In-Person</span>
+                    <span class="tag">Group</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">📚</div>
+            <div class="card-body">
+                <h3>Training Session</h3>
+                <div class="meta">4 hours • Training Center</div>
+                <div class="price">$500 <span>/ session</span></div>
+                <div class="tags">
+                    <span class="tag">In-Person</span>
+                    <span class="tag">Custom</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">🏥</div>
+            <div class="card-body">
+                <h3>Health Checkup</h3>
+                <div class="meta">30 min • Medical Center</div>
+                <div class="price">$80 <span>/ visit</span></div>
+                <div class="tags">
+                    <span class="tag">In-Person</span>
+                    <span class="tag">Appointment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>📆 March 2026</h2>
+        <div class="calendar">
+            <div class="cal-day header">M</div>
+            <div class="cal-day header">T</div>
+            <div class="cal-day header">W</div>
+            <div class="cal-day header">T</div>
+            <div class="cal-day header">F</div>
+            <div class="cal-day header">S</div>
+            <div class="cal-day header">S</div>
+            <div class="cal-day unavail">1</div>
+            <div class="cal-day unavail">2</div>
+            <div class="cal-day unavail">3</div>
+            <div class="cal-day unavail">4</div>
+            <div class="cal-day unavail">5</div>
+            <div class="cal-day avail">6</div>
+            <div class="cal-day avail">7</div>
+            <div class="cal-day avail">8</div>
+            <div class="cal-day avail">9</div>
+            <div class="cal-day avail">10</div>
+            <div class="cal-day avail selected">11</div>
+            <div class="cal-day avail">12</div>
+            <div class="cal-day avail">13</div>
+            <div class="cal-day avail">14</div>
+            <div class="cal-day avail">15</div>
+            <div class="cal-day avail">16</div>
+            <div class="cal-day avail">17</div>
+            <div class="cal-day avail">18</div>
+            <div class="cal-day avail">19</div>
+            <div class="cal-day avail">20</div>
+            <div class="cal-day avail">21</div>
+            <div class="cal-day avail">22</div>
+            <div class="cal-day avail">23</div>
+            <div class="cal-day avail">24</div>
+            <div class="cal-day avail">25</div>
+            <div class="cal-day avail">26</div>
+            <div class="cal-day avail">27</div>
+            <div class="cal-day avail">28</div>
+            <div class="cal-day avail">29</div>
+            <div class="cal-day avail">30</div>
+            <div class="cal-day avail">31</div>
+        </div>
+        <div class="form-group">
+            <label>Select Time</label>
+            <select>
+                <option>9:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option selected>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+            </select>
+        </div>
+        <button class="btn" style="width: 100%;">Confirm Booking</button>
+    </div>
+</body>
+</html>
