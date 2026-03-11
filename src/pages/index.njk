@@ -7,28 +7,73 @@ permalink: /
 
 <section class="hero">
   <div class="container">
-    <h1>AI Solutions for Singapore SMEs</h1>
-    <p class="lead">Custom software development, AI agents, and managed IT services.</p>
-    <p class="lead">Budget 2026 gives SMEs up to $50K/year in AI tax deductions. We'll help you claim them.</p>
-    <a href="/ai-readiness/" class="btn btn-primary">Free AI Readiness Assessment</a>
+    <div class="hero-content">
+      <span class="tag">Singapore's Tech Partner</span>
+      <h1>Intelligent Solutions for <em>Modern Business</em></h1>
+      <p>
+        Custom software development, AI agents, and managed IT services for Singapore SMEs. 
+        Budget 2026 gives SMEs up to $50K/year in AI tax deductions. We'll help you claim them.
+      </p>
+      <div class="hero-buttons">
+        <a href="/ai-readiness/" class="btn btn-primary">Free AI Readiness Assessment</a>
+        <a href="/showcase/" class="btn btn-outline">Our Work</a>
+      </div>
+      <div class="trust">
+        <div class="trust-avatars">
+          <img src="https://api.dicebear.com/7.x/initials/svg?seed=AS" alt="Client">
+          <img src="https://api.dicebear.com/7.x/initials/svg?seed=SA" alt="Client">
+          <img src="https://api.dicebear.com/7.x/initials/svg?seed=SO" alt="Client">
+        </div>
+        <span>Trusted by Singapore SMEs</span>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="visual-content">
+        <div class="visual-icon">🧠</div>
+        <div class="visual-text">AI-Powered Solutions</div>
+      </div>
+      <div class="floating-card">
+        <div class="floating-card-icon">⚡</div>
+        <div>
+          <div class="floating-card-text">Response Time</div>
+          <div class="floating-card-sub">&lt; 2 hours</div>
+        </div>
+      </div>
+      <div class="floating-card">
+        <div class="floating-card-icon">🎯</div>
+        <div>
+          <div class="floating-card-text">SME Focus</div>
+          <div class="floating-card-sub">Budget-friendly</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 4rem 0;">
-  <div class="container" style="text-align: center;">
-    <p style="color: #f59e0b; font-weight: 600; margin-bottom: 1rem;">⭐ Trusted by</p>
-    <p style="color: white; font-size: 1.25rem;">Astons F&B · Security Association Singapore · Solution Details</p>
-  </div>
-</section>
-
-<section class="services">
+<section class="trusted-by">
   <div class="container">
-    <h2>What We Do</h2>
-    <div class="services-grid">
+    <p class="trusted-by-label">Trusted by</p>
+    <div class="trusted-by-logos">
+      <span>Astons F&B</span>
+      <span>Security Association Singapore</span>
+      <span>Solution Details</span>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="features-header">
+      <h2>What We Do</h2>
+      <p>Comprehensive technology solutions designed for Singapore's SME landscape</p>
+    </div>
+    
+    <div class="features-grid">
       {% for service in services %}
       {% if service.link %}
-      <a href="{{ service.link }}" class="service-card service-card-link">
-        <div class="service-icon">{{ service.icon }}</div>
+      <a href="{{ service.link }}" class="feature-card">
+        <div class="feature-icon">{{ service.icon }}</div>
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
         {% if service.featured %}
@@ -36,25 +81,24 @@ permalink: /
         {% endif %}
       </a>
       {% else %}
-      <div class="service-card">
-        <div class="service-icon">{{ service.icon }}</div>
+      <div class="feature-card">
+        <div class="feature-icon">{{ service.icon }}</div>
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
       </div>
       {% endif %}
       {% endfor %}
     </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="/services/" class="btn btn-secondary">View All Services</a>
-    </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="container">
-    <h2>Got a Technical Challenge?</h2>
-    <p>Whether you need custom software built from scratch or a crashed server brought back to life, we've got you covered.</p>
-    <p>Based in Singapore. Available for remote work worldwide.</p>
-    <a href="/contact/" class="btn btn-primary">Get in Touch</a>
+    <div class="cta-box">
+      <h2>Got a Technical Challenge?</h2>
+      <p>Whether you need custom software built from scratch or a crashed server brought back to life, we've got you covered.</p>
+      <p style="font-size: 14px; opacity: 0.7; margin-bottom: 0;">Based in Singapore. Available for remote work worldwide.</p>
+      <a href="/contact/" class="btn">Get in Touch</a>
+    </div>
   </div>
 </section>
