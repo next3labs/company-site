@@ -2,12 +2,11 @@
   <ul class="nav-list">
     <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
     <li class="nav-dropdown">
-      <a href="/services/" {% if page.url == "/services/" or "/ai-readiness/" in page.url or "/server-rescue/" in page.url or "/custom-software/" in page.url or "/devops/" in page.url %}class="active"{% endif %}>Services</a>
+      <a href="/services/" {% if page.url == "/services/" or "/ai-readiness/" in page.url or "/agent-boost/" in page.url %}class="active"{% endif %}>Services</a>
       <div class="nav-dropdown-menu">
         <a href="/ai-readiness/">AI Readiness Assessment</a>
-        <a href="/server-rescue/">Server Rescue</a>
-        <a href="/devops/">Cloud & DevOps</a>
-        <a href="/custom-software/">Custom Software</a>
+        <a href="/agent-boost/">Agent Boost</a>
+        <a href="/services/">Custom Software</a>
       </div>
     </li>
     <li><a href="/showcase/" {% if page.url == "/showcase/" %}class="active"{% endif %}>Work</a></li>
