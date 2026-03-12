@@ -763,3 +763,13 @@ p {
         text-align: center;
     }
 }
+
+/* Mobile Logo Fix */
+@media (max-width: 768px) {
+  .logo img {
+    height: 28px !important;
+  }
+  .logo span {
+    font-size: 1rem !important;
+  }
+}
