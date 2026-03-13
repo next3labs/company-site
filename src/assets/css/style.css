@@ -858,3 +858,10 @@ p {
     gap: 2rem;
   }
 }
+
+/* Logo Fix - Desktop */
+.logo img {
+  height: 36px !important;
+  width: auto !important;
+  max-width: 150px;
+}
