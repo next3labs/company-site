@@ -865,3 +865,12 @@ p {
   width: auto !important;
   max-width: 150px;
 }
+
+/* Hero Section - Full Screen Desktop */
+@media (min-width: 901px) {
+  .hero {
+    min-height: 100vh !important;
+    padding: 120px 0 80px !important;
+    align-items: center !important;
+  }
+}
