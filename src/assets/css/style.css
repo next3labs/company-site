@@ -96,32 +96,32 @@ p { margin-bottom: 16px; color: var(--text-secondary); }
 .floating-card-sub { font-size: 18px; font-weight: 700; color: var(--primary); }
 
 /* Trusted By */
-.trusted-by { background: var(--bg-warm); padding: 24px 0; text-align: center; }
+.trusted-by { background: var(--bg-warm); padding: 20px 0; text-align: center; margin-top: 0; }
 .trusted-by-label { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
 .trusted-by-logos { display: flex; justify-content: center; gap: 48px; font-weight: 600; color: var(--text-secondary); }
 
 /* Content Sections */
-.content-section { padding: 100px 60px; width: 100%; max-width: 100%; }
+.content-section { padding: 60px 60px; width: 100%; max-width: 100%; }
 .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1400px; margin: 0 auto; }
 .content-grid.reverse .content-text { order: 2; }
 .content-text h2 { font-size: 40px; margin-bottom: 16px; }
 .content-text p { font-size: 18px; }
 
 /* Services */
-.services-section { background: var(--bg-warm); padding: 100px 60px; width: 100%; }
-.services-section h2 { text-align: center; font-size: 40px; margin-bottom: 16px; }
-.services-section > .container > p { text-align: center; max-width: 600px; margin: 0 auto 48px; }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1400px; margin: 0 auto; }
+.services-section { background: var(--bg-warm); padding: 80px 60px; width: 100%; }
+.services-section h2 { text-align: center; font-size: 40px; margin-bottom: 8px; }
+.services-section > .container > p { text-align: center; max-width: 600px; margin: 0 auto 40px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1400px; margin: 0 auto; }
 .service-card { background: white; padding: 32px; border-radius: 16px; transition: all 0.2s; }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-.service-icon { font-size: 40px; margin-bottom: 16px; }
+.service-icon { font-size: 48px; margin-bottom: 16px; }
 .service-card h3 { font-size: 20px; margin-bottom: 8px; }
 .service-card p { font-size: 16px; margin-bottom: 0; }
 
 /* CTA */
-.cta { background: var(--primary); color: white; padding: 80px 60px; text-align: center; }
-.cta h2 { color: white; font-size: 40px; margin-bottom: 16px; }
-.cta p { color: rgba(255,255,255,0.8); font-size: 20px; max-width: 600px; margin: 0 auto 32px; }
+.cta { background: var(--primary); color: white; padding: 60px 40px; text-align: center; }
+.cta h2 { color: white; font-size: 36px; margin-bottom: 12px; }
+.cta p { color: rgba(255,255,255,0.9); font-size: 18px; max-width: 600px; margin: 0 auto 24px; }
 .cta .btn { background: white; color: var(--primary); }
 .cta .btn:hover { background: rgba(255,255,255,0.9); }
 
