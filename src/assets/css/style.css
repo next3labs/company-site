@@ -96,7 +96,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); }
 .floating-card-sub { font-size: 18px; font-weight: 700; color: var(--primary); }
 
 /* Trusted By */
-.trusted-by { background: var(--bg-warm); padding: 20px 0; text-align: center; margin-top: 0; }
+.trusted-by { background: var(--bg-warm); padding: 32px 0; text-align: center; margin-top: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .trusted-by-label { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
 .trusted-by-logos { display: flex; justify-content: center; gap: 48px; font-weight: 600; color: var(--text-secondary); }
 
@@ -112,16 +112,18 @@ p { margin-bottom: 16px; color: var(--text-secondary); }
 .services-section h2 { text-align: center; font-size: 40px; margin-bottom: 8px; }
 .services-section > .container > p { text-align: center; max-width: 600px; margin: 0 auto 40px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1400px; margin: 0 auto; }
-.service-card { background: white; padding: 32px; border-radius: 16px; transition: all 0.2s; }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.service-card { background: white; padding: 32px; border-radius: 16px; transition: all 0.3s; border: 1px solid var(--border); display: flex; flex-direction: column; }
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); border-color: var(--primary); }
+.service-card a.service-card:hover { text-decoration: none; }
 .service-icon { font-size: 48px; margin-bottom: 16px; }
-.service-card h3 { font-size: 20px; margin-bottom: 8px; }
-.service-card p { font-size: 16px; margin-bottom: 0; }
+.service-card h3 { font-size: 20px; margin-bottom: 8px; color: var(--text-primary); }
+.service-card p { font-size: 15px; margin-bottom: 16px; color: var(--text-secondary); line-height: 1.6; flex-grow: 1; }
+.featured-badge { display: inline-block; font-size: 12px; font-weight: 600; color: var(--primary); background: rgba(30, 64, 175, 0.08); padding: 4px 10px; border-radius: 100px; margin-top: auto; align-self: flex-start; }
 
 /* CTA */
-.cta { background: var(--primary); color: white; padding: 60px 40px; text-align: center; }
-.cta h2 { color: white; font-size: 36px; margin-bottom: 12px; }
-.cta p { color: rgba(255,255,255,0.9); font-size: 18px; max-width: 600px; margin: 0 auto 24px; }
+.cta { background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 100%); color: white; padding: 80px 40px; text-align: center; }
+.cta h2 { color: white; font-size: 40px; margin-bottom: 16px; }
+.cta p { color: rgba(255,255,255,0.85); font-size: 18px; max-width: 600px; margin: 0 auto 24px; line-height: 1.7; }
 .cta .btn { background: white; color: var(--primary); }
 .cta .btn:hover { background: rgba(255,255,255,0.9); }
 
