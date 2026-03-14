@@ -506,7 +506,7 @@ p {
 }
 
 /* Mobile Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .hero {
         padding: 100px 24px 60px;
         min-height: auto;
