@@ -900,3 +900,23 @@ p {
     max-width: 1400px !important;
   }
 }
+
+/* Make all sections full width on desktop */
+@media (min-width: 901px) {
+  .content-section {
+    padding: 100px 48px;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .content-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .hero + .content-section {
+    max-width: 100%;
+    width: 100%;
+  }
+}
