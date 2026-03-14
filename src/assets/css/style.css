@@ -149,13 +149,19 @@ p {
 
 /* Hero - FULL WIDTH */
 .hero {
+    min-height: 100vh;
+    padding: 120px 60px 80px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    min-height: 100vh;
-    padding: 120px 60px 80px;
-    background: var(--bg);
+    width: 100%;
 }
 
 .hero-content {
@@ -502,9 +508,12 @@ p {
 /* Mobile Responsive */
 @media (max-width: 900px) {
     .hero {
-        grid-template-columns: 1fr;
         padding: 100px 24px 60px;
         min-height: auto;
+    }
+
+    .hero .container {
+        grid-template-columns: 1fr;
     }
     
     .hero h1 {
