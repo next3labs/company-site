@@ -1,0 +1,18 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "main.js",
+      "file_type": "code",
+      "source_file": "src/assets/js/main.js",
+      "source_location": "L1",
+      "id": "src_assets_js_main_js",
+      "community": 0,
+      "norm_label": "main.js"
+    }
+  ],
+  "links": [],
+  "hyperedges": []
+}
