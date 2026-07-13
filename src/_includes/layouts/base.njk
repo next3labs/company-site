@@ -115,8 +115,10 @@
 
     gtag('config', 'G-KBERM3VWPC');
   </script>
+
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
 </head>
-<body>
+<body class="{{ bodyClass }}">
   {% include "header.njk" %}
 
   <main>
