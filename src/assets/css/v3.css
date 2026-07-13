@@ -571,3 +571,9 @@ body.v3 main {
     display: none;
   }
 }
+
+/* Inline SVG icons (replaced the Material Symbols font for performance). */
+.v3-ico { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+.v3-legacy__foot .v3-ico,
+.v3-terminal__badge .v3-ico,
+.v3-finalcta .v3-ico { width: 16px; height: 16px; }
