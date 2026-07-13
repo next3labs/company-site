@@ -92,6 +92,10 @@ body.v3 main {
   font-weight: 500;
   color: var(--v3-muted);
   transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* WCAG target size */
+  padding: 0 0.25rem;
 }
 .v3-nav__links a:hover {
   color: var(--v3-primary);
@@ -125,12 +129,12 @@ body.v3 main {
 .v3-eyebrow {
   display: inline-block;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--v3-accent);
-  background: rgba(123, 211, 240, 0.12);
-  border: 1px solid rgba(123, 211, 240, 0.3);
+  color: #d7f2fb; /* brighter cyan for AA contrast on the indigo hero */
+  background: rgba(123, 211, 240, 0.18);
+  border: 1px solid rgba(123, 211, 240, 0.45);
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   margin-bottom: 1.5rem;
@@ -283,7 +287,7 @@ body.v3 main {
   text-align: center;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
-  color: rgba(63, 63, 179, 0.45);
+  color: #5b5b96; /* AA-contrast muted indigo on white */
   text-transform: uppercase;
   margin: 0;
 }
@@ -297,10 +301,10 @@ body.v3 main {
 }
 .v3-kicker {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--v3-accent);
+  color: #0f6d8f; /* deep teal — AA (>=4.5:1) on the light surface */
   margin-bottom: 0.5rem;
 }
 .v3-section h2 {
@@ -344,7 +348,7 @@ body.v3 main {
 .v3-card__num {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
-  color: rgba(63, 63, 179, 0.35);
+  color: #6a6ab0; /* AA-contrast on white card */
 }
 .v3-card h3 {
   font-size: 1.15rem;
@@ -426,8 +430,13 @@ body.v3 main {
   font-weight: 800;
   font-size: 7rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.06);
+  /* Decorative watermark (aria-hidden). Rendered via a border/no fill so it reads as
+     a large outline, not body text — avoids a foreground/background contrast failure
+     while staying subtle. */
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.14);
   pointer-events: none;
+  user-select: none;
 }
 
 /* ── Final CTA ────────────────────────────────────────────────────── */
@@ -478,8 +487,9 @@ body.v3 main {
   font-size: 0.85rem;
   line-height: 1.7;
 }
-.v3-footer__col h4 {
+.v3-footer__coltitle {
   font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--v3-primary);
@@ -487,6 +497,7 @@ body.v3 main {
 }
 .v3-footer__col a {
   display: block;
+  padding: 0.35rem 0; /* taller tap target for footer links */
 }
 .v3-footer__col a:hover {
   color: var(--v3-primary);
@@ -502,7 +513,7 @@ body.v3 main {
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(63, 63, 179, 0.4);
+  color: #5b5b96; /* AA-contrast muted indigo */
   display: block;
   margin-bottom: 0.35rem;
 }
