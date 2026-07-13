@@ -182,3 +182,16 @@ p { margin-bottom: 16px; color: var(--text-secondary); }
     .services-grid { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; }
 }
+
+/* ── A11y compliance (Lighthouse AA gate) ─────────────────────────── */
+/* Footer copyright: readable on the dark navy footer (was ~1.92 contrast). */
+.footer-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+/* Header nav links: WCAG target size (>=44px) + AA-contrast link colour. */
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.5rem;
+}
