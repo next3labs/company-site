@@ -3,34 +3,8 @@ layout: layouts/base.njk
 title: AI-Powered Engineering Studio
 description: NEXT3LABS is a Singapore-based AI-powered engineering studio. We build and run the high-stakes custom software businesses depend on — engineering excellence since 2016, AI-adapted.
 permalink: /
-bodyClass: v3
-extraHead: |
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Load webfonts without blocking first paint (print-swap trick + noscript fallback). -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&family=JetBrains+Mono&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&family=JetBrains+Mono&display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/v3.css">
+# Nav, footer, v3.css and fonts are provided site-wide by base.njk.
 ---
-
-<!-- ── Nav ─────────────────────────────────────────────────────────── -->
-<nav class="v3-nav">
-  <div class="v3-wrap">
-    <a class="v3-nav__brand" href="/">
-      <img src="/assets/images/next3labs-logo.png" alt="NEXT3LABS logo">
-      <span>NEXT3LABS</span>
-    </a>
-    <div class="v3-nav__links">
-      <a href="#capabilities">Studio</a>
-      <a href="#principles">Approach</a>
-      <a href="/contact/">Contact</a>
-    </div>
-    <div class="v3-nav__meta">
-      Location &amp; History<br>
-      <strong>Singapore · since {{ site.foundingYear }}</strong>
-    </div>
-  </div>
-</nav>
 
 <!-- ── Hero ────────────────────────────────────────────────────────── -->
 <section class="v3-hero">
@@ -176,41 +150,3 @@ extraHead: |
   </div>
 </section>
 
-<!-- ── Footer ──────────────────────────────────────────────────────── -->
-<footer class="v3-footer">
-  <div class="v3-wrap">
-    <div class="v3-footer__top">
-      <div class="v3-footer__brand">
-        <strong>{{ site.company.legalName }}</strong>
-        <p>
-          Singapore based<br>
-          UEN {{ site.company.uen }}<br>
-          <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a>
-        </p>
-      </div>
-      <div class="v3-footer__col">
-        <p class="v3-footer__coltitle">Studio</p>
-        <a href="#principles">Approach</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="/contact/">Contact</a>
-      </div>
-      <div class="v3-footer__col">
-        <p class="v3-footer__coltitle">Focus</p>
-        <a href="#capabilities">Engineering</a>
-        <a href="#principles">Operations</a>
-        <a href="#principles">AI Leverage</a>
-      </div>
-      <div class="v3-status">
-        <span class="label">Current Status</span>
-        <span class="dot" aria-hidden="true"></span> Accepting New Projects
-      </div>
-    </div>
-    <div class="v3-footer__legal">
-      <span>{{ site.company.legalName }}, Singapore, UEN {{ site.company.uen }}</span>
-      <span>
-        <a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp;
-        <a href="/terms/">Terms of Service</a>
-      </span>
-    </div>
-  </div>
-</footer>

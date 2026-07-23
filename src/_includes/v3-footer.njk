@@ -1,0 +1,41 @@
+<!--
+  v3 site footer. Anchor links use "/#..." so they resolve from any page.
+  Shared by every page via base.njk.
+-->
+<footer class="v3-footer">
+  <div class="v3-wrap">
+    <div class="v3-footer__top">
+      <div class="v3-footer__brand">
+        <strong>{{ site.company.legalName }}</strong>
+        <p>
+          Singapore based<br>
+          UEN {{ site.company.uen }}<br>
+          <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+        </p>
+      </div>
+      <div class="v3-footer__col">
+        <p class="v3-footer__coltitle">Studio</p>
+        <a href="/#principles">Approach</a>
+        <a href="/#capabilities">Capabilities</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div class="v3-footer__col">
+        <p class="v3-footer__coltitle">Focus</p>
+        <a href="/#capabilities">Engineering</a>
+        <a href="/#principles">Operations</a>
+        <a href="/#principles">AI Leverage</a>
+      </div>
+      <div class="v3-status">
+        <span class="label">Current Status</span>
+        <span class="dot" aria-hidden="true"></span> Accepting New Projects
+      </div>
+    </div>
+    <div class="v3-footer__legal">
+      <span>{{ site.company.legalName }}, Singapore, UEN {{ site.company.uen }}</span>
+      <span>
+        <a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="/terms/">Terms of Service</a>
+      </span>
+    </div>
+  </div>
+</footer>

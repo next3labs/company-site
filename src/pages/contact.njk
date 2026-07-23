@@ -1,75 +1,79 @@
 ---
 layout: layouts/base.njk
 title: Contact Us - Get in Touch
-description: Contact NEXT3LABS for software development and Linux server rescue in Singapore. Email, WhatsApp, or visit our office at Peck Seah Street. Emergency support available.
+description: Contact NEXT3LABS for high-stakes custom software and infrastructure in Singapore. Email, WhatsApp, or visit our office at Peck Seah Street.
 permalink: /contact/
+# Nav, footer, v3.css and fonts are provided site-wide by base.njk.
 ---
 
-<section class="page-header">
-  <div class="container">
+<!-- ── Page hero ───────────────────────────────────────────────────── -->
+<section class="v3-pagehero">
+  <div class="v3-wrap">
     <h1>Let's Talk</h1>
-    <p class="lead">Got a project? Server emergency? Just want to chat about tech?</p>
+    <p class="v3-pagehero__lead">Got a project? Server emergency? Just want to chat about tech? The fastest way to reach us is email — we typically respond within a few hours on business days.</p>
   </div>
 </section>
 
-<section class="contact-content">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <p>Fastest way to reach us is by email. We typically respond within a few hours during business days.</p>
-        <p>For server emergencies, mention "URGENT" in your subject line.</p>
+<!-- ── Contact grid ────────────────────────────────────────────────── -->
+<section class="v3-contact">
+  <div class="v3-wrap">
+    <div class="v3-contact__grid">
 
-        <div class="contact-details">
-          <div class="contact-item">
+      <!-- Left: details -->
+      <div>
+        <p class="v3-contact__lead">For server emergencies, mention <strong>"URGENT"</strong> in your subject line and we'll prioritise it.</p>
+
+        <div class="v3-contact__items">
+          <div class="v3-contact__item">
             <h3>Email</h3>
             <p><a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
           </div>
 
-          <div class="contact-item">
+          <div class="v3-contact__item">
             <h3>WhatsApp</h3>
-            <p><a href="https://wa.me/6587721895" target="_blank" rel="noopener noreferrer">+65 8772 1895</a></p>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Quick questions? Chat with us on WhatsApp</p>
+            <p><a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener noreferrer">+65 8772 1895</a></p>
+            <p class="v3-contact__note">Quick questions? Chat with us on WhatsApp.</p>
           </div>
 
-          <div class="contact-item">
+          <div class="v3-contact__item">
             <h3>Location</h3>
             <p><strong>{{ site.company.legalName }}</strong><br>
             {{ site.company.address.street }}<br>
             {{ site.company.address.building }}<br>
-            {{ site.company.city }} {{ site.company.address.postal }}</p>
-            <p style="margin-top: 0.5rem;">UEN: {{ site.company.uen }}</p>
+            {{ site.company.address.city }} {{ site.company.address.postal }}</p>
+            <p class="v3-contact__note">UEN: {{ site.company.uen }}</p>
           </div>
 
-          <div class="contact-item">
+          <div class="v3-contact__item">
             <h3>Working Hours</h3>
-            <p>Monday - Friday: 9:00 AM - 6:00 PM SGT<br>
-            Emergency support available 24/7 for existing clients</p>
+            <p>Monday – Friday: 9:00 AM – 6:00 PM SGT</p>
+            <p class="v3-contact__note">Emergency support available 24/7 for existing clients.</p>
           </div>
         </div>
       </div>
 
-      <div class="contact-form">
-        <h3>Send Us a Message</h3>
-        <p style="margin-bottom: 1.5rem;">Or just email us directly at <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
+      <!-- Right: form -->
+      <div class="v3-formcard">
+        <h2>Send Us a Message</h2>
+        <p class="v3-formcard__sub">Or just email us directly at <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
 
         <form id="contact-form" method="POST" onsubmit="return sendContactEmail(event)">
-          <div class="form-group">
+          <div class="v3-field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
           </div>
 
-          <div class="form-group">
+          <div class="v3-field">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
           </div>
 
-          <div class="form-group">
+          <div class="v3-field">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or what you need help with..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="v3-btn v3-btn--primary">Send Message</button>
         </form>
 
         <!--
@@ -95,6 +99,7 @@ permalink: /contact/
           }
         </script>
       </div>
+
     </div>
   </div>
 </section>

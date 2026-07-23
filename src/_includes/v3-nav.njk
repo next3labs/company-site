@@ -1,0 +1,21 @@
+<!--
+  v3 site nav. Anchor links use "/#..." so they work from any page (they jump to
+  the homepage sections). Shared by every page via base.njk.
+-->
+<nav class="v3-nav">
+  <div class="v3-wrap">
+    <a class="v3-nav__brand" href="/">
+      <img src="/assets/images/next3labs-logo.png" alt="NEXT3LABS logo">
+      <span>NEXT3LABS</span>
+    </a>
+    <div class="v3-nav__links">
+      <a href="/#capabilities">Studio</a>
+      <a href="/#principles">Approach</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div class="v3-nav__meta">
+      Location &amp; History<br>
+      <strong>Singapore · since {{ site.foundingYear }}</strong>
+    </div>
+  </div>
+</nav>
