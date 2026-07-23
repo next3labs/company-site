@@ -53,7 +53,7 @@ permalink: /contact/
         <h3>Send Us a Message</h3>
         <p style="margin-bottom: 1.5rem;">Or just email us directly at <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
 
-        <form action="#" method="POST">
+        <form id="contact-form" method="POST" onsubmit="return sendContactEmail(event)">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -69,12 +69,31 @@ permalink: /contact/
             <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or what you need help with..."></textarea>
           </div>
 
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
-            Note: This form is not yet connected. Please email us directly for now.
-          </p>
-
-          <button type="submit" class="btn btn-primary" disabled>Send Message</button>
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
+
+        <!--
+          The form opens the visitor's email client pre-filled to {{ site.company.email }}.
+          This guarantees a working contact path with no backend. Swap onsubmit for a
+          POST endpoint (Formspree / serverless / etc.) when one is provisioned.
+        -->
+        <script>
+          function sendContactEmail(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var message = document.getElementById('message').value.trim();
+            var subject = 'Website enquiry from ' + (name || 'a visitor');
+            var body =
+              'Name: ' + name + '\n' +
+              'Email: ' + email + '\n\n' +
+              message;
+            window.location.href = 'mailto:{{ site.company.email }}'
+              + '?subject=' + encodeURIComponent(subject)
+              + '&body=' + encodeURIComponent(body);
+            return false;
+          }
+        </script>
       </div>
     </div>
   </div>
