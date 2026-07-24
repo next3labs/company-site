@@ -577,3 +577,168 @@ body.v3 main {
 .v3-legacy__foot .v3-ico,
 .v3-terminal__badge .v3-ico,
 .v3-finalcta .v3-ico { width: 16px; height: 16px; }
+
+/* ── Contact page ─────────────────────────────────────────────────── */
+/* Compact indigo hero, matching the home hero's language. */
+.v3-pagehero {
+  background: var(--v3-primary);
+  color: #fff;
+  padding: 4rem 0 3.5rem;
+}
+.v3-pagehero h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  color: #fff;
+}
+.v3-pagehero__lead {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 36rem;
+}
+
+/* Two-column: contact details | message form. Stacks on mobile. */
+.v3-contact {
+  padding: 4rem 0 5rem;
+}
+.v3-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+.v3-contact__lead {
+  color: var(--v3-muted);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+/* Detail cards (Email / WhatsApp / Location / Hours) */
+.v3-contact__items {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.v3-contact__item {
+  background: var(--v3-surface);
+  border: 1px solid rgba(63, 63, 179, 0.06);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+}
+.v3-contact__item h3 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--v3-primary);
+  margin: 0 0 0.4rem;
+}
+.v3-contact__item p {
+  margin: 0;
+  color: var(--v3-ink);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.v3 .v3-contact__item a {
+  color: var(--v3-secondary);
+  font-weight: 600;
+}
+.v3-contact__item a:hover {
+  color: var(--v3-primary);
+}
+.v3-contact__note {
+  font-size: 0.8rem;
+  color: var(--v3-muted);
+  margin-top: 0.4rem !important;
+}
+
+/* Form card */
+.v3-formcard {
+  background: #fff;
+  border: 1px solid rgba(63, 63, 179, 0.08);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  align-self: start;
+}
+.v3-formcard h2 {
+  font-size: 1.35rem;
+  color: var(--v3-primary);
+}
+.v3-formcard__sub {
+  color: var(--v3-muted);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1.75rem;
+}
+.v3-field {
+  margin-bottom: 1.25rem;
+}
+.v3-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--v3-ink);
+  margin-bottom: 0.4rem;
+}
+.v3-field input,
+.v3-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--v3-ink);
+  background: var(--v3-surface);
+  border: 1px solid rgba(63, 63, 179, 0.14);
+  border-radius: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.v3-field textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+.v3-field input:focus,
+.v3-field textarea:focus {
+  outline: none;
+  border-color: var(--v3-primary);
+  box-shadow: 0 0 0 3px rgba(63, 63, 179, 0.12);
+}
+.v3-formcard .v3-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .v3-contact__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+/* ── Prose (legal pages: privacy, terms) ──────────────────────────── */
+.v3-prose {
+  padding: 3.5rem 0 5rem;
+}
+.v3-prose .v3-wrap {
+  max-width: 48rem;
+}
+.v3-prose h2 {
+  font-size: 1.25rem;
+  color: var(--v3-primary);
+  margin: 2.5rem 0 0.75rem;
+}
+.v3-prose p {
+  color: var(--v3-ink);
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+.v3-prose p em {
+  color: var(--v3-muted);
+}
+.v3 .v3-prose a {
+  color: var(--v3-secondary);
+  font-weight: 600;
+}
+.v3-prose a:hover {
+  color: var(--v3-primary);
+}
