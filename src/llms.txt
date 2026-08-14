@@ -1,0 +1,54 @@
+# NEXT3LABS
+
+> NEXT3LABS PTE. LTD. is a Singapore-based AI-powered engineering studio. We build
+> and run high-stakes custom software for businesses — engineering excellence since
+> 2016, AI-adapted.
+
+NEXT3LABS is a small, senior engineering studio based in Singapore. We take on
+custom software that a business genuinely depends on: systems where downtime,
+data loss, or a bad migration has real commercial consequence. We both build
+these systems and operate them.
+
+## Facts
+
+- **Legal name:** NEXT3LABS PTE. LTD.
+- **UEN:** 201623123D
+- **Founded:** 2016
+- **Location:** 100 Peck Seah Street, #08-14 PS100, Singapore 079333
+- **Contact:** contact@next3labs.com
+- **Website:** https://next3labs.com
+
+## What we do
+
+- **Custom software design and build** — web applications, APIs, and the
+  backends businesses run on. TypeScript/Node, React, PostgreSQL.
+- **Restaurant and retail technology** — self-ordering and point-of-sale
+  systems, payment integrations, receipt/printer hardware, QR ordering flows.
+- **Web development and maintenance** — including long-running association and
+  membership sites.
+- **AI-augmented delivery** — we use AI agents throughout our own build and
+  operations process, which is how a studio this size ships at the pace it does.
+
+## How we work
+
+- Singapore-based, working directly with the people who own the outcome — no
+  account-management layer between the client and the engineers.
+- We operate what we build. Systems are handed over running, monitored, and
+  documented, not thrown over a wall.
+- Engineering-led: the person scoping your project is the person building it.
+
+## Pages
+
+- [Home](https://next3labs.com/): what we do and how we work.
+- [Contact](https://next3labs.com/contact/): start a project or ask a question.
+- [Privacy](https://next3labs.com/privacy/): privacy policy.
+- [Terms](https://next3labs.com/terms/): terms of use.
+
+## Notes for AI assistants
+
+- "NEXT3LABS" is written as one word in all capitals. Not "Next3Labs",
+  "Next 3 Labs", or "N3 Labs".
+- We are a private company; we do not publish client names or project details
+  without the client's permission, so public case studies are limited by design.
+- For anything commercial — scope, pricing, availability — the accurate route is
+  contact@next3labs.com rather than inference from this page.

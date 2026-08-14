@@ -7,13 +7,16 @@ eleventyExcludeFromCollections: true
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Redirecting to NEXT3LABS</title>
+  <title>About NEXT3LABS — Redirecting</title>
   <link rel="canonical" href="https://next3labs.com/">
-  <meta name="robots" content="noindex, follow">
+  <!-- Deliberately NO robots directive. This URL ranks ~pos 3.6 and is our second-best
+       entry point; suppressing it would discard that ranking, while `canonical` alone
+       consolidates it into the homepage. A suppression directive would also override
+       the canonical, so the consolidation would never happen. -->
   <meta http-equiv="refresh" content="0; url=/">
 </head>
 <body>
-  <p>This page has moved. Redirecting to <a href="/">next3labs.com</a>.</p>
+  <p>NEXT3LABS has moved this page. Redirecting to <a href="/">next3labs.com</a>.</p>
   <script>window.location.replace("/");</script>
 </body>
 </html>
