@@ -23,6 +23,23 @@ module.exports = function(eleventyConfig) {
     },
   });
 
+  // Sitemap allow-list. The sitemap template used to emit `collections.all`,
+  // which advertises EVERY page Eleventy renders — that leaked a client
+  // proposal and three image-mockup pages to Google (14 Aug 2026).
+  // Publishing is now opt-out: anything under assets/, or any page with
+  // `eleventyExcludeFromCollections` or `sitemap: false` in front matter,
+  // never reaches sitemap.xml.
+  eleventyConfig.addCollection("sitemapPages", (collectionApi) =>
+    collectionApi.getAll().filter((item) => {
+      if (item.data.sitemap === false) return false;
+      if (item.data.eleventyExcludeFromCollections) return false;
+      const url = item.url;
+      if (!url) return false;                    // no output (e.g. data files)
+      if (url.startsWith("/assets/")) return false; // assets are not pages
+      return true;
+    })
+  );
+
   // Image optimization shortcode
   // Usage: {% image "src/assets/images/photo.jpg", "Alt text", "320, 640, 1024" %}
   eleventyConfig.addShortcode("image", async function(src, alt, sizes = "320, 640, 1024") {
