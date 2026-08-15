@@ -2,9 +2,10 @@
 layout: layouts/post.njk
 title: The quiet cost of not having a specialist
 description: Small companies rarely fail from one big mistake. They lose ground slowly, in all the places they could never afford to hire.
-date: 2026-08-25
+date: 2026-08-15
 readingTime: 5
 tags: posts
+draft: true
 ---
 
 Ask a small business owner what holds the company back and you will usually hear something

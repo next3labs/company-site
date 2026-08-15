@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: What AI actually changes for a small business (and what it doesn't)
 description: Most AI advice for SMEs is written for companies with a hundred staff. Here is the version for a company with fifteen.
-date: 2026-08-18
+date: 2026-08-15
 readingTime: 5
 tags: posts
 ---

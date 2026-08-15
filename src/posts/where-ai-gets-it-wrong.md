@@ -2,9 +2,10 @@
 layout: layouts/post.njk
 title: Where AI gets it wrong — and how you find out
 description: The failure mode isn't a wrong answer. It's a confident, well-formatted, entirely plausible answer that nobody thinks to check.
-date: 2026-09-01
+date: 2026-08-15
 readingTime: 6
 tags: posts
+draft: true
 ---
 
 If you only read one thing about using AI in a business, make it this: **the dangerous failure
