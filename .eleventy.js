@@ -40,7 +40,28 @@ module.exports = function(eleventyConfig) {
     "/contact/",
     "/privacy/",
     "/terms/",
+    "/blog/",
   ]);
+
+  // Blog posts: any .md under src/posts/. They are allowed in the sitemap by
+  // PREFIX (not one-by-one) — a post's whole purpose is to be found. Drafts stay
+  // out by setting `draft: true`, which also skips the build entirely.
+  const isPublishablePost = (item) =>
+    item.url && item.url.startsWith("/blog/") && item.url !== "/blog/" &&
+    !item.data.draft;
+
+  eleventyConfig.addCollection("posts", (api) =>
+    api.getFilteredByGlob("src/posts/*.md")
+       .filter((p) => !p.data.draft)
+       .sort((a, b) => a.date - b.date)
+  );
+
+  eleventyConfig.addFilter("readableDate", (d) =>
+    new Date(d).toLocaleDateString("en-SG", {
+      year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Singapore",
+    })
+  );
+  eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
 
   eleventyConfig.addCollection("sitemapPages", (collectionApi) =>
     collectionApi.getAll().filter((item) => {
@@ -49,7 +70,7 @@ module.exports = function(eleventyConfig) {
       const url = item.url;
       if (!url) return false;                    // no output (e.g. data files)
       if (url.startsWith("/assets/")) return false; // assets are not pages
-      return SITEMAP_ALLOWLIST.has(url);
+      return SITEMAP_ALLOWLIST.has(url) || isPublishablePost(item);
     })
   );
 
@@ -59,7 +80,9 @@ module.exports = function(eleventyConfig) {
     const rendered = (results || [])
       .map((r) => r.url)
       .filter((u) => u && !u.startsWith("/assets/"));
-    const unlisted = rendered.filter((u) => !SITEMAP_ALLOWLIST.has(u));
+    const unlisted = rendered.filter(
+      (u) => !SITEMAP_ALLOWLIST.has(u) && !(u.startsWith("/blog/") && u !== "/blog/")
+    );
     if (unlisted.length) {
       console.log(
         `\n[sitemap] ${rendered.length} pages built, ${SITEMAP_ALLOWLIST.size} in sitemap.\n` +

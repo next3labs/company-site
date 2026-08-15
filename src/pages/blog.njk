@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: Notes
+description: Practical notes on building and running software with AI — written from what actually happened, including the parts that went wrong.
+permalink: /blog/
+---
+
+<section class="v3-pagehero">
+  <div class="v3-wrap">
+    <h1>Notes</h1>
+    <p class="v3-pagehero__lead">What we've learned building and running software with AI —
+    written from real projects, including the parts that went wrong.</p>
+  </div>
+</section>
+
+<section class="v3-prose">
+  <div class="v3-wrap">
+    {% for post in collections.posts | reverse %}
+      <article style="padding:1.75rem 0;border-bottom:1px solid var(--v3-surface,#e2e2ee);">
+        <p class="v3-eyebrow" style="margin-bottom:.4rem;">
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        </p>
+        <h2 style="margin:.2rem 0 .5rem;font-size:1.5rem;">
+          <a href="{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.data.title }}</a>
+        </h2>
+        <p style="margin:0;">{{ post.data.description }}</p>
+      </article>
+    {% else %}
+      <p>Nothing here yet.</p>
+    {% endfor %}
+  </div>
+</section>

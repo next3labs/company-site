@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+---
+<section class="v3-pagehero">
+  <div class="v3-wrap">
+    <p class="v3-eyebrow"><a href="/blog/" style="color:inherit;text-decoration:none;">← Notes</a></p>
+    <h1>{{ title }}</h1>
+    <p class="v3-pagehero__lead">{{ description }}</p>
+    <p style="opacity:.75;font-size:.95rem;margin-top:.75rem;">
+      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+      {% if readingTime %} · {{ readingTime }} min read{% endif %}
+    </p>
+  </div>
+</section>
+
+<section class="v3-prose">
+  <div class="v3-wrap">
+    {{ content | safe }}
+
+    <hr style="margin:3rem 0 2rem;border:0;border-top:1px solid var(--v3-surface,#e2e2ee);">
+    <p><strong>NEXT3LABS</strong> builds and runs high-stakes custom software from Singapore.
+    If something here is useful to you, <a href="/contact/">say hello</a>.</p>
+  </div>
+</section>
