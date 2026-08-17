@@ -2,10 +2,10 @@
 layout: layouts/post.njk
 title: Seven offshore developers to zero — and we got faster
 description: In October 2024 we had seven offshore developers. Today we have none, and we ship faster. The dates, the numbers, and the one thing that makes it work.
-date: 2026-09-08
+date: 2026-08-17
 readingTime: 7
 tags: posts
-draft: true
+draft: false
 ---
 
 
@@ -64,7 +64,7 @@ with AI.
 Not seven, not ten, not "as many as we can take on." Three — and we stop there deliberately.
 
 That number is not a technical ceiling. We could accept more work and the tooling would keep
-up. It is a quality ceiling. Three is the most that one person can hold in their head properly
+up. It is a quality ceiling. Three is the most anyone can hold in their head properly
 — knowing what each project is actually doing, where each one is fragile, what was decided last
 week and why. Past that you stop directing the work and start rubber-stamping it, and the whole
 advantage evaporates. The speed only means anything if someone is genuinely across the detail.
