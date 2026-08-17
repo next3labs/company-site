@@ -18,6 +18,8 @@ over-claimed sentence in software. Most versions of it are a feeling, or a demo,
 productivity study with a vested interest attached. So here is ours with dates on it, including
 the parts that are less flattering.
 
+{% include "infographics/seven-to-zero.njk" %}
+
 ## The sequence
 
 **October 2024 — we started using AI for coding.** Not on a toy project or a hackathon
