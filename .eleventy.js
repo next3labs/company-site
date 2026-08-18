@@ -41,6 +41,7 @@ module.exports = function(eleventyConfig) {
     "/privacy/",
     "/terms/",
     "/blog/",
+    "/services/",
   ]);
 
   // Blog posts: any .md under src/posts/. They are allowed in the sitemap by

@@ -1,20 +1,72 @@
 ---
+layout: layouts/base.njk
+title: AI Consultancy & Software Development Services
+description: AI consultancy, custom software development, DevOps, and server rescue for Singapore SMEs. We help you adopt AI and ship software 5–7× faster.
 permalink: /services/
-sitemap: false
-eleventyExcludeFromCollections: true
+sitemap: true
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Services — Redirecting to NEXT3LABS</title>
-  <link rel="canonical" href="https://next3labs.com/">
-  <!-- Orphaned by the v3 migration but still indexed at ~pos 1.0. A consolidating stub
-       beats a hard 404. Deliberately no robots directive — see about.njk. -->
-  <meta http-equiv="refresh" content="0; url=/">
-</head>
-<body>
-  <p>NEXT3LABS has moved this page. Redirecting to <a href="/">next3labs.com</a>.</p>
-  <script>window.location.replace("/");</script>
-</body>
-</html>
+
+<section class="v3-pagehero">
+  <div class="v3-wrap">
+    <p class="v3-eyebrow">Services</p>
+    <h1>AI consultancy &amp; software development in Singapore</h1>
+    <p class="v3-pagehero__lead">We help Singapore SMEs adopt AI and ship custom software 5–7× faster. From AI readiness to production systems — built and operated in-house.</p>
+  </div>
+</section>
+
+<section class="v3-section">
+  <div class="v3-wrap">
+    <div class="v3-section__head">
+      <p class="v3-kicker">What we do</p>
+      <h2>Services for Singapore businesses</h2>
+    </div>
+    <div class="v3-cards v3-cards--3">
+      {% for service in services %}
+      <div class="v3-card">
+        <div class="v3-card__num">0{{ loop.index }}</div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        {% if service.link %}<p><a href="{{ service.link }}">Learn more →</a></p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-section--surface">
+  <div class="v3-wrap">
+    <div class="v3-section__head">
+      <p class="v3-kicker">Why NEXT3LABS</p>
+      <h2>AI-adapted engineering, operated in production</h2>
+    </div>
+    <div class="v3-cards v3-cards--3">
+      <div class="v3-card">
+        <div class="v3-card__num">01</div>
+        <h3>5–7× faster delivery</h3>
+        <p>We replaced a seven-person offshore team with AI-augmented in-house engineering. The result: faster fixes, more testing, lower error rate.</p>
+      </div>
+      <div class="v3-card">
+        <div class="v3-card__num">02</div>
+        <h3>Build AND run</h3>
+        <p>We operate what we ship. No hand-off, no disappearing — we stay accountable for performance and uptime.</p>
+      </div>
+      <div class="v3-card">
+        <div class="v3-card__num">03</div>
+        <h3>No lock-in</h3>
+        <p>We integrate with the stack you already run. We augment your infrastructure, not force you into a proprietary ecosystem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v3-finalcta">
+  <div class="v3-wrap">
+    <div class="v3-finalcta__box">
+      <h2>Ready to adopt AI or ship software faster?</h2>
+      <div class="v3-finalcta__ctas">
+        <a class="v3-btn v3-btn--light" href="/contact/">Talk to us</a>
+        <a class="v3-btn v3-btn--ghost" href="https://api.whatsapp.com/send/?phone={{ site.whatsapp }}&text&type=phone_number" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
