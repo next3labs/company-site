@@ -5,7 +5,7 @@ description: Offshore development was rational when senior local engineers were 
 date: 2026-08-31
 readingTime: 6
 tags: posts
-draft: true
+draft: false
 ---
 
 Every Singapore SME that has ever priced local software talent has heard the same answer:

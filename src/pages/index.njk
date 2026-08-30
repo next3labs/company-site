@@ -135,6 +135,27 @@ permalink: /
   </div>
 </section>
 
+<!-- ── Notes teaser ────────────────────────────────────────────────── -->
+<section class="v3-section v3-section--surface" id="notes">
+  <div class="v3-wrap">
+    <div class="v3-section__head">
+      <p class="v3-kicker">From the Notes</p>
+      <h2>How we actually deliver with AI</h2>
+      <p class="v3-section__lead">Real projects, real numbers, including the parts that went wrong.</p>
+    </div>
+    <div class="v3-cards v3-cards--3">
+      {% for post in collections.posts | reverse | slice(0, 3) %}
+      <div class="v3-card">
+        <h3><a href="{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.data.title }}</a></h3>
+        <p>{{ post.data.description }}</p>
+        <p><a href="{{ post.url }}">Read →</a></p>
+      </div>
+      {% endfor %}
+    </div>
+    <p style="margin-top:1.5rem;"><a class="v3-btn v3-btn--ghost" href="/blog/">All notes →</a></p>
+  </div>
+</section>
+
 <!-- ── Final CTA ───────────────────────────────────────────────────── -->
 <section class="v3-finalcta">
   <div class="v3-wrap">
