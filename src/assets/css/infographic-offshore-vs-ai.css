@@ -1,0 +1,279 @@
+/* ── Offshore vs AI cost infographic — scoped to .n3l-ova only ──
+   No global selectors; all custom properties declared on the wrapper. */
+
+.n3l-ova{
+  --ink:        #0B1020;
+  --ink-2:      #141B33;
+  --ink-3:      #232C4A;
+  --paper:      #FFFFFF;
+  --paper-2:    #F4F5F8;
+  --rule:       #E1E4EC;
+  --muted:      #5B6480;
+  --muted-dark: #9AA3BF;
+  --accent:     #3F3FB3;
+  --accent-hi:  #6B6BE8;
+  --signal:     #E8523F;
+  --shadow-lg:  0 4px 10px rgba(11,16,32,.10), 0 22px 48px -14px rgba(11,16,32,.34);
+
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  margin:32px 0;
+}
+
+.n3l-ova, .n3l-ova *, .n3l-ova *::before, .n3l-ova *::after{ box-sizing:border-box; }
+
+.n3l-ova .fig{
+  max-width:760px;
+  margin:0 auto;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:8px;
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+  container-type:inline-size;
+}
+
+.n3l-ova .eyebrow{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+/* ── masthead ── */
+.n3l-ova .mast{
+  background:var(--ink);
+  color:var(--paper);
+  padding:34px 36px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.n3l-ova .mast::after{
+  content:"";
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(115deg,
+    rgba(255,255,255,.045) 0 1px, transparent 1px 13px);
+  pointer-events:none;
+}
+.n3l-ova .mast > *{ position:relative; z-index:1; }
+
+.n3l-ova .brandline{
+  display:flex; align-items:baseline; gap:12px;
+  margin-bottom:26px; flex-wrap:wrap;
+}
+.n3l-ova .brand{
+  font-family:Archivo,sans-serif;
+  font-weight:700; font-size:12px; letter-spacing:.14em;
+  color:var(--paper);
+}
+.n3l-ova .brandline .tag{
+  font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:500; color:var(--muted-dark);
+  padding-left:12px; border-left:1px solid var(--ink-3);
+}
+
+.n3l-ova h1{
+  font-family:Archivo,sans-serif;
+  font-weight:600;
+  font-size:clamp(30px,5.6cqi,44px);
+  line-height:1.05;
+  letter-spacing:-.036em;
+  margin:0 0 14px;
+  max-width:16ch;
+  text-wrap:balance;
+  color:var(--paper);
+}
+.n3l-ova h1 .hl{ color:var(--accent-hi); }
+
+.n3l-ova .sub{
+  font-size:15px; line-height:1.5; color:#C3C9DE; margin:0; max-width:46ch;
+}
+.n3l-ova .sub strong{ color:var(--paper); font-weight:600; }
+
+.n3l-ova .mast-rule{
+  margin-top:28px; height:3px; width:76px;
+  background:var(--accent-hi); border-radius:2px;
+}
+
+/* ── comparison columns ── */
+.n3l-ova .cols{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:stretch;
+  border-bottom:1px solid var(--rule);
+}
+.n3l-ova .col{
+  background:var(--paper);
+  padding:32px 30px 30px;
+  display:flex; flex-direction:column; min-width:0;
+}
+.n3l-ova .col.accent{ background:var(--paper-2); }
+.n3l-ova .col .label{ color:var(--accent); margin-bottom:18px; display:block; }
+
+.n3l-ova .bignum{
+  font-family:Archivo,sans-serif;
+  font-weight:600;
+  font-size:clamp(48px,9cqi,72px);
+  line-height:.86;
+  letter-spacing:-.04em;
+  color:var(--ink);
+  font-variant-numeric:lining-nums tabular-nums;
+}
+.n3l-ova .col.accent .bignum{ color:var(--accent); }
+.n3l-ova .bignum .cap-unit{
+  font-family:Inter,sans-serif;
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-left:8px;
+  vertical-align:middle;
+}
+
+.n3l-ova .capline{
+  margin:14px 0 20px;
+  font-size:13.5px;
+  line-height:1.5;
+  color:var(--muted);
+  max-width:24ch;
+}
+
+.n3l-ova .stack{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:10px;
+  border-top:1px solid var(--rule);
+  padding-top:16px;
+}
+.n3l-ova .stack li{
+  display:flex; flex-direction:column; gap:2px;
+}
+.n3l-ova .stack .k{
+  font-size:10px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted-dark);
+}
+.n3l-ova .stack .v{
+  font-size:13.5px; font-weight:500; color:var(--ink);
+  line-height:1.35;
+}
+
+.n3l-ova .vs{
+  display:flex; align-items:center; justify-content:center;
+  padding:0 4px;
+  position:relative;
+}
+.n3l-ova .vs::before{
+  content:""; position:absolute; top:0; bottom:0; left:50%;
+  width:1px; background:var(--rule);
+}
+.n3l-ova .vs span{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  width:34px; height:34px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700; letter-spacing:.04em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+
+/* ── supporting stats ── */
+.n3l-ova .support{ background:var(--ink-2); padding:28px 36px 32px; color:var(--paper); }
+.n3l-ova .support-head{
+  padding-bottom:18px; margin-bottom:4px;
+  border-bottom:1px solid var(--ink-3);
+}
+.n3l-ova .support-head .eyebrow{ color:var(--muted-dark); }
+
+.n3l-ova .grid3{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background:var(--ink-3); margin-top:1px;
+}
+.n3l-ova .cell{ background:var(--ink-2); padding:24px 20px 4px; min-width:0; }
+.n3l-ova .cell:first-child{ padding-left:0; }
+.n3l-ova .cell:last-child{ padding-right:0; }
+
+.n3l-ova .cell .figure{
+  display:flex; align-items:baseline; gap:6px; margin-bottom:10px; min-height:40px;
+}
+.n3l-ova .cell .figure .num{
+  font-family:Archivo,sans-serif; font-weight:600; font-size:38px;
+  letter-spacing:-.03em; color:var(--paper); line-height:.86;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+.n3l-ova .cell .figure .x{
+  font-size:22px; color:var(--accent-hi); font-weight:600;
+}
+.n3l-ova .cell .figure .glyph{
+  font-family:Archivo,sans-serif; font-weight:700; font-size:40px;
+  line-height:.86; letter-spacing:-.02em; position:relative; top:.02em;
+}
+.n3l-ova .glyph.down{ color:var(--signal); }
+.n3l-ova .glyph.up{ color:#4ECB9B; }
+.n3l-ova .cell .figure .unit{
+  font-size:10.5px; font-weight:600; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted-dark);
+  position:relative; top:-.2em;
+}
+
+.n3l-ova .cell h3{
+  font-size:12.5px; font-weight:600; letter-spacing:-.005em;
+  margin:0 0 5px; color:var(--paper);
+}
+.n3l-ova .cell p{
+  margin:0; font-size:12px; line-height:1.5; color:var(--muted-dark);
+  word-wrap:break-word; overflow-wrap:anywhere;
+}
+
+/* ── footer ── */
+.n3l-ova .foot{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; flex-wrap:wrap; padding:16px 36px;
+  background:var(--paper); border-top:1px solid var(--rule);
+  font-size:11px; letter-spacing:.06em; color:var(--muted);
+  text-transform:uppercase; font-weight:500;
+}
+.n3l-ova .foot .mark{
+  font-family:Archivo,sans-serif; font-weight:700; letter-spacing:.12em;
+  color:var(--ink); flex:none;
+}
+.n3l-ova .foot > span:last-child{ flex:1 1 auto; text-align:right; }
+
+/* ── narrow ── */
+@container (max-width: 620px){
+  .n3l-ova .mast{ padding:26px 22px 24px; }
+  .n3l-ova h1{ font-size:clamp(26px,8.4cqi,34px); max-width:none; }
+  .n3l-ova .cols{ grid-template-columns:1fr; }
+  .n3l-ova .vs{ padding:6px 22px; }
+  .n3l-ova .vs::before{ top:50%; bottom:auto; left:0; right:0; width:auto; height:1px; }
+  .n3l-ova .col{ padding:24px 22px 22px; }
+  .n3l-ova .capline{ max-width:none; }
+  .n3l-ova .support{ padding:24px 22px 26px; }
+  .n3l-ova .grid3{ grid-template-columns:1fr; }
+  .n3l-ova .cell{ padding:18px 0; }
+  .n3l-ova .cell:first-child{ padding-top:20px; }
+  .n3l-ova .cell:last-child{ padding-bottom:6px; }
+  .n3l-ova .foot{ padding:14px 22px; font-size:10px; }
+  .n3l-ova .foot > span:last-child{ flex-basis:100%; text-align:left; }
+}
+
+@media (max-width: 600px){
+  .n3l-ova{ margin:20px 0; }
+  .n3l-ova .mast{ padding:26px 22px 24px; }
+  .n3l-ova h1{ font-size:clamp(26px,7.6vw,34px); max-width:none; }
+  .n3l-ova .cols{ grid-template-columns:1fr; }
+  .n3l-ova .vs{ padding:6px 22px; }
+  .n3l-ova .vs::before{ top:50%; bottom:auto; left:0; right:0; width:auto; height:1px; }
+  .n3l-ova .col{ padding:24px 22px 22px; }
+  .n3l-ova .bignum{ font-size:clamp(44px,13vw,60px); }
+  .n3l-ova .capline{ max-width:none; }
+  .n3l-ova .support{ padding:24px 22px 26px; }
+  .n3l-ova .grid3{ grid-template-columns:1fr; }
+  .n3l-ova .cell{ padding:18px 0; }
+  .n3l-ova .cell:first-child{ padding-top:20px; padding-left:0; }
+  .n3l-ova .cell:last-child{ padding-bottom:6px; padding-right:0; }
+  .n3l-ova .foot{ padding:14px 22px; font-size:10px; }
+}
