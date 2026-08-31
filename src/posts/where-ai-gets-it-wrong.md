@@ -74,7 +74,10 @@ in the moment. It closes with a habit:
 > specific thing.**
 
 Not "did it run without errors". Not "does the output look right". What observable fact, in the
-real world, would be true if this genuinely worked? Then check that.
+real world, would be true if this genuinely worked? Then check that. We wrote up one case in
+detail — [a feature that passed every test for nineteen days without working
+at all](/blog/ai-code-passes-tests-but-doesnt-work/) — because the gap between "tests green"
+and "actually works" is where most of this goes wrong.
 
 ## Which brings us to the uncomfortable part
 

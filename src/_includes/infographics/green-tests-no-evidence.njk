@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/infographic-green-tests.css">
+<div class="n3l-gte">
+<figure class="fig">
+
+  <header class="mast">
+    <div class="brandline">
+      <span class="brand">NEXT3LABS</span>
+      <span class="tag">Evidence over green checkmarks</span>
+    </div>
+    <h1>Green tests. <span class="hl">Dead LED.</span></h1>
+    <p class="sub"><strong>A passing suite tells you the code ran.</strong> It does not tell you the feature worked.</p>
+    <div class="mast-rule"></div>
+  </header>
+
+  <section class="timeline">
+    <span class="eyebrow section-label">One defect, in real time</span>
+
+    <ol class="beats">
+
+      <li class="beat beat--false">
+        <div class="beat-date">8 Aug</div>
+        <div class="beat-track" aria-hidden="true"><span class="beat-dot"></span></div>
+        <div class="beat-body">
+          <span class="beat-tag">Shipped</span>
+          <h3>Tests green.</h3>
+          <p>The feature was a camera torch &mdash; the LED light on a handheld barcode-scanning terminal. The full test suite passed. Nobody had put it on real hardware: the emulator has no flash hardware to test against.</p>
+        </div>
+      </li>
+
+      <li class="beat beat--fail">
+        <div class="beat-date">11 Aug</div>
+        <div class="beat-track" aria-hidden="true"><span class="beat-dot"></span></div>
+        <div class="beat-body">
+          <span class="beat-tag">Reality check</span>
+          <h3>First look at real hardware.</h3>
+          <p>The torch had never lit &mdash; not once. Root cause sat upstream, not in our code: a camera library silently dropped the torch-enable flag when it was already set at first render.</p>
+        </div>
+      </li>
+
+      <li class="beat beat--fail">
+        <div class="beat-date">14 Aug</div>
+        <div class="beat-track" aria-hidden="true"><span class="beat-dot"></span></div>
+        <div class="beat-body">
+          <span class="beat-tag">Wrong diagnosis</span>
+          <h3>Fixed &mdash; then it died after one scan.</h3>
+          <p>The first fix worked for exactly one scan. The real cause was the camera getting rebuilt on every decode. The first read on the bug was wrong, and only a human watching the device caught it.</p>
+        </div>
+      </li>
+
+      <li class="beat beat--true beat--last">
+        <div class="beat-date">27 Aug</div>
+        <div class="beat-track" aria-hidden="true"><span class="beat-dot"></span></div>
+        <div class="beat-body">
+          <span class="beat-tag">Confirmed</span>
+          <h3>LED confirmed on, on the device.</h3>
+          <p>Nineteen days after the tests went green, someone finally watched the light turn on in a person's hand.</p>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section class="stat">
+    <div class="stat-num">19<span class="stat-unit">days</span></div>
+    <p class="stat-line">between a passing test suite and a light that actually turned on.</p>
+    <p class="stat-frame">Green tests measured the code path. The feature was a photon.</p>
+  </section>
+
+  <figcaption class="foot">
+    <span class="mark">NEXT3LABS</span>
+    <span>Ship on evidence, not on green &middot; next3labs.com</span>
+  </figcaption>
+
+</figure>
+</div>
