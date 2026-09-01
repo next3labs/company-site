@@ -66,6 +66,9 @@ module.exports = function(eleventyConfig) {
     })
   );
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
+  // First N items of an array (Nunjucks' `slice` splits into groups — the
+  // homepage teaser used slice(0,3) and silently rendered ZERO cards).
+  eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
 
   eleventyConfig.addCollection("sitemapPages", (collectionApi) =>
     collectionApi.getAll().filter((item) => {
