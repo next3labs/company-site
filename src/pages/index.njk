@@ -144,7 +144,7 @@ permalink: /
       <p class="v3-section__lead">Real projects, real numbers, including the parts that went wrong.</p>
     </div>
     <div class="v3-cards v3-cards--3">
-      {% for post in collections.posts | reverse | head(3) %}
+      {% for post in collections.posts | reverse | head(6) %}
       <div class="v3-card">
         <h3><a href="{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.data.title }}</a></h3>
         <p>{{ post.data.description }}</p>
