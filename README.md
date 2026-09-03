@@ -1,5 +1,7 @@
 # NEXT3LABS Company Website
 
+**Live site:** https://next3labs.com · **AI consultancy & software development, Singapore**
+
 Static company website built with Eleventy (11ty).
 
 ## Quick Start
