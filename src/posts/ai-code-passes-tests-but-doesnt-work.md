@@ -103,3 +103,6 @@ that happens outside the code, and who physically watched it happen?**
 
 If the honest answer is "the test suite passes," you have not verified the feature. You have
 verified the paragraph the code wrote about itself.
+
+And deciding *whether to hand a process to AI in the first place* is a different question, with
+its own tool: [the AI readiness checklist — seven checks that actually matter](/blog/ai-readiness-checklist-for-sme-singapore/).

@@ -82,3 +82,7 @@ That list is where the value is. It is also, almost always, a list nobody has lo
 years, because the answer was permanently "we can't afford that."
 
 The answer has changed. It is worth re-reading the list.
+
+And once a role is on that list, the next question is whether a given process inside it is
+ready to hand over at all. [The seven checks we run before giving any business process to
+AI](/blog/ai-readiness-checklist-for-sme-singapore/) answer that in an afternoon.

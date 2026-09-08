@@ -75,6 +75,10 @@ That is a small enough bet to survive being wrong, and a real enough test to tel
 something. Most "AI transformation" programmes for small businesses fail because they start
 with the technology and look for a use. Start with the thing that is already broken.
 
+If you want the filter we run before handing any process to AI, it is the same one we run on
+ourselves: [the AI readiness checklist for SMEs](/blog/ai-readiness-checklist-for-sme-singapore/)
+— seven checks, one afternoon, no maturity score.
+
 ---
 
 *This is the first in a short series on what AI has actually done inside our own business —
