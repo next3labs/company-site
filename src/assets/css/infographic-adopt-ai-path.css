@@ -1,0 +1,347 @@
+  /* ── AI adoption path infographic — fully scoped to .n3l-adopt-path ──
+     Sibling of the readiness checklist: same ink/paper system, same mast,
+     same row grid. All custom properties are declared on the wrapper
+     itself, so nothing leaks into the surrounding page. */
+
+  .n3l-adopt-path{
+    --ink:        #0B1020;   /* deep navy, near-black */
+    --ink-2:      #141B33;   /* panel navy */
+    --ink-3:      #232C4A;   /* hairlines on dark */
+    --paper:      #FFFFFF;
+    --paper-2:    #F4F5F8;   /* page ground */
+    --rule:       #E1E4EC;
+    --muted:      #5B6480;
+    --muted-dark: #9AA3BF;   /* muted on navy */
+    --accent:     #3F3FB3;   /* NEXT3LABS indigo */
+    --accent-hi:  #6B6BE8;   /* lifted indigo for dark ground */
+    --signal:     #E8523F;   /* single warm counter-accent */
+    --step-bg:    #EEEEFA;   /* step marker ground */
+    --step-ring:  #CFCFF2;
+    --done:       #17936B;   /* the final step lands */
+    --done-bg:    #EAF7F1;
+    --done-ring:  #BFE5D6;
+    --r:          6px;
+    --shadow-lg:  0 4px 10px rgba(11,16,32,.10), 0 22px 48px -14px rgba(11,16,32,.34);
+
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    margin:32px 0;
+  }
+
+  .n3l-adopt-path,
+  .n3l-adopt-path *,
+  .n3l-adopt-path *::before,
+  .n3l-adopt-path *::after{ box-sizing:border-box; }
+
+  .n3l-adopt-path .fig{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+    container-type:inline-size;
+  }
+
+  /* ── shared type ────────────────────────────────────────── */
+  .n3l-adopt-path .num{
+    font-family:Archivo,Inter,sans-serif;
+    font-weight:600;
+    letter-spacing:-.05em;
+    line-height:.86;
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  .n3l-adopt-path .eyebrow{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  /* ── masthead ───────────────────────────────────────────── */
+  .n3l-adopt-path .mast{
+    background:var(--ink);
+    color:var(--paper);
+    padding:34px 36px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .n3l-adopt-path .mast::after{ /* faint diagonal ruling, no gradient wash */
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(115deg,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 13px);
+    pointer-events:none;
+  }
+  .n3l-adopt-path .mast > *{ position:relative; z-index:1; }
+
+  .n3l-adopt-path .brand-eyebrow{
+    display:block;
+    color:var(--muted-dark);
+    margin-bottom:24px;
+  }
+
+  .n3l-adopt-path h1{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:clamp(28px,5.4cqi,40px);
+    line-height:1.06;
+    letter-spacing:-.038em;
+    margin:0 0 12px;
+    max-width:18ch;
+    text-wrap:balance;
+    color:var(--paper);
+  }
+  .n3l-adopt-path h1 .hi{ color:var(--accent-hi); }
+
+  .n3l-adopt-path .sub{
+    font-size:15px;
+    line-height:1.5;
+    color:#C3C9DE;
+    margin:0;
+    max-width:44ch;
+  }
+  .n3l-adopt-path .sub strong{ color:var(--paper); font-weight:600; }
+
+  .n3l-adopt-path .mast-rule{
+    margin-top:26px;
+    height:3px;
+    width:76px;
+    background:var(--accent-hi);
+    border-radius:2px;
+  }
+
+  /* ── steps header strip ─────────────────────────────────── */
+  .n3l-adopt-path .steps-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:16px 36px 14px;
+    background:var(--paper-2);
+    border-bottom:1px solid var(--rule);
+  }
+  .n3l-adopt-path .steps-head .eyebrow{ color:var(--accent); }
+  .n3l-adopt-path .steps-head .legend{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.04em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+
+  /* ── the five step rows ─────────────────────────────────── */
+  .n3l-adopt-path .steps{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .n3l-adopt-path .step{
+    display:grid;
+    grid-template-columns:44px minmax(0,1fr) 26px;
+    align-items:center;
+    column-gap:16px;
+    padding:17px 36px;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+  }
+  .n3l-adopt-path .step:last-child{ border-bottom:0; }
+
+  /* the thread running down the numbers — the order made visible */
+  .n3l-adopt-path .step::before{
+    content:"";
+    position:absolute;
+    left:47px;
+    top:50%;
+    bottom:-1px;
+    width:1px;
+    background:var(--rule);
+  }
+  .n3l-adopt-path .step:first-child::before{ top:50%; }
+  .n3l-adopt-path .step--last::before{ display:none; }
+
+  .n3l-adopt-path .idx{
+    font-size:26px;
+    color:var(--accent);
+    position:relative;
+    z-index:1;
+  }
+  .n3l-adopt-path .step--last .idx{ color:var(--done); }
+
+  .n3l-adopt-path .body{ min-width:0; }
+  .n3l-adopt-path .body h3{
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin:0 0 3px;
+    color:var(--ink);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+  .n3l-adopt-path .body p{
+    margin:0;
+    font-size:13px;
+    line-height:1.5;
+    color:var(--muted);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  /* step marker — carry-on arrow, green tick on the last */
+  .n3l-adopt-path .mark{
+    width:24px;
+    height:24px;
+    flex:none;
+    justify-self:end;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-style:normal;
+    background:var(--step-bg);
+    border:1.5px solid var(--step-ring);
+    border-radius:50%;
+  }
+  .n3l-adopt-path .mark b{
+    font-weight:600;
+    font-size:12px;
+    line-height:1;
+    color:var(--accent);
+  }
+  .n3l-adopt-path .mark--end{
+    background:var(--done-bg);
+    border-color:var(--done-ring);
+  }
+  .n3l-adopt-path .mark--end b{ color:var(--done); }
+  .n3l-adopt-path .mark.mini{
+    width:16px;
+    height:16px;
+    border-width:1px;
+  }
+  .n3l-adopt-path .mark.mini b{ font-size:9px; }
+
+  /* ── order rules strip ──────────────────────────────────── */
+  .n3l-adopt-path .rules{
+    padding:16px 36px 18px;
+    background:var(--paper-2);
+    border-top:1px solid var(--rule);
+  }
+  .n3l-adopt-path .rules-label{
+    display:block;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .n3l-adopt-path .rule-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+  }
+  .n3l-adopt-path .rule-item{
+    min-width:0;
+    padding:10px 12px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--accent);
+    border-radius:var(--r);
+    font-size:12px;
+    font-weight:500;
+    line-height:1.35;
+    color:var(--ink);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  /* ── footer strip ───────────────────────────────────────── */
+  .n3l-adopt-path .foot{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:16px 36px;
+    margin:0;
+    background:var(--ink-2);
+    border-top:1px solid var(--ink-3);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .n3l-adopt-path .foot .verdict{
+    min-width:0;
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+  .n3l-adopt-path .foot .verdict b{
+    font-weight:600;
+    color:var(--paper);
+  }
+  .n3l-adopt-path .foot .verdict b.num{
+    font-size:13px;
+    letter-spacing:0;
+    color:var(--accent-hi);
+  }
+  .n3l-adopt-path .foot .twist{ color:var(--signal); }
+  .n3l-adopt-path .foot .sep{ color:var(--ink-3); flex:none; }
+
+  /* ── narrow: container query + width fallback ───────────── */
+  @container (max-width: 560px){
+    .n3l-adopt-path .mast{ padding:28px 22px 26px; }
+    .n3l-adopt-path h1{ font-size:clamp(25px,7.6cqi,34px); max-width:none; }
+    .n3l-adopt-path .steps-head{ padding:14px 22px 12px; }
+    .n3l-adopt-path .steps-head .legend{ letter-spacing:.02em; }
+    .n3l-adopt-path .step{
+      grid-template-columns:36px minmax(0,1fr) 22px;
+      column-gap:12px;
+      padding:15px 22px;
+    }
+    .n3l-adopt-path .step::before{ left:33px; }
+    .n3l-adopt-path .idx{ font-size:21px; }
+    .n3l-adopt-path .mark{ width:22px; height:22px; }
+    .n3l-adopt-path .mark b{ font-size:11px; }
+    .n3l-adopt-path .rules{ padding:14px 22px 16px; }
+    .n3l-adopt-path .rule-list{ grid-template-columns:minmax(0,1fr); gap:6px; }
+    .n3l-adopt-path .foot{
+      padding:14px 22px;
+      font-size:10px;
+      justify-content:flex-start;
+      row-gap:4px;
+    }
+  }
+
+  @media (max-width: 600px){
+    .n3l-adopt-path{ margin:20px 0; }
+    .n3l-adopt-path .mast{ padding:28px 22px 26px; }
+    .n3l-adopt-path h1{ font-size:clamp(25px,7vw,34px); max-width:none; }
+    .n3l-adopt-path .steps-head{ padding:14px 22px 12px; }
+    .n3l-adopt-path .steps-head .legend{ letter-spacing:.02em; }
+    .n3l-adopt-path .step{
+      grid-template-columns:36px minmax(0,1fr) 22px;
+      column-gap:12px;
+      padding:15px 22px;
+    }
+    .n3l-adopt-path .step::before{ left:33px; }
+    .n3l-adopt-path .idx{ font-size:21px; }
+    .n3l-adopt-path .mark{ width:22px; height:22px; }
+    .n3l-adopt-path .mark b{ font-size:11px; }
+    .n3l-adopt-path .rules{ padding:14px 22px 16px; }
+    .n3l-adopt-path .rule-list{ grid-template-columns:minmax(0,1fr); gap:6px; }
+    .n3l-adopt-path .foot{
+      padding:14px 22px;
+      font-size:10px;
+      justify-content:flex-start;
+      row-gap:4px;
+    }
+  }
