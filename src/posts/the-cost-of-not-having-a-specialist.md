@@ -86,3 +86,7 @@ The answer has changed. It is worth re-reading the list.
 And once a role is on that list, the next question is whether a given process inside it is
 ready to hand over at all. [The seven checks we run before giving any business process to
 AI](/blog/ai-readiness-checklist-for-sme-singapore/) answer that in an afternoon.
+
+If your business is a restaurant group, we ran that sort explicitly — which kitchen-group
+jobs to hand to AI first, which stay behind a manager's approval, and which to leave alone:
+[where AI goes in a restaurant group](/blog/ai-consultancy-fnb-restaurants-singapore/).
