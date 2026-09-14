@@ -45,7 +45,6 @@ module.exports = function(eleventyConfig) {
     "/terms/",
     "/blog/",
     "/services/",
-    "/nexus/",   // product page for Nexus (POS + loyalty), published 8 Sep 2026 (CEO)
   ]);
 
   // Blog posts: any .md under src/posts/. They are allowed in the sitemap by
