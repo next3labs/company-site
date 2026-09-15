@@ -163,5 +163,11 @@ or a filing, and move jobs up a lane when the evidence says so. Do it once prope
 with one job and the second goes much faster — the muscle carries over even when the
 software does not.
 
+One decision sits upstream of all of this: whether the job should be bought,
+configured, or built in the first place. [Custom software for Singapore
+SMEs](/blog/custom-software-for-singapore-smes/) covers that sort — worth settling
+before the sequencing, because automating a job that should have been bought just
+accelerates the wrong work.
+
 So: of the jobs your business repeats every week, which one would you hand over
 first — and could you name today who checks its output before it leaves the building?
