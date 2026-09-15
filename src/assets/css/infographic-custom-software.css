@@ -1,0 +1,415 @@
+/* ── Build vs buy decision map infographic — fully scoped to
+   .n3l-custom-software ──
+   Sibling of the automation lane map and the property/F&B suitability maps:
+   same ink/paper system, same mast, same list rhythm, its own accent trio
+   (teal = buy, amber = configure, crimson = build). All custom properties are
+   declared on the wrapper itself, so nothing leaks into the surrounding page. */
+
+  .n3l-custom-software{
+    --ink:        #0B1020;   /* deep navy, near-black */
+    --ink-2:      #141B33;   /* panel navy */
+    --ink-3:      #232C4A;   /* hairlines on dark */
+    --paper:      #FFFFFF;
+    --paper-2:    #F4F5F8;   /* page ground */
+    --rule:       #E1E4EC;
+    --muted:      #5B6480;
+    --muted-dark: #9AA3BF;   /* muted on navy */
+    --accent:     #3F3FB3;   /* NEXT3LABS indigo */
+    --accent-hi:  #6B6BE8;   /* lifted indigo for dark ground */
+    --buy:        #0E7C86;   /* destination 1 — buy the subscription (teal) */
+    --buy-bg:     #E8F5F6;
+    --buy-ring:   #BCE0E3;
+    --cfg:        #B5730A;   /* destination 2 — configure (amber) */
+    --cfg-bg:     #FCF3E3;
+    --cfg-ring:   #EFD9AE;
+    --build:      #C0324B;   /* destination 3 — build (crimson) */
+    --build-bg:   #FBEBEE;
+    --build-ring: #F0C8D0;
+    --r:          6px;
+    --shadow-lg:  0 4px 10px rgba(11,16,32,.10), 0 22px 48px -14px rgba(11,16,32,.34);
+
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    margin:32px 0;
+  }
+
+  .n3l-custom-software,
+  .n3l-custom-software *,
+  .n3l-custom-software *::before,
+  .n3l-custom-software *::after{ box-sizing:border-box; }
+
+  .n3l-custom-software .fig{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+    container-type:inline-size;
+  }
+
+  /* ── shared type ────────────────────────────────────────── */
+  .n3l-custom-software .num{
+    font-family:Archivo,Inter,sans-serif;
+    font-weight:600;
+    letter-spacing:-.05em;
+    line-height:.86;
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  .n3l-custom-software .eyebrow{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  /* ── masthead ───────────────────────────────────────────── */
+  .n3l-custom-software .mast{
+    background:var(--ink);
+    color:var(--paper);
+    padding:34px 36px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .n3l-custom-software .mast::after{ /* faint diagonal ruling, no gradient wash */
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(115deg,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 13px);
+    pointer-events:none;
+  }
+  .n3l-custom-software .mast > *{ position:relative; z-index:1; }
+
+  .n3l-custom-software .brand-eyebrow{
+    display:block;
+    color:var(--muted-dark);
+    margin-bottom:24px;
+  }
+
+  .n3l-custom-software h1{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:clamp(28px,5.4cqi,40px);
+    line-height:1.06;
+    letter-spacing:-.038em;
+    margin:0 0 12px;
+    max-width:18ch;
+    text-wrap:balance;
+    color:var(--paper);
+  }
+  .n3l-custom-software h1 .hi{ color:var(--accent-hi); }
+
+  .n3l-custom-software .sub{
+    margin:0;
+    font-size:15px;
+    line-height:1.5;
+    color:var(--muted-dark);
+    max-width:48ch;
+  }
+
+  .n3l-custom-software .mast-rule{
+    height:2px;
+    width:56px;
+    background:var(--accent-hi);
+    margin-top:22px;
+  }
+
+  /* ── the four entry questions ───────────────────────────── */
+  .n3l-custom-software .gate{
+    padding:26px 36px 4px;
+  }
+  .n3l-custom-software .gate-head .eyebrow{
+    color:var(--muted);
+    display:block;
+    margin-bottom:14px;
+  }
+
+  .n3l-custom-software .questions{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .n3l-custom-software .q{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:var(--paper-2);
+    border:1px solid var(--rule);
+    border-radius:var(--r);
+    padding:14px 16px;
+  }
+
+  .n3l-custom-software .q-num{
+    font-size:22px;
+    color:var(--accent);
+    flex:0 0 auto;
+    padding-top:2px;
+    min-width:16px;
+  }
+
+  .n3l-custom-software .q-body{ min-width:0; }
+
+  .n3l-custom-software .q h2{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:-.015em;
+    line-height:1.25;
+    margin:0 0 5px;
+  }
+  .n3l-custom-software .q p{
+    margin:0;
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+  .n3l-custom-software .q-read{
+    margin-top:7px !important;
+    padding-top:7px;
+    border-top:1px solid var(--rule);
+  }
+  .n3l-custom-software .q-read b{
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  /* ── lanes head ─────────────────────────────────────────── */
+  .n3l-custom-software .lanes-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    padding:26px 36px 0;
+  }
+  .n3l-custom-software .lanes-head .eyebrow{ color:var(--muted); }
+  .n3l-custom-software .legend{
+    display:flex;
+    align-items:center;
+    font-size:11px;
+    color:var(--muted);
+    gap:2px;
+  }
+  .n3l-custom-software .chip{
+    display:inline-block;
+    width:9px; height:9px;
+    border-radius:50%;
+    margin:0 5px 0 12px;
+    vertical-align:middle;
+  }
+  .n3l-custom-software .chip:first-child{ margin-left:0; }
+  .n3l-custom-software .chip--buy{ background:var(--buy); }
+  .n3l-custom-software .chip--cfg{ background:var(--cfg); }
+  .n3l-custom-software .chip--build{ background:var(--build); }
+
+  /* ── the three destinations ─────────────────────────────── */
+  .n3l-custom-software .lanes{
+    list-style:none;
+    margin:0;
+    padding:18px 36px 4px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .n3l-custom-software .lane{
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:18px 20px 16px;
+    border-left-width:4px;
+    background:var(--paper);
+  }
+  .n3l-custom-software .lane--buy{ border-left-color:var(--buy); }
+  .n3l-custom-software .lane--cfg{ border-left-color:var(--cfg); }
+  .n3l-custom-software .lane--build{ border-left-color:var(--build); }
+
+  .n3l-custom-software .lane-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  }
+  .n3l-custom-software .lane-tag{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .n3l-custom-software .lane--buy .lane-tag{ background:var(--buy-bg); color:var(--buy); box-shadow:inset 0 0 0 1px var(--buy-ring); }
+  .n3l-custom-software .lane--cfg .lane-tag{ background:var(--cfg-bg); color:var(--cfg); box-shadow:inset 0 0 0 1px var(--cfg-ring); }
+  .n3l-custom-software .lane--build .lane-tag{ background:var(--build-bg); color:var(--build); box-shadow:inset 0 0 0 1px var(--build-ring); }
+
+  .n3l-custom-software .lane-head h2{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:19px;
+    letter-spacing:-.02em;
+    margin:0;
+  }
+  .n3l-custom-software .lane-why{
+    margin:0;
+    font-size:12px;
+    color:var(--muted);
+    width:100%;
+  }
+  .n3l-custom-software .lane-why em{
+    font-style:normal;
+    font-weight:600;
+    color:var(--ink);
+  }
+
+  .n3l-custom-software .jobs{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .n3l-custom-software .job{
+    background:var(--paper-2);
+    border:1px solid var(--rule);
+    border-radius:var(--r);
+    padding:12px 14px;
+  }
+  .n3l-custom-software .lane--buy .job{ background:var(--buy-bg); border-color:var(--buy-ring); }
+  .n3l-custom-software .lane--cfg .job{ background:var(--cfg-bg); border-color:var(--cfg-ring); }
+  .n3l-custom-software .lane--build .job{ background:var(--build-bg); border-color:var(--build-ring); }
+
+  .n3l-custom-software .job h3{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:13.5px;
+    letter-spacing:-.01em;
+    margin:0 0 4px;
+    line-height:1.25;
+  }
+  .n3l-custom-software .job p{
+    margin:0;
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+
+  /* ── the honest cost note under each destination ────────── */
+  .n3l-custom-software .cost{
+    margin:12px 0 0;
+    padding-top:11px;
+    border-top:1px dashed var(--rule);
+    font-size:12px;
+    line-height:1.5;
+    color:var(--muted);
+  }
+  .n3l-custom-software .cost-tag{
+    display:inline-block;
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    margin-right:8px;
+    vertical-align:1px;
+  }
+  .n3l-custom-software .lane--buy .cost-tag{ color:var(--buy); }
+  .n3l-custom-software .lane--cfg .cost-tag{ color:var(--cfg); }
+  .n3l-custom-software .lane--build .cost-tag{ color:var(--build); }
+
+  /* ── rules strip ────────────────────────────────────────── */
+  .n3l-custom-software .rules{
+    margin:16px 36px 0;
+    padding:16px 20px;
+    background:var(--ink);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .n3l-custom-software .rules-label{
+    color:var(--muted-dark);
+    white-space:nowrap;
+  }
+  .n3l-custom-software .rule-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .n3l-custom-software .rule-item{
+    font-size:12px;
+    font-weight:500;
+    color:var(--paper);
+    position:relative;
+    padding-left:14px;
+  }
+  .n3l-custom-software .rule-item::before{
+    content:"";
+    position:absolute;
+    left:0; top:5px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--accent-hi);
+  }
+
+  /* ── footer verdict ─────────────────────────────────────── */
+  .n3l-custom-software .foot{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:18px 36px 26px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .n3l-custom-software .verdict .num{
+    font-size:17px;
+    color:var(--accent);
+    vertical-align:-1px;
+  }
+  .n3l-custom-software .verdict.twist{ color:var(--ink); font-weight:600; }
+  .n3l-custom-software .sep{ color:var(--rule); }
+
+  /* ── mobile ─────────────────────────────────────────────── */
+  @container (max-width:719px){
+    .n3l-custom-software .mast{ padding:26px 22px 24px; }
+    .n3l-custom-software .gate{ padding:22px 22px 0; }
+    .n3l-custom-software .questions{ grid-template-columns:1fr; }
+    .n3l-custom-software .lanes-head{ padding:22px 22px 0; }
+    .n3l-custom-software .lanes{ padding:14px 22px 4px; }
+    .n3l-custom-software .jobs{ grid-template-columns:1fr; }
+    .n3l-custom-software .rules{ margin:14px 22px 0; align-items:flex-start; flex-direction:column; gap:10px; }
+    .n3l-custom-software .rule-list{ flex-direction:column; gap:8px; }
+    .n3l-custom-software .foot{ padding:14px 22px 22px; }
+  }
+
+  /* Fallback for engines without container query support: the figure is capped
+     at 720px, so a narrow viewport implies a narrow figure. */
+  @supports not (container-type:inline-size){
+    @media (max-width:760px){
+      .n3l-custom-software .mast{ padding:26px 22px 24px; }
+      .n3l-custom-software .gate{ padding:22px 22px 0; }
+      .n3l-custom-software .questions{ grid-template-columns:1fr; }
+      .n3l-custom-software .lanes-head{ padding:22px 22px 0; }
+      .n3l-custom-software .lanes{ padding:14px 22px 4px; }
+      .n3l-custom-software .jobs{ grid-template-columns:1fr; }
+      .n3l-custom-software .rules{ margin:14px 22px 0; align-items:flex-start; flex-direction:column; gap:10px; }
+      .n3l-custom-software .rule-list{ flex-direction:column; gap:8px; }
+      .n3l-custom-software .foot{ padding:14px 22px 22px; }
+    }
+  }
