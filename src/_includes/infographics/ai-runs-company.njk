@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="/assets/css/infographic-ai-runs-company.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<div class="n3l-ai-runs-company">
+<figure class="fig">
+
+  <header class="mast">
+    <span class="eyebrow brand-eyebrow">NEXT3LABS &mdash; AI in operations</span>
+    <h1>Who holds <span class="hi">this decision</span>?</h1>
+    <p class="sub">Two questions sort every decision a company makes. They produce four lanes &mdash; and the human keeps two of them.</p>
+    <div class="mast-rule"></div>
+  </header>
+
+  <section class="gate">
+    <div class="gate-head">
+      <span class="eyebrow">Ask both, in this order</span>
+    </div>
+    <ol class="questions">
+      <li class="q">
+        <span class="q-num num">1</span>
+        <div class="q-body">
+          <h2>Is there a written rule?</h2>
+          <p>Written down &mdash; specific enough that something without judgement could follow it.</p>
+        </div>
+      </li>
+      <li class="q">
+        <span class="q-num num">2</span>
+        <div class="q-body">
+          <h2>What does it cost when wrong?</h2>
+          <p>Not the average case. The bad case, and how fast you would find out.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <div class="map-head">
+    <span class="eyebrow">The four lanes</span>
+    <span class="legend"><i class="chip chip--decide" aria-hidden="true"></i> agent decides
+      &nbsp;<i class="chip chip--exec" aria-hidden="true"></i> agent executes
+      &nbsp;<i class="chip chip--draft" aria-hidden="true"></i> agent drafts
+      &nbsp;<i class="chip chip--human" aria-hidden="true"></i> stays human</span>
+  </div>
+
+  <div class="map">
+
+    <div class="axis-x" aria-hidden="true">
+      <span class="axis-label">Cost of being wrong</span>
+      <span class="axis-val">cheap</span>
+      <span class="axis-val">expensive</span>
+    </div>
+
+    <div class="grid">
+
+      <div class="row-label"><span class="axis-label">Written rule</span><span class="axis-val">yes</span></div>
+
+      <div class="cell cell--decide">
+        <span class="cell-tag">Rule &middot; cheap</span>
+        <h2>Agent decides, human sample-audits</h2>
+        <dl class="split">
+          <dt>Agent</dt><dd>Holds the call outright. Reviewing each one costs more than the odd error does.</dd>
+          <dt>Human</dt><dd>Checks a sample, and means it.</dd>
+        </dl>
+        <p class="eg"><span class="eg-tag">In our operation</span> Log triage, file hygiene, draft bookkeeping entries reconciliation will catch.</p>
+      </div>
+
+      <div class="cell cell--exec">
+        <span class="cell-tag">Rule &middot; expensive</span>
+        <h2>Agent executes, verification closes the loop</h2>
+        <dl class="split">
+          <dt>Agent</dt><dd>Runs the sequence. Every claim is checked against ground truth before it counts.</dd>
+          <dt>Human</dt><dd>Audits the exceptions, not the successes.</dd>
+        </dl>
+        <p class="eg"><span class="eg-tag">In our operation</span> Service deployments &mdash; staged, health-checked, rolled back automatically when the check fails.</p>
+      </div>
+
+      <div class="row-label"><span class="axis-label">Written rule</span><span class="axis-val">no</span></div>
+
+      <div class="cell cell--draft">
+        <span class="cell-tag">No rule &middot; cheap</span>
+        <h2>Human decides, agent drafts and watches</h2>
+        <dl class="split">
+          <dt>Agent</dt><dd>Drafts, summarises, flags what moved. Never signs off.</dd>
+          <dt>Human</dt><dd>Keeps the call. Taste matters more than correctness here.</dd>
+        </dl>
+        <p class="eg"><span class="eg-tag">In our operation</span> Tone of a client reply; which of three features to cut this sprint.</p>
+      </div>
+
+      <div class="cell cell--human">
+        <span class="cell-tag">No rule &middot; expensive</span>
+        <h2>Stays human. Agent improves the information.</h2>
+        <dl class="split">
+          <dt>Agent</dt><dd>Pulls history, lays out options, shows what you are not looking at.</dd>
+          <dt>Human</dt><dd>Decides. Full stop &mdash; this lane never moves.</dd>
+        </dl>
+        <p class="eg"><span class="eg-tag">In our operation</span> Pricing; what to build next; whether a client relationship is healthy or just quiet.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="rules">
+    <span class="eyebrow rules-label">The rule it all hangs on</span>
+    <p class="rule-line">Nothing an agent claims is trusted until it is verified from ground truth.</p>
+  </section>
+
+  <figcaption class="foot">
+    <span class="verdict"><b class="num">2</b> questions</span>
+    <span class="sep" aria-hidden="true">&middot;</span>
+    <span class="verdict"><b class="num">4</b> lanes</span>
+    <span class="sep" aria-hidden="true">&middot;</span>
+    <span class="verdict twist">delegate the decision, never the verification</span>
+  </figcaption>
+
+</figure>
+</div>

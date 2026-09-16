@@ -1,0 +1,453 @@
+/* ── Decision-rights 2×2 map infographic — fully scoped to
+   .n3l-ai-runs-company ──
+   Sibling of the build-vs-buy map and the automation lane map: same ink/paper
+   system, same mast rhythm, same list typography, its own accent quartet
+   (teal = agent decides, indigo = agent executes + verified, amber = human
+   decides while the agent drafts, crimson = stays human). All custom properties
+   are declared on the wrapper itself, so nothing leaks into the page. */
+
+  .n3l-ai-runs-company{
+    --ink:         #0B1020;   /* deep navy, near-black */
+    --ink-2:       #141B33;   /* panel navy */
+    --ink-3:       #232C4A;   /* hairlines on dark */
+    --paper:       #FFFFFF;
+    --paper-2:     #F4F5F8;   /* page ground */
+    --rule:        #E1E4EC;
+    --muted:       #5B6480;
+    --muted-dark:  #9AA3BF;   /* muted on navy */
+    --accent:      #3F3FB3;   /* NEXT3LABS indigo */
+    --accent-hi:   #6B6BE8;   /* lifted indigo for dark ground */
+    --decide:      #0E7C86;   /* rule + cheap — agent decides (teal) */
+    --decide-bg:   #E8F5F6;
+    --decide-ring: #BCE0E3;
+    --exec:        #3F3FB3;   /* rule + expensive — agent executes (indigo) */
+    --exec-bg:     #ECECFA;
+    --exec-ring:   #CBCBEF;
+    --draft:       #B5730A;   /* no rule + cheap — agent drafts (amber) */
+    --draft-bg:    #FCF3E3;
+    --draft-ring:  #EFD9AE;
+    --human:       #C0324B;   /* no rule + expensive — stays human (crimson) */
+    --human-bg:    #FBEBEE;
+    --human-ring:  #F0C8D0;
+    --r:           6px;
+    --shadow-lg:   0 4px 10px rgba(11,16,32,.10), 0 22px 48px -14px rgba(11,16,32,.34);
+
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    margin:32px 0;
+  }
+
+  .n3l-ai-runs-company,
+  .n3l-ai-runs-company *,
+  .n3l-ai-runs-company *::before,
+  .n3l-ai-runs-company *::after{ box-sizing:border-box; }
+
+  .n3l-ai-runs-company .fig{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+    container-type:inline-size;
+  }
+
+  /* ── shared type ────────────────────────────────────────── */
+  .n3l-ai-runs-company .num{
+    font-family:Archivo,Inter,sans-serif;
+    font-weight:600;
+    letter-spacing:-.05em;
+    line-height:.86;
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  .n3l-ai-runs-company .eyebrow{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  /* ── masthead ───────────────────────────────────────────── */
+  .n3l-ai-runs-company .mast{
+    background:var(--ink);
+    color:var(--paper);
+    padding:34px 36px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .n3l-ai-runs-company .mast::after{ /* faint diagonal ruling, no gradient wash */
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(115deg,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 13px);
+    pointer-events:none;
+  }
+  .n3l-ai-runs-company .mast > *{ position:relative; z-index:1; }
+
+  .n3l-ai-runs-company .brand-eyebrow{
+    display:block;
+    color:var(--muted-dark);
+    margin-bottom:24px;
+  }
+
+  .n3l-ai-runs-company h1{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:clamp(28px,5.4cqi,40px);
+    line-height:1.06;
+    letter-spacing:-.038em;
+    margin:0 0 12px;
+    max-width:18ch;
+    text-wrap:balance;
+    color:var(--paper);
+  }
+  .n3l-ai-runs-company h1 .hi{ color:var(--accent-hi); }
+
+  .n3l-ai-runs-company .sub{
+    margin:0;
+    font-size:15px;
+    line-height:1.5;
+    color:var(--muted-dark);
+    max-width:48ch;
+  }
+
+  .n3l-ai-runs-company .mast-rule{
+    height:2px;
+    width:56px;
+    background:var(--accent-hi);
+    margin-top:22px;
+  }
+
+  /* ── the two sorting questions ──────────────────────────── */
+  .n3l-ai-runs-company .gate{
+    padding:26px 36px 4px;
+  }
+  .n3l-ai-runs-company .gate-head .eyebrow{
+    color:var(--muted);
+    display:block;
+    margin-bottom:14px;
+  }
+
+  .n3l-ai-runs-company .questions{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .n3l-ai-runs-company .q{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:var(--paper-2);
+    border:1px solid var(--rule);
+    border-radius:var(--r);
+    padding:14px 16px;
+  }
+
+  .n3l-ai-runs-company .q-num{
+    font-size:22px;
+    color:var(--accent);
+    flex:0 0 auto;
+    padding-top:2px;
+    min-width:16px;
+  }
+
+  .n3l-ai-runs-company .q-body{ min-width:0; }
+
+  .n3l-ai-runs-company .q h2{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:-.015em;
+    line-height:1.25;
+    margin:0 0 5px;
+  }
+  .n3l-ai-runs-company .q p{
+    margin:0;
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+
+  /* ── map head + legend ──────────────────────────────────── */
+  .n3l-ai-runs-company .map-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    padding:26px 36px 0;
+  }
+  .n3l-ai-runs-company .map-head .eyebrow{ color:var(--muted); }
+  .n3l-ai-runs-company .legend{
+    display:flex;
+    align-items:center;
+    font-size:11px;
+    color:var(--muted);
+    gap:2px;
+    flex-wrap:wrap;
+  }
+  .n3l-ai-runs-company .chip{
+    display:inline-block;
+    width:9px; height:9px;
+    border-radius:50%;
+    margin:0 5px 0 12px;
+    vertical-align:middle;
+  }
+  .n3l-ai-runs-company .chip:first-child{ margin-left:0; }
+  .n3l-ai-runs-company .chip--decide{ background:var(--decide); }
+  .n3l-ai-runs-company .chip--exec{ background:var(--exec); }
+  .n3l-ai-runs-company .chip--draft{ background:var(--draft); }
+  .n3l-ai-runs-company .chip--human{ background:var(--human); }
+
+  /* ── the 2×2 map ────────────────────────────────────────── */
+  .n3l-ai-runs-company .map{
+    padding:18px 36px 4px;
+  }
+
+  .n3l-ai-runs-company .axis-x{
+    display:grid;
+    grid-template-columns:96px 1fr 1fr;
+    gap:12px;
+    align-items:baseline;
+    margin-bottom:10px;
+  }
+  .n3l-ai-runs-company .axis-label{
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .n3l-ai-runs-company .axis-val{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:-.01em;
+    color:var(--ink);
+  }
+  .n3l-ai-runs-company .axis-x .axis-val{
+    padding-left:2px;
+    border-top:2px solid var(--rule);
+    padding-top:6px;
+  }
+
+  .n3l-ai-runs-company .grid{
+    display:grid;
+    grid-template-columns:96px 1fr 1fr;
+    gap:12px;
+    align-items:stretch;
+  }
+
+  .n3l-ai-runs-company .row-label{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:4px;
+    padding-right:10px;
+    border-right:2px solid var(--rule);
+    text-align:right;
+  }
+  .n3l-ai-runs-company .row-label .axis-val{ font-size:15px; }
+
+  .n3l-ai-runs-company .cell{
+    border:1px solid var(--rule);
+    border-radius:8px;
+    border-top-width:4px;
+    padding:14px 16px 13px;
+    background:var(--paper);
+    min-width:0;
+  }
+  .n3l-ai-runs-company .cell--decide{ border-top-color:var(--decide); }
+  .n3l-ai-runs-company .cell--exec{ border-top-color:var(--exec); }
+  .n3l-ai-runs-company .cell--draft{ border-top-color:var(--draft); }
+  .n3l-ai-runs-company .cell--human{ border-top-color:var(--human); }
+
+  .n3l-ai-runs-company .cell-tag{
+    display:inline-block;
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+    margin-bottom:9px;
+  }
+  .n3l-ai-runs-company .cell--decide .cell-tag{ background:var(--decide-bg); color:var(--decide); box-shadow:inset 0 0 0 1px var(--decide-ring); }
+  .n3l-ai-runs-company .cell--exec .cell-tag{ background:var(--exec-bg); color:var(--exec); box-shadow:inset 0 0 0 1px var(--exec-ring); }
+  .n3l-ai-runs-company .cell--draft .cell-tag{ background:var(--draft-bg); color:var(--draft); box-shadow:inset 0 0 0 1px var(--draft-ring); }
+  .n3l-ai-runs-company .cell--human .cell-tag{ background:var(--human-bg); color:var(--human); box-shadow:inset 0 0 0 1px var(--human-ring); }
+
+  .n3l-ai-runs-company .cell h2{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    letter-spacing:-.018em;
+    line-height:1.22;
+    margin:0 0 11px;
+    text-wrap:balance;
+  }
+
+  /* ── who does what, inside each lane ────────────────────── */
+  .n3l-ai-runs-company .split{
+    margin:0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:5px 10px;
+    align-items:baseline;
+  }
+  .n3l-ai-runs-company .split dt{
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    padding-top:1px;
+  }
+  .n3l-ai-runs-company .cell--decide .split dt{ color:var(--decide); }
+  .n3l-ai-runs-company .cell--exec .split dt{ color:var(--exec); }
+  .n3l-ai-runs-company .cell--draft .split dt{ color:var(--draft); }
+  .n3l-ai-runs-company .cell--human .split dt{ color:var(--human); }
+  .n3l-ai-runs-company .split dd{
+    margin:0;
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+
+  /* ── the worked example under each lane ─────────────────── */
+  .n3l-ai-runs-company .eg{
+    margin:11px 0 0;
+    padding-top:10px;
+    border-top:1px dashed var(--rule);
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+  .n3l-ai-runs-company .eg-tag{
+    display:inline-block;
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    margin-right:8px;
+    vertical-align:1px;
+    color:var(--ink);
+  }
+
+  /* ── the operating rule strip ───────────────────────────── */
+  .n3l-ai-runs-company .rules{
+    margin:16px 36px 0;
+    padding:16px 20px;
+    background:var(--ink);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .n3l-ai-runs-company .rules-label{
+    color:var(--muted-dark);
+    white-space:nowrap;
+  }
+  .n3l-ai-runs-company .rule-line{
+    margin:0;
+    flex:1 1 320px;
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:15px;
+    line-height:1.35;
+    letter-spacing:-.015em;
+    color:var(--paper);
+    position:relative;
+    padding-left:14px;
+  }
+  .n3l-ai-runs-company .rule-line::before{
+    content:"";
+    position:absolute;
+    left:0; top:7px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--accent-hi);
+  }
+
+  /* ── footer verdict ─────────────────────────────────────── */
+  .n3l-ai-runs-company .foot{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:18px 36px 26px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .n3l-ai-runs-company .verdict .num{
+    font-size:17px;
+    color:var(--accent);
+    vertical-align:-1px;
+  }
+  .n3l-ai-runs-company .verdict.twist{ color:var(--ink); font-weight:600; }
+  .n3l-ai-runs-company .sep{ color:var(--rule); }
+
+  /* ── mobile: the 2×2 unfolds into four stacked lanes ────── */
+  @container (max-width:719px){
+    .n3l-ai-runs-company .mast{ padding:26px 22px 24px; }
+    .n3l-ai-runs-company .gate{ padding:22px 22px 0; }
+    .n3l-ai-runs-company .questions{ grid-template-columns:1fr; }
+    .n3l-ai-runs-company .map-head{ padding:22px 22px 0; }
+    .n3l-ai-runs-company .map{ padding:14px 22px 4px; }
+    .n3l-ai-runs-company .axis-x{ display:none; }
+    .n3l-ai-runs-company .grid{ grid-template-columns:1fr; gap:10px; }
+    .n3l-ai-runs-company .row-label{
+      flex-direction:row;
+      align-items:baseline;
+      justify-content:flex-start;
+      gap:8px;
+      text-align:left;
+      padding:6px 0 0;
+      border-right:0;
+      border-top:2px solid var(--rule);
+    }
+    .n3l-ai-runs-company .row-label .axis-val{ font-size:13px; }
+    .n3l-ai-runs-company .rules{ margin:14px 22px 0; align-items:flex-start; flex-direction:column; gap:10px; }
+    .n3l-ai-runs-company .rule-line{ font-size:14px; }
+    .n3l-ai-runs-company .foot{ padding:14px 22px 22px; }
+  }
+
+  /* Fallback for engines without container query support: the figure is capped
+     at 720px, so a narrow viewport implies a narrow figure. */
+  @supports not (container-type:inline-size){
+    @media (max-width:760px){
+      .n3l-ai-runs-company .mast{ padding:26px 22px 24px; }
+      .n3l-ai-runs-company .gate{ padding:22px 22px 0; }
+      .n3l-ai-runs-company .questions{ grid-template-columns:1fr; }
+      .n3l-ai-runs-company .map-head{ padding:22px 22px 0; }
+      .n3l-ai-runs-company .map{ padding:14px 22px 4px; }
+      .n3l-ai-runs-company .axis-x{ display:none; }
+      .n3l-ai-runs-company .grid{ grid-template-columns:1fr; gap:10px; }
+      .n3l-ai-runs-company .row-label{
+        flex-direction:row;
+        align-items:baseline;
+        justify-content:flex-start;
+        gap:8px;
+        text-align:left;
+        padding:6px 0 0;
+        border-right:0;
+        border-top:2px solid var(--rule);
+      }
+      .n3l-ai-runs-company .row-label .axis-val{ font-size:13px; }
+      .n3l-ai-runs-company .rules{ margin:14px 22px 0; align-items:flex-start; flex-direction:column; gap:10px; }
+      .n3l-ai-runs-company .rule-line{ font-size:14px; }
+      .n3l-ai-runs-company .foot{ padding:14px 22px 22px; }
+    }
+  }
