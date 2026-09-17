@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
-title: What AI-assisted software development actually looks like
-description: Most vendors saying "AI-assisted" mean autocomplete. Here is the arrangement that actually changes delivery speed — bounded agents, verification against ground truth, human sign-off — and the work where it does not help at all.
+title: "AI-assisted software development in Singapore: what it actually looks like"
+description: Most vendors in Singapore saying "AI-assisted software development" mean autocomplete. Here is the arrangement that actually changes delivery speed — bounded agents, verification against ground truth, human sign-off — and the work where it does not help at all.
 date: 2026-09-18
 readingTime: 7
 tags: posts
