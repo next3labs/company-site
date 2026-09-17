@@ -1,0 +1,374 @@
+/* ── AI-assisted development: suggestion-only vs bounded-agent lanes —
+   fully scoped to .n3l-ai-assisted-dev ──
+   Sibling of the decision-rights map and the build-vs-buy map: same ink/paper
+   system, same mast rhythm, same eyebrow/num typography. Its accent pair is
+   deliberately narrow — slate = the suggestion-only lane (present, unremarkable),
+   indigo = the bounded-agent lane, with teal reserved for the verification gate
+   so the one stage that carries the argument is the one stage that reads hot.
+   All custom properties are declared on the wrapper itself, so nothing leaks
+   into the page. */
+
+  .n3l-ai-assisted-dev{
+    --ink:         #0B1020;   /* deep navy, near-black */
+    --ink-2:       #141B33;   /* panel navy */
+    --paper:       #FFFFFF;
+    --paper-2:     #F4F5F8;   /* page ground */
+    --rule:        #E1E4EC;
+    --muted:       #5B6480;
+    --muted-dark:  #9AA3BF;   /* muted on navy */
+    --accent:      #3F3FB3;   /* NEXT3LABS indigo */
+    --accent-hi:   #6B6BE8;   /* lifted indigo for dark ground */
+    --sugg:        #6B7390;   /* suggestion-only lane (slate) */
+    --sugg-bg:     #EFF1F5;
+    --sugg-ring:   #D7DBE5;
+    --agent:       #3F3FB3;   /* bounded-agent lane (indigo) */
+    --agent-bg:    #ECECFA;
+    --agent-ring:  #CBCBEF;
+    --gate:        #0E7C86;   /* the verification gate (teal) */
+    --gate-bg:     #E8F5F6;
+    --gate-ring:   #BCE0E3;
+    --warn:        #B5730A;   /* the self-marked-homework problem (amber) */
+    --r:           6px;
+    --shadow-lg:   0 4px 10px rgba(11,16,32,.10), 0 22px 48px -14px rgba(11,16,32,.34);
+
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    margin:32px 0;
+  }
+
+  .n3l-ai-assisted-dev,
+  .n3l-ai-assisted-dev *,
+  .n3l-ai-assisted-dev *::before,
+  .n3l-ai-assisted-dev *::after{ box-sizing:border-box; }
+
+  .n3l-ai-assisted-dev .fig{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+    container-type:inline-size;
+  }
+
+  /* ── shared type ────────────────────────────────────────── */
+  .n3l-ai-assisted-dev .num{
+    font-family:Archivo,Inter,sans-serif;
+    font-weight:600;
+    letter-spacing:-.05em;
+    line-height:.86;
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  .n3l-ai-assisted-dev .eyebrow{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  /* ── masthead ───────────────────────────────────────────── */
+  .n3l-ai-assisted-dev .mast{
+    background:var(--ink);
+    color:var(--paper);
+    padding:34px 36px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .n3l-ai-assisted-dev .mast::after{ /* faint diagonal ruling, no gradient wash */
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(115deg,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 13px);
+    pointer-events:none;
+  }
+  .n3l-ai-assisted-dev .mast > *{ position:relative; z-index:1; }
+
+  .n3l-ai-assisted-dev .brand-eyebrow{
+    display:block;
+    color:var(--muted-dark);
+    margin-bottom:24px;
+  }
+
+  .n3l-ai-assisted-dev h1{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:clamp(28px,5.4cqi,40px);
+    line-height:1.06;
+    letter-spacing:-.038em;
+    margin:0 0 12px;
+    max-width:18ch;
+    text-wrap:balance;
+    color:var(--paper);
+  }
+  .n3l-ai-assisted-dev h1 .hi{ color:var(--accent-hi); }
+
+  .n3l-ai-assisted-dev .sub{
+    margin:0;
+    font-size:15px;
+    line-height:1.5;
+    color:var(--muted-dark);
+    max-width:52ch;
+  }
+
+  .n3l-ai-assisted-dev .mast-rule{
+    height:2px;
+    width:56px;
+    background:var(--accent-hi);
+    margin-top:22px;
+  }
+
+  /* ── lanes head + legend ────────────────────────────────── */
+  .n3l-ai-assisted-dev .lanes-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    padding:26px 36px 0;
+  }
+  .n3l-ai-assisted-dev .lanes-head .eyebrow{ color:var(--muted); }
+  .n3l-ai-assisted-dev .legend{
+    display:flex;
+    align-items:center;
+    font-size:11px;
+    color:var(--muted);
+    gap:2px;
+    flex-wrap:wrap;
+  }
+  .n3l-ai-assisted-dev .chip{
+    display:inline-block;
+    width:9px; height:9px;
+    border-radius:50%;
+    margin:0 5px 0 12px;
+    vertical-align:middle;
+  }
+  .n3l-ai-assisted-dev .chip:first-child{ margin-left:0; }
+  .n3l-ai-assisted-dev .chip--sugg{ background:var(--sugg); }
+  .n3l-ai-assisted-dev .chip--agent{ background:var(--agent); }
+
+  /* ── the two lanes ──────────────────────────────────────── */
+  .n3l-ai-assisted-dev .lanes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    padding:18px 36px 4px;
+    align-items:stretch;
+  }
+
+  .n3l-ai-assisted-dev .lane{
+    border:1px solid var(--rule);
+    border-radius:8px;
+    border-top-width:4px;
+    padding:15px 17px 14px;
+    background:var(--paper);
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+  }
+  .n3l-ai-assisted-dev .lane--sugg{ border-top-color:var(--sugg); background:var(--paper-2); }
+  .n3l-ai-assisted-dev .lane--agent{ border-top-color:var(--agent); }
+
+  .n3l-ai-assisted-dev .lane-tag{
+    display:inline-block;
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+    margin-bottom:9px;
+  }
+  .n3l-ai-assisted-dev .lane--sugg .lane-tag{ background:var(--sugg-bg); color:var(--sugg); box-shadow:inset 0 0 0 1px var(--sugg-ring); }
+  .n3l-ai-assisted-dev .lane--agent .lane-tag{ background:var(--agent-bg); color:var(--agent); box-shadow:inset 0 0 0 1px var(--agent-ring); }
+
+  .n3l-ai-assisted-dev .lane h2{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:-.018em;
+    line-height:1.22;
+    margin:0 0 7px;
+    text-wrap:balance;
+  }
+
+  .n3l-ai-assisted-dev .lane-note{
+    margin:0 0 13px;
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+
+  /* ── the four stages, as a rail ─────────────────────────── */
+  .n3l-ai-assisted-dev .stages{
+    list-style:none;
+    margin:0 0 13px;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    flex:1 1 auto;
+  }
+
+  .n3l-ai-assisted-dev .stage{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    position:relative;
+    min-width:0;
+  }
+  /* the connective rail between stage markers */
+  .n3l-ai-assisted-dev .stage:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:23px;
+    bottom:-11px;
+    width:1px;
+    background:var(--rule);
+  }
+
+  .n3l-ai-assisted-dev .stage-num{
+    flex:0 0 auto;
+    width:21px; height:21px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    line-height:1;
+    position:relative;
+    z-index:1;
+  }
+  .n3l-ai-assisted-dev .lane--sugg .stage-num{
+    background:var(--sugg-bg);
+    color:var(--sugg);
+    box-shadow:inset 0 0 0 1px var(--sugg-ring);
+  }
+  .n3l-ai-assisted-dev .lane--agent .stage-num{
+    background:var(--agent-bg);
+    color:var(--agent);
+    box-shadow:inset 0 0 0 1px var(--agent-ring);
+  }
+  /* the verification gate is the one stage that carries the argument */
+  .n3l-ai-assisted-dev .stage--gate .stage-num{
+    background:var(--gate);
+    color:var(--paper);
+    box-shadow:0 0 0 3px var(--gate-bg);
+  }
+
+  .n3l-ai-assisted-dev .stage-body{ min-width:0; padding-top:2px; }
+
+  .n3l-ai-assisted-dev .stage h3{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:-.012em;
+    line-height:1.25;
+    margin:0 0 4px;
+  }
+  .n3l-ai-assisted-dev .stage--gate h3{ color:var(--gate); }
+
+  .n3l-ai-assisted-dev .stage p{
+    margin:0;
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+  .n3l-ai-assisted-dev .stage p .warn{ color:var(--warn); font-weight:600; }
+  .n3l-ai-assisted-dev .stage p .good{ color:var(--gate); font-weight:600; }
+
+  /* ── the per-lane verdict ───────────────────────────────── */
+  .n3l-ai-assisted-dev .verdict-line{
+    margin:0;
+    padding-top:11px;
+    border-top:1px dashed var(--rule);
+    font-size:11.5px;
+    line-height:1.45;
+    color:var(--muted);
+  }
+  .n3l-ai-assisted-dev .verdict-line b{ color:var(--ink); }
+  .n3l-ai-assisted-dev .lane--agent .verdict-line b{ color:var(--agent); }
+
+  /* ── the operating rule strip ───────────────────────────── */
+  .n3l-ai-assisted-dev .rules{
+    margin:16px 36px 0;
+    padding:16px 20px;
+    background:var(--ink);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .n3l-ai-assisted-dev .rules-label{
+    color:var(--muted-dark);
+    white-space:nowrap;
+  }
+  .n3l-ai-assisted-dev .rule-line{
+    margin:0;
+    flex:1 1 320px;
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:15px;
+    line-height:1.35;
+    letter-spacing:-.015em;
+    color:var(--paper);
+    position:relative;
+    padding-left:14px;
+  }
+  .n3l-ai-assisted-dev .rule-line::before{
+    content:"";
+    position:absolute;
+    left:0; top:7px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--accent-hi);
+  }
+
+  /* ── footer verdict ─────────────────────────────────────── */
+  .n3l-ai-assisted-dev .foot{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:18px 36px 26px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .n3l-ai-assisted-dev .verdict .num{
+    font-size:17px;
+    color:var(--accent);
+    vertical-align:-1px;
+  }
+  .n3l-ai-assisted-dev .verdict.twist{ color:var(--ink); font-weight:600; }
+  .n3l-ai-assisted-dev .sep{ color:var(--rule); }
+
+  /* ── mobile: the two lanes stack ────────────────────────── */
+  @container (max-width:719px){
+    .n3l-ai-assisted-dev .mast{ padding:26px 22px 24px; }
+    .n3l-ai-assisted-dev .lanes-head{ padding:22px 22px 0; }
+    .n3l-ai-assisted-dev .lanes{ grid-template-columns:1fr; gap:10px; padding:14px 22px 4px; }
+    .n3l-ai-assisted-dev .rules{ margin:14px 22px 0; align-items:flex-start; flex-direction:column; gap:10px; }
+    .n3l-ai-assisted-dev .rule-line{ font-size:14px; }
+    .n3l-ai-assisted-dev .foot{ padding:14px 22px 22px; }
+  }
+
+  /* Fallback for engines without container query support: the figure is capped
+     at 720px, so a narrow viewport implies a narrow figure. */
+  @supports not (container-type:inline-size){
+    @media (max-width:760px){
+      .n3l-ai-assisted-dev .mast{ padding:26px 22px 24px; }
+      .n3l-ai-assisted-dev .lanes-head{ padding:22px 22px 0; }
+      .n3l-ai-assisted-dev .lanes{ grid-template-columns:1fr; gap:10px; padding:14px 22px 4px; }
+      .n3l-ai-assisted-dev .rules{ margin:14px 22px 0; align-items:flex-start; flex-direction:column; gap:10px; }
+      .n3l-ai-assisted-dev .rule-line{ font-size:14px; }
+      .n3l-ai-assisted-dev .foot{ padding:14px 22px 22px; }
+    }
+  }

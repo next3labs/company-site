@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="/assets/css/infographic-ai-assisted-dev.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<div class="n3l-ai-assisted-dev">
+<figure class="fig">
+
+  <header class="mast">
+    <span class="eyebrow brand-eyebrow">NEXT3LABS &mdash; AI-assisted software development</span>
+    <h1>Autocomplete is not <span class="hi">a delivery model</span>.</h1>
+    <p class="sub">Both of these get called &ldquo;AI-assisted&rdquo;. Only one of them changes who has to be at the keyboard &mdash; and only one of them has somewhere for a wrong answer to be caught.</p>
+    <div class="mast-rule"></div>
+  </header>
+
+  <div class="lanes-head">
+    <span class="eyebrow">Same four stages, two very different arrangements</span>
+    <span class="legend">
+      <i class="chip chip--sugg" aria-hidden="true"></i> suggestion-only
+      &nbsp;<i class="chip chip--agent" aria-hidden="true"></i> bounded agent
+    </span>
+  </div>
+
+  <div class="lanes">
+
+    <section class="lane lane--sugg">
+      <header class="lane-head">
+        <span class="lane-tag">Suggestion-only</span>
+        <h2>&ldquo;We use Copilot&rdquo;</h2>
+        <p class="lane-note">The engineer still performs every stage. The tool types faster than they do.</p>
+      </header>
+
+      <ol class="stages">
+        <li class="stage">
+          <span class="stage-num num">1</span>
+          <div class="stage-body">
+            <h3>Scope</h3>
+            <p>Held in someone&rsquo;s head. Nothing written the tool could be held to.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <span class="stage-num num">2</span>
+          <div class="stage-body">
+            <h3>Build</h3>
+            <p>Line-by-line completions inside one file. The human drives every keystroke.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <span class="stage-num num">3</span>
+          <div class="stage-body">
+            <h3>Check</h3>
+            <p><b class="warn">Same engineer, same assumptions.</b> Whoever accepted the suggestion also decides it was right.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <span class="stage-num num">4</span>
+          <div class="stage-body">
+            <h3>Ship</h3>
+            <p>Review queue and release still cost exactly what they always did.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="verdict-line">Typing was never the bottleneck. <b>Net effect: modest.</b></p>
+    </section>
+
+    <section class="lane lane--agent">
+      <header class="lane-head">
+        <span class="lane-tag">Bounded agent</span>
+        <h2>How we actually build</h2>
+        <p class="lane-note">Whole stages are delegated under written conditions &mdash; and every claim meets an independent check.</p>
+      </header>
+
+      <ol class="stages">
+        <li class="stage">
+          <span class="stage-num num">1</span>
+          <div class="stage-body">
+            <h3>Scope written as conditions</h3>
+            <p>What the agent may decide, and where it must stop and ask. The boundary is the deliverable.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <span class="stage-num num">2</span>
+          <div class="stage-body">
+            <h3>Agent executes the lane</h3>
+            <p>Implementation, tests, migration, logs &mdash; the volume work, run end to end rather than suggested.</p>
+          </div>
+        </li>
+        <li class="stage stage--gate">
+          <span class="stage-num num">3</span>
+          <div class="stage-body">
+            <h3>Verified against ground truth</h3>
+            <p><b class="good">Something the agent does not control answers.</b> Real device, real endpoint, real statement &mdash; not the agent&rsquo;s own report.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <span class="stage-num num">4</span>
+          <div class="stage-body">
+            <h3>Human sign-off</h3>
+            <p>An engineer reads the diff and owns what ships. This stage never moves.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="verdict-line">The hours came out of stage 2. <b>Stages 3 and 4 got stricter.</b></p>
+    </section>
+
+  </div>
+
+  <section class="rules">
+    <span class="eyebrow rules-label">The gate that makes the speed safe</span>
+    <p class="rule-line">A green result is not evidence. Ground truth is.</p>
+  </section>
+
+  <figcaption class="foot">
+    <span class="verdict"><b class="num">5&ndash;7&times;</b> faster on fixes and changes</span>
+    <span class="sep" aria-hidden="true">&middot;</span>
+    <span class="verdict twist">our own figure, from our own delivery calendar</span>
+  </figcaption>
+
+</figure>
+</div>
