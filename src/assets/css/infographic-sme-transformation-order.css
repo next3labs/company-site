@@ -1,0 +1,399 @@
+/* ── Singapore SME digital transformation: the stage order that works —
+   fully scoped to .n3l-sme-transformation-order ──
+   Sibling of the adoption path and the automation lane map: same ink/paper
+   system, same mast rhythm, same numbered step grid. Accents are narrow —
+   indigo carries the sequence, teal is reserved for stage 4 (the independent
+   verification gate, the stage that carries the argument), green lands stage 5,
+   and crimson marks the order that fails. All custom properties are declared
+   on the wrapper itself, so nothing leaks into the surrounding page. */
+
+  .n3l-sme-transformation-order{
+    --ink:        #0B1020;   /* deep navy, near-black */
+    --ink-2:      #141B33;   /* panel navy */
+    --ink-3:      #232C4A;   /* hairlines on dark */
+    --paper:      #FFFFFF;
+    --paper-2:    #F4F5F8;   /* page ground */
+    --rule:       #E1E4EC;
+    --muted:      #5B6480;
+    --muted-dark: #9AA3BF;   /* muted on navy */
+    --accent:     #3F3FB3;   /* NEXT3LABS indigo */
+    --accent-hi:  #6B6BE8;   /* lifted indigo for dark ground */
+    --step-bg:    #EEEEFA;   /* step marker ground */
+    --step-ring:  #CFCFF2;
+    --gate:       #0E7C86;   /* stage 4 — the independent check (teal) */
+    --gate-bg:    #E8F5F6;
+    --gate-ring:  #BCE0E3;
+    --done:       #17936B;   /* stage 5 lands */
+    --done-bg:    #EAF7F1;
+    --done-ring:  #BFE5D6;
+    --stop:       #C0324B;   /* the order that fails (crimson) */
+    --stop-bg:    #FBEBEE;
+    --stop-ring:  #F0C8D0;
+    --r:          6px;
+    --shadow-lg:  0 4px 10px rgba(11,16,32,.10), 0 22px 48px -14px rgba(11,16,32,.34);
+
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    margin:32px 0;
+  }
+
+  .n3l-sme-transformation-order,
+  .n3l-sme-transformation-order *,
+  .n3l-sme-transformation-order *::before,
+  .n3l-sme-transformation-order *::after{ box-sizing:border-box; }
+
+  .n3l-sme-transformation-order .fig{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+    container-type:inline-size;
+  }
+
+  /* ── shared type ────────────────────────────────────────── */
+  .n3l-sme-transformation-order .num{
+    font-family:Archivo,Inter,sans-serif;
+    font-weight:600;
+    letter-spacing:-.05em;
+    line-height:.86;
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  .n3l-sme-transformation-order .eyebrow{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  /* ── masthead ───────────────────────────────────────────── */
+  .n3l-sme-transformation-order .mast{
+    background:var(--ink);
+    color:var(--paper);
+    padding:34px 36px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .n3l-sme-transformation-order .mast::after{ /* faint diagonal ruling */
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(115deg,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 13px);
+    pointer-events:none;
+  }
+  .n3l-sme-transformation-order .mast > *{ position:relative; z-index:1; }
+
+  .n3l-sme-transformation-order .brand-eyebrow{
+    display:block;
+    color:var(--muted-dark);
+    margin-bottom:24px;
+  }
+
+  /* the title is a styled div, not a heading — the post owns the h1 */
+  .n3l-sme-transformation-order .title{
+    font-family:Archivo,sans-serif;
+    font-weight:600;
+    font-size:clamp(28px,5.4cqi,40px);
+    line-height:1.06;
+    letter-spacing:-.038em;
+    margin:0 0 12px;
+    max-width:18ch;
+    text-wrap:balance;
+    color:var(--paper);
+  }
+  .n3l-sme-transformation-order .title .hi{ color:var(--accent-hi); }
+
+  .n3l-sme-transformation-order .sub{
+    font-size:15px;
+    line-height:1.5;
+    color:#C3C9DE;
+    margin:0;
+    max-width:46ch;
+  }
+  .n3l-sme-transformation-order .sub strong{ color:var(--paper); font-weight:600; }
+
+  .n3l-sme-transformation-order .mast-rule{
+    margin-top:26px;
+    height:3px;
+    width:76px;
+    background:var(--accent-hi);
+    border-radius:2px;
+  }
+
+  /* ── the order that fails — one crimson strip ───────────── */
+  .n3l-sme-transformation-order .wrong{
+    padding:16px 36px 17px;
+    background:var(--stop-bg);
+    border-bottom:1px solid var(--stop-ring);
+  }
+  .n3l-sme-transformation-order .wrong-label{
+    display:block;
+    color:var(--stop);
+    margin-bottom:8px;
+  }
+  .n3l-sme-transformation-order .wrong-line{
+    margin:0;
+    font-size:13px;
+    line-height:1.5;
+    color:var(--ink);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+  .n3l-sme-transformation-order .wrong-line .chev{
+    color:var(--stop);
+    font-weight:600;
+    padding:0 2px;
+  }
+  .n3l-sme-transformation-order .wrong-line b{
+    font-weight:600;
+    color:var(--stop);
+  }
+
+  /* ── steps header strip ─────────────────────────────────── */
+  .n3l-sme-transformation-order .steps-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:16px 36px 14px;
+    background:var(--paper-2);
+    border-bottom:1px solid var(--rule);
+  }
+  .n3l-sme-transformation-order .steps-head .eyebrow{ color:var(--accent); }
+  .n3l-sme-transformation-order .steps-head .legend{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:none;
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.04em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+
+  /* ── the five step rows ─────────────────────────────────── */
+  .n3l-sme-transformation-order .steps{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .n3l-sme-transformation-order .step{
+    display:grid;
+    grid-template-columns:44px minmax(0,1fr) 26px;
+    align-items:center;
+    column-gap:16px;
+    padding:17px 36px;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+  }
+  .n3l-sme-transformation-order .step:last-child{ border-bottom:0; }
+
+  /* the thread running down the numbers — the order made visible */
+  .n3l-sme-transformation-order .step::before{
+    content:"";
+    position:absolute;
+    left:47px;
+    top:50%;
+    bottom:-1px;
+    width:1px;
+    background:var(--rule);
+  }
+  .n3l-sme-transformation-order .step--last::before{ display:none; }
+
+  .n3l-sme-transformation-order .idx{
+    font-size:26px;
+    color:var(--accent);
+    position:relative;
+    z-index:1;
+  }
+  .n3l-sme-transformation-order .step--gate{ background:var(--gate-bg); }
+  .n3l-sme-transformation-order .step--gate .idx{ color:var(--gate); }
+  .n3l-sme-transformation-order .step--last .idx{ color:var(--done); }
+
+  .n3l-sme-transformation-order .body{ min-width:0; }
+  .n3l-sme-transformation-order .body h3{
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin:0 0 3px;
+    color:var(--ink);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+  .n3l-sme-transformation-order .body p{
+    margin:0;
+    font-size:13px;
+    line-height:1.5;
+    color:var(--muted);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+  .n3l-sme-transformation-order .body .gate-em{
+    font-weight:600;
+    color:var(--gate);
+  }
+
+  /* step marker — carry-on arrow, teal at the gate, green tick at the end */
+  .n3l-sme-transformation-order .mark{
+    width:24px;
+    height:24px;
+    flex:none;
+    justify-self:end;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-style:normal;
+    background:var(--step-bg);
+    border:1.5px solid var(--step-ring);
+    border-radius:50%;
+  }
+  .n3l-sme-transformation-order .mark b{
+    font-weight:600;
+    font-size:12px;
+    line-height:1;
+    color:var(--accent);
+  }
+  .n3l-sme-transformation-order .mark--gate{
+    background:var(--paper);
+    border-color:var(--gate-ring);
+  }
+  .n3l-sme-transformation-order .mark--gate b{ color:var(--gate); }
+  .n3l-sme-transformation-order .mark--end{
+    background:var(--done-bg);
+    border-color:var(--done-ring);
+  }
+  .n3l-sme-transformation-order .mark--end b{ color:var(--done); }
+  .n3l-sme-transformation-order .mark.mini{
+    width:16px;
+    height:16px;
+    border-width:1px;
+  }
+  .n3l-sme-transformation-order .mark.mini b{ font-size:9px; }
+
+  /* ── where SMEs lose it ─────────────────────────────────── */
+  .n3l-sme-transformation-order .rules{
+    padding:16px 36px 18px;
+    background:var(--paper-2);
+    border-top:1px solid var(--rule);
+  }
+  .n3l-sme-transformation-order .rules-label{
+    display:block;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .n3l-sme-transformation-order .rule-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+  }
+  .n3l-sme-transformation-order .rule-item{
+    min-width:0;
+    padding:10px 12px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--accent);
+    border-radius:var(--r);
+    font-size:12px;
+    font-weight:500;
+    line-height:1.35;
+    color:var(--ink);
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  /* ── footer brand line ──────────────────────────────────── */
+  .n3l-sme-transformation-order .foot{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:16px 36px;
+    margin:0;
+    background:var(--ink-2);
+    border-top:1px solid var(--ink-3);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .n3l-sme-transformation-order .foot .mark-word{
+    font-family:Archivo,Inter,sans-serif;
+    font-weight:700;
+    letter-spacing:.1em;
+    color:var(--paper);
+  }
+
+  /* ── narrow: container query + width fallback ───────────── */
+  @container (max-width: 560px){
+    .n3l-sme-transformation-order .mast{ padding:28px 22px 26px; }
+    .n3l-sme-transformation-order .title{ font-size:clamp(25px,7.6cqi,34px); max-width:none; }
+    .n3l-sme-transformation-order .wrong{ padding:14px 22px 15px; }
+    .n3l-sme-transformation-order .steps-head{
+      padding:14px 22px 12px;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+    }
+    .n3l-sme-transformation-order .steps-head .legend{ letter-spacing:.02em; }
+    .n3l-sme-transformation-order .step{
+      grid-template-columns:36px minmax(0,1fr) 22px;
+      column-gap:12px;
+      padding:15px 22px;
+    }
+    .n3l-sme-transformation-order .step::before{ left:33px; }
+    .n3l-sme-transformation-order .idx{ font-size:21px; }
+    .n3l-sme-transformation-order .mark{ width:22px; height:22px; }
+    .n3l-sme-transformation-order .mark b{ font-size:11px; }
+    .n3l-sme-transformation-order .rules{ padding:14px 22px 16px; }
+    .n3l-sme-transformation-order .rule-list{ grid-template-columns:minmax(0,1fr); gap:6px; }
+    .n3l-sme-transformation-order .foot{
+      padding:14px 22px;
+      font-size:10px;
+      justify-content:flex-start;
+      row-gap:4px;
+    }
+  }
+
+  @media (max-width: 600px){
+    .n3l-sme-transformation-order{ margin:20px 0; }
+    .n3l-sme-transformation-order .mast{ padding:28px 22px 26px; }
+    .n3l-sme-transformation-order .title{ font-size:clamp(25px,7vw,34px); max-width:none; }
+    .n3l-sme-transformation-order .wrong{ padding:14px 22px 15px; }
+    .n3l-sme-transformation-order .steps-head{
+      padding:14px 22px 12px;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+    }
+    .n3l-sme-transformation-order .steps-head .legend{ letter-spacing:.02em; }
+    .n3l-sme-transformation-order .step{
+      grid-template-columns:36px minmax(0,1fr) 22px;
+      column-gap:12px;
+      padding:15px 22px;
+    }
+    .n3l-sme-transformation-order .step::before{ left:33px; }
+    .n3l-sme-transformation-order .idx{ font-size:21px; }
+    .n3l-sme-transformation-order .mark{ width:22px; height:22px; }
+    .n3l-sme-transformation-order .mark b{ font-size:11px; }
+    .n3l-sme-transformation-order .rules{ padding:14px 22px 16px; }
+    .n3l-sme-transformation-order .rule-list{ grid-template-columns:minmax(0,1fr); gap:6px; }
+    .n3l-sme-transformation-order .foot{
+      padding:14px 22px;
+      font-size:10px;
+      justify-content:flex-start;
+      row-gap:4px;
+    }
+  }
