@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="/assets/css/infographic-ai-integration-map.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<div class="n3l-ai-integration-map">
+  <figure class="fig">
+    <header class="mast">
+      <span class="eyebrow brand-eyebrow">NEXT3LABS &mdash; AI integration, Singapore</span>
+      <div class="title">The API call is 10%. <span class="hi">The rest is the project.</span></div>
+      <p class="sub">Data access, boundaries and accountability are the real work behind an AI integration that belongs in your business.</p>
+      <div class="mast-rule"></div>
+    </header>
+
+    <div class="split">
+      <div class="half half--quick">
+        <span class="eyebrow half-label">What takes an afternoon</span>
+        <p class="half-line">Wiring a model into your <b>stack.</b></p>
+      </div>
+      <div class="half half--project">
+        <span class="eyebrow half-label">What takes the project</span>
+        <p class="half-line">An <b class="stop-em">access map, boundaries and ownership.</b></p>
+      </div>
+    </div>
+
+    <div class="steps-head">
+      <span class="eyebrow">The integration map &mdash; five decisions before launch</span>
+      <span class="legend">Make each decision explicit</span>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="idx num" aria-hidden="true">01</span>
+        <div class="body">
+          <h3>Map the systems, not the use case</h3>
+          <p>Sort what it needs to read vs write before scoping the feature.</p>
+        </div>
+        <span class="out">Access map (reads vs writes)</span>
+      </li>
+      <li class="step">
+        <span class="idx num" aria-hidden="true">02</span>
+        <div class="body">
+          <h3>Decide the model / system-of-record boundary</h3>
+          <p>The model reads live from the system of truth, never caches its own copy.</p>
+        </div>
+        <span class="out">Live reads, no cached copies</span>
+      </li>
+      <li class="step step--gate">
+        <span class="idx num" aria-hidden="true">03</span>
+        <div class="body">
+          <h3>Put a human-legible permission boundary on it</h3>
+          <p>Write down which actions are autonomous and which need a person to confirm.</p>
+        </div>
+        <span class="out out--gate">Written action list (autonomous vs confirm-required)</span>
+      </li>
+      <li class="step">
+        <span class="idx num" aria-hidden="true">04</span>
+        <div class="body">
+          <h3>Instrument every call before you trust it</h3>
+          <p>Log every call and response so a failure is diagnosable in minutes.</p>
+        </div>
+        <span class="out">Full call/response log</span>
+      </li>
+      <li class="step step--last">
+        <span class="idx num" aria-hidden="true">05</span>
+        <div class="body">
+          <h3>Assign a named owner before launch</h3>
+          <p>Someone accountable for reading logs and deciding on scope changes.</p>
+        </div>
+        <span class="out out--done">Accountable owner, day one</span>
+      </li>
+    </ol>
+
+    <section class="fails">
+      <span class="eyebrow fails-label">Scope creep, not model error</span>
+      <ul class="fail-list">
+        <li class="fail-item"><span class="x" aria-hidden="true">&times;</span><b>Unscoped write access</b></li>
+        <li class="fail-item"><span class="x" aria-hidden="true">&times;</span><b>Cached data that drifts</b></li>
+        <li class="fail-item"><span class="x" aria-hidden="true">&times;</span><b>No log when something fails</b></li>
+        <li class="fail-item"><span class="x" aria-hidden="true">&times;</span><b>No owner when it does</b></li>
+      </ul>
+    </section>
+
+    <figcaption class="foot">
+      <span class="mark-word">NEXT3LABS</span>
+      <span>Reads before it writes &middot; next3labs.com</span>
+    </figcaption>
+  </figure>
+</div>
