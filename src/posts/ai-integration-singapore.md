@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "AI integration in Singapore: why the API call is the easy 10%"
-description: AI integration in Singapore is usually quoted as connecting an API. That part takes an afternoon. The other 90% is data access, system boundaries, and who is accountable when the model is wrong — and skipping it is why most integrations get switched off within a quarter.
+description: AI integration in Singapore is usually quoted as connecting an API. That part takes an afternoon. The other 90% is data access, system boundaries, and who is accountable when the model gets it wrong.
 date: 2026-09-21
 readingTime: 7
 tags: posts
@@ -72,7 +72,8 @@ what the integration is trusted to do, happening quietly, without anyone decidin
 purpose. A read-only lookup gets a "just also let it update the record while we're at
 it" six weeks in, with no new review of the access map, no new log of what it is allowed
 to touch, and no new owner assigned to the expanded scope. Nothing failed technically.
-The decision that should have gated the expansion never happened.
+The decision that should have gated the expansion never happened, and that is the gap
+that eventually surfaces as an incident nobody can explain.
 
 The fix is not more caution about AI specifically. It is the same discipline you would
 already apply to giving a new hire access to your systems: write down what they can
