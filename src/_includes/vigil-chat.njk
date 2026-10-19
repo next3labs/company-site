@@ -1,0 +1,13 @@
+{% if site.vigil and site.vigil.enabled and site.vigil.deploymentKey %}
+<link rel="stylesheet" href="/assets/css/vigil-chat.css">
+<button class="vigil-launcher" type="button" data-vigil-open aria-haspopup="dialog" aria-controls="vigil-chat" aria-expanded="false" hidden>Chat with NEXT3LABS</button>
+<dialog class="vigil-chat" id="vigil-chat" aria-labelledby="vigil-chat-title" data-vigil-url="https://app.vigilcc.com/widget/{{ site.vigil.deploymentKey }}">
+  <header class="vigil-chat__bar">
+    <span id="vigil-chat-title">NEXT3LABS chat</span>
+    <button type="button" data-vigil-close aria-label="Close chat">Close</button>
+  </header>
+  <div class="vigil-chat__fallback"><a href="https://app.vigilcc.com/widget/{{ site.vigil.deploymentKey }}" target="_blank" rel="noopener noreferrer">Open chat in a new tab</a><span> · </span><a href="mailto:{{ site.contactEmail }}">Email the team</a></div>
+  <div class="vigil-chat__frame" data-vigil-frame></div>
+</dialog>
+<script src="/assets/js/vigil-chat.js" defer></script>
+{% endif %}
