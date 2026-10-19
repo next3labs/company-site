@@ -28,3 +28,14 @@ test('invalid hosts, malformed keys and unsupported dialogs fail closed',()=>{
   }
   const f=fixture(undefined,false);assert.equal(f.launcher.hidden,true);assert.equal(f.slot.children.length,0);
 });
+test('release gate: navigation labels do not carry prohibited ARIA names',()=>{
+  const nav=readFileSync('src/_includes/v3-nav.njk','utf8');
+  assert.doesNotMatch(nav,/<label\b[^>]*aria-label=/);
+  assert.match(nav,/<input\b[^>]*id="v3-nav-toggle"[^>]*aria-label="Toggle menu"/);
+});
+test('release gate: contact headings and links retain accessible semantics and contrast token',()=>{
+  const page=readFileSync('src/pages/contact.njk','utf8');
+  assert.match(page,/<h2>Email<\/h2>/);assert.doesNotMatch(page,/<h3>/);
+  const css=readFileSync('src/assets/css/v3.css','utf8');
+  assert.match(css,/\.v3 \.v3-contact__item a\s*\{\s*color:\s*var\(--v3-primary\)/);
+});
