@@ -1,0 +1,49 @@
+/* Host chrome follows the approved NEXT3LABS v3 palette; chat owns VIGIL tokens. */
+.vigil-launcher {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 60;
+  min-height: 48px;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 20px;
+  background: var(--v3-primary);
+  color: white;
+  font: 500 14px/20px 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 8px 24px rgb(26 26 46 / 18%);
+  cursor: pointer;
+}
+.vigil-launcher[hidden] { display: none; }
+.vigil-chat {
+  position: fixed;
+  inset: auto max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) auto;
+  width: min(410px, calc(100vw - 32px));
+  height: min(740px, calc(100dvh - 40px));
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--v3-muted);
+  border-radius: 10px;
+  background: white;
+  color: var(--v3-ink);
+  font: 400 14px/20px 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 12px 48px rgb(26 26 46 / 20%);
+  overflow: hidden;
+}
+.vigil-chat[open] { display: flex; flex-direction: column; }
+.vigil-chat::backdrop { background: rgb(26 26 46 / 40%); }
+.vigil-chat__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 12px 4px 16px; border-bottom: 1px solid var(--v3-surface); }
+.vigil-chat__bar > span { font-weight: 600; }
+.vigil-chat__bar button { min-width: 44px; min-height: 44px; border: 0; border-radius: 8px; background: transparent; color: var(--v3-primary); font: inherit; cursor: pointer; }
+.vigil-chat__fallback { padding: 8px 16px; color: var(--v3-muted); font-size: 12px; line-height: 18px; }
+.v3 .vigil-chat__fallback a { color: var(--v3-primary); text-decoration: underline; }
+.vigil-chat__frame { flex: 1; min-height: 0; }
+.vigil-chat__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.vigil-launcher:focus-visible, .vigil-chat button:focus-visible, .vigil-chat a:focus-visible { outline: 3px solid var(--v3-secondary); outline-offset: 3px; }
+@media (max-width: 480px) {
+  .vigil-chat { inset: 0; width: 100%; height: 100dvh; border: 0; border-radius: 0; }
+  .vigil-chat__bar { padding-top: max(4px, env(safe-area-inset-top)); }
+  .vigil-launcher { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
+}

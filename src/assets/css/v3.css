@@ -668,7 +668,7 @@ body.v3 main {
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
 }
-.v3-contact__item h3 {
+.v3-contact__item h2 {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -683,7 +683,7 @@ body.v3 main {
   line-height: 1.6;
 }
 .v3 .v3-contact__item a {
-  color: var(--v3-secondary);
+  color: var(--v3-primary);
   font-weight: 600;
 }
 .v3-contact__item a:hover {

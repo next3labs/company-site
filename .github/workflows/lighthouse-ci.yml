@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - name: Widget unit checks
+        run: yarn test
+
       - name: Build site
         run: yarn build
 
@@ -39,3 +42,4 @@ jobs:
         with:
           name: lighthouse-results
           path: .lighthouseci
+          include-hidden-files: true

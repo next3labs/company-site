@@ -7,6 +7,10 @@
   "descriptor": "AI Consultancy & Software Development · Singapore",
   "foundingYear": 2016,
   "contactEmail": "contact@next3labs.com",
+  "vigil": {
+    "enabled": true,
+    "deploymentKey": "ceYMTSfW0BKm2Gianelu-_ywy6C7LIju"
+  },
   "whatsapp": "6587721895",
   "company": {
     "legalName": "NEXT3LABS PTE. LTD.",
