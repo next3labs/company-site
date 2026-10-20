@@ -6,7 +6,7 @@
     <span id="vigil-chat-title">NEXT3LABS chat</span>
     <button type="button" data-vigil-close aria-label="Close chat">Close</button>
   </header>
-  <div class="vigil-chat__fallback"><a href="https://app.vigilcc.com/widget/{{ site.vigil.deploymentKey }}" target="_blank" rel="noopener noreferrer">Open chat in a new tab</a><span> · </span><a href="mailto:{{ site.contactEmail }}">Email the team</a></div>
+  <div class="vigil-chat__fallback"><a href="https://app.vigilcc.com/widget/{{ site.vigil.deploymentKey }}" target="_blank" rel="noopener noreferrer">Open chat in a new tab</a><span> · </span><a data-vigil-contact href="mailto:{{ site.contactEmail }}">Email the team</a></div>
   <div class="vigil-chat__frame" data-vigil-frame></div>
 </dialog>
 <script src="/assets/js/vigil-chat.js" defer></script>
