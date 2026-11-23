@@ -8,7 +8,7 @@
   "foundingYear": 2016,
   "contactEmail": "contact@next3labs.com",
   "vigil": {
-    "enabled": true,
+    "enabled": false,
     "deploymentKey": "ceYMTSfW0BKm2Gianelu-_ywy6C7LIju"
   },
   "whatsapp": "6587721895",
